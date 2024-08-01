@@ -1,5 +1,5 @@
 ---
-title: Write-ups
+title: Blog
 layout: blog
 ---
 
