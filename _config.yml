@@ -11,7 +11,7 @@ title: CyberWiki
 # Description of the Site
 description: Bienvenido a mi web de hacking
 # URL of Image of the Site
-site-image: "/assets/images/favicon.png"
+site-image: https://joseeelv.github.io/assets/images/banner.png
 # Keywords of the Site
 site-keywords: Site, Template, Theme
 # URL for the Image of custom Favicon
