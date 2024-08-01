@@ -11,11 +11,11 @@ title: CyberWiki
 # Description of the Site
 description: Bienvenido a mi web de hacking
 # URL of Image of the Site
-site-image: ./assets/images/favicon.png
+site-image:  [<img src="./assets/images/favicon.png" width="250" />]
 # Keywords of the Site
 site-keywords: Site, Template, Theme
 # URL for the Image of custom Favicon
-favicon-url: /CyberWiki/assets/images/favicon.png
+favicon-url: 
 
 # URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
 heroimage: 
