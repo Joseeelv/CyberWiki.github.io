@@ -19,7 +19,7 @@ layout: compress
         <div id="results-container"></div>
         <!--Blog Cards Section-->
         {% for post in site.posts %}
-            {% unless post.tags contains "hidden" %}
+            {% unless post.tags contains "LAB" %}
                  {% include blog-card.html %}
             {% endunless %}
         {% endfor %}
