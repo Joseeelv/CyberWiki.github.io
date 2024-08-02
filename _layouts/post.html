@@ -22,6 +22,7 @@
             </figure>
           </div>
           <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
+            <div class="content-container">
             {% unless page.description.size == 0 %}
             <p id="description" class="content is-small has-text-weight-medium is-uppercase">
               {{page.description | strip | strip_html | strip_newlines }}
