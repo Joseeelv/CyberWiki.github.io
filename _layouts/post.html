@@ -22,7 +22,6 @@
             </figure>
           </div>
           <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
-            <div class="content-container">
             {% unless page.description.size == 0 %}
             <p id="description" class="content is-small has-text-weight-medium is-uppercase">
               {{page.description | strip | strip_html | strip_newlines }}
@@ -56,9 +55,7 @@
               </b>READ</p> -->
             {%- endunless -%}
           </div>
-        </div>
-        </div>
-          <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
+        <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
           <p>{{ content }}</p>
         </div>
         {% unless site.disqus-shortname == "" %}
@@ -66,6 +63,7 @@
         {% endunless %}
       </div>
     </div>
+  </div>
   </section>
   {% include footer.html %}
 </body>
