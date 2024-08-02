@@ -362,12 +362,12 @@ a.navbar-item.is-active {
       }
       
       /* Reducir el espacio específico entre la imagen y el contenido */
-      .column.is-6 {
-        margin-bottom: 0; /* Eliminar margen inferior de la columna con la imagen */
-          margin-left: flex; /* Reducir el espacio entre columnas */
-        margin-right: flex; /* Reducir el espacio entre columnas */
-      }
-      
+    .column.is-6 {
+    margin-bottom: 0; /* Eliminar margen inferior de la columna con la imagen */
+      margin-left: -10rem; /* Reducir el espacio entre columnas */
+    margin-right: -10rem ; /* Reducir el espacio entre columnas */
+  }
+
       .column.is-5 {
         margin-top: 10; /* Eliminar margen superior de la columna con el contenido */
       }
