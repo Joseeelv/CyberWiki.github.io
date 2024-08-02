@@ -46,11 +46,7 @@ a.navbar-item.is-active {
 .navbar-link:not(.is-arrowless)::after {
     border-color: grey;
 }
-@media (max-width: 768px) {
-    .heroimage {
-        display: none;
-    }
-}
+
 
 #hero {
     background: rgb(0, 0, 0);
