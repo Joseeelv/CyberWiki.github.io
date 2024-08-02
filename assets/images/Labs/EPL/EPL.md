@@ -1,4 +1,9 @@
-
+---
+layout: project
+title: Escalar Privilegios en Linux
+image: "../assets/images/Labs/EPL/p.png"
+description: Módulo sobre las diferentes formas de escalar privilegios en un sistema Linux.
+---
 # Escalar Privilegios en Linux
 
 Etiquetas: Apuntes, Enumerate, Linux
