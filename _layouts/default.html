@@ -4,15 +4,30 @@ layout: compress
 
 <!DOCTYPE html>
 <html>
-{% include head.html %}
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>{{ site.title }}</title>
+      <link rel="icon" href="{{ site.favicon-url }}" type="image/png">
+      <meta name="description" content="{{ site.description }}">
+      <!-- Otros metadatos y enlaces -->
+    </head>
+    <body>
+      <header>
+        <div class="site-title">
+          <img src="{{ site.favicon-url }}" alt="Site Icon" style="width: 24px; height: 24px; vertical-align: middle;">
+          <span>{{ site.title }}</span>
+        </div>
+        <!-- Otros elementos del encabezado -->
+      </header>
+      <!-- Contenido del sitio -->
 
-<body>
-  {% include navbar.html %}
-  {% include showcase.html %}
-  {% include about.html %}
-  {% include contact.html %}
-  <!--Footer begins here-->
-  {% include footer.html %}
+      {% include navbar.html %}
+      {% include showcase.html %}
+      {% include about.html %}
+      {% include contact.html %}
+      <!--Footer begins here-->
+      {% include footer.html %}
 </body>
 <script>
   var navItems = document.getElementsByClassName('navbar-item');
