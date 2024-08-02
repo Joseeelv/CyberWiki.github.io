@@ -8,11 +8,10 @@ tags:
 - Exploit
 - Fuerza-bruta
 - Hash cracking
-dificulty: Fácil
+difficulty: Fácil
+url: https://tryhackme.com/room/agentsudoctf
 ---
 
-# Agent Sudo
-Enlace de la room: [Agent Sudo](https://tryhackme.com/room/agentsudoctf)
 
 # Task 1: Author note
 
