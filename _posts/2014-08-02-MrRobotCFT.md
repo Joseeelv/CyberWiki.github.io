@@ -1,12 +1,16 @@
-# Mr. Robot CTF
-
-Created: July 24, 2024 4:58 PM
-Etiquetas: Enumeración, Exploit, Fuerza-bruta, Hash cracking, Web
-Dificultad: Medio
-Enlace:: https://tryhackme.com/r/room/mrrobot
-Hecho : Jose Luis 
-Status: Done
-
+---
+title: Mr Robot CTF
+layout: post
+post-image: "../assets/images/Labs/MrRobotCTF/mr.png"
+description: En este documento se detalla el proceso de un CTF (Capture The Flag) de Mr. Robot. Se realiza un escaneo de puertos, se descubren directorios ocultos, se encuentra una clave en el archivo robots.txt, se obtienen credenciales de acceso a un panel de login de WordPress, se realiza una revershell PHP para obtener acceso remoto, se encuentran y se obtienen claves adicionales, se descifra una contraseña encriptada, se escalan privilegios a root y se encuentra la última clave para completar el ejercicio.
+difficulty: Media
+enlace: https://tryhackme.com/r/room/mrrobot
+tags:
+- Enumeración
+- Exploit
+- Fuerza-bruta
+- Hash cracking
+- Web
 ---
 
 Vamos a realizar un escaneo de puertos desde la maquina atacante:
