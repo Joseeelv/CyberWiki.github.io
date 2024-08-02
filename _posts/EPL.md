@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: post
 title: Escalar Privilegios en Linux
 image: "../assets/images/Labs/EPL/p.png"
 difficulty:
