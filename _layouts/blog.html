@@ -19,7 +19,9 @@ layout: compress
         <div id="results-container"></div>
         <!--Blog Cards Section-->
         {% for post in site.posts %}
-            {% include blog-card.html %}
+            {% unless post.tags contains "hidden" %}
+                 {% include blog-card.html %}
+            {% endunless %}
         {% endfor %}
         </div>
     </section>
