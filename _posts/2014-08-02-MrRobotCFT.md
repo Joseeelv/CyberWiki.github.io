@@ -12,28 +12,38 @@ tags:
 - Hash cracking
 - Web
 ---
-
+# Proceso para conseguir la user.txt:
 Vamos a realizar un escaneo de puertos desde la maquina atacante:
 
-![Untitled](Mr%20Robot%20CTF%207a258c36a903403f97c0f024c98bfbbe/Untitled.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/MrRobotCFT/Untitled.png" alt="Foto"/>
+  </div>
 
 Hemos obtenido:
 
-![Untitled](Mr%20Robot%20CTF%207a258c36a903403f97c0f024c98bfbbe/Untitled%201.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/MrRobotCFT/Untitled1.png" alt="Foto"/>
+  </div>
 
 Tenemos dos protocolos http (80) y https(443), podemos acceder a ella introduciendo la ip en la barra del buscador de nuestro navegador.
 
 Vamos ver si hay directorios ocultos, mediante fuzzing con gobuster:
 
-![Untitled](Mr%20Robot%20CTF%207a258c36a903403f97c0f024c98bfbbe/Untitled%202.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/MrRobotCFT/Untitled2.png" alt="Foto"/>
+  </div>
 
 Y vamos a ver que directorios escondidos tiene la pagina web:
 
-![Untitled](Mr%20Robot%20CTF%207a258c36a903403f97c0f024c98bfbbe/Untitled%203.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/MrRobotCFT/Untitled3.png" alt="Foto"/>
+  </div>
 
 Primero de todo, toda página web contiene el directorio */robots.txt* por tanto vamos a echarle un ojo:
 
-![Untitled](Mr%20Robot%20CTF%207a258c36a903403f97c0f024c98bfbbe/Untitled%204.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/MrRobotCFT/Untitled\4.png" alt="Foto"/>
+  </div>
 
 Encontramos la primera key, que la podemos ver accediendo desde la barra de navegación o haciendo un curl desde la consola:
 
