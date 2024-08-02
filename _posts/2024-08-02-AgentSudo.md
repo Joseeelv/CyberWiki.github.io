@@ -27,8 +27,8 @@ Mediante el comando → `nmap -p- -v <ip_maquina>` obtenemos todos los puertos q
 
 Ahora haremos uso del comando → `nmap -sC -sV -p<Puertos_obtenidos> <ip_maquina>`
 
-<div style="text-align: center;">
-    <img src="./Labs/AgentSudo/Untitled.png" alt="Agent Sudo Image" />
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/AgentSudo/Untitled.png" alt="Agent Sudo Image" />
 </div>
 
 Obtenemos información sobre los puertos abiertos → Servicio, Versión, Estado…
