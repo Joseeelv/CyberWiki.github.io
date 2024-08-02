@@ -1,31 +1,34 @@
-source "http://rubygems.org"
-# Hello! This is where you manage which Jekyll version is used to run.
-# When you want to use a different version, change it below, save the
-# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
-#
-#     bundle exec jekyll serve
-#
-# This will help ensure the proper Jekyll version is running.
-# Happy Jekylling!
+# NOTE: These are development-only dependencies
+source "https://rubygems.org"
 
-gem "jekyll"
-gem "rack"
-gem "webrick"
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
-# gem "github-pages", group: :jekyll_plugins
-# If you have any plugins, put them here!
-group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem 'jekyll-admin', "0.9.0"
+gem "bugsnag", "~> 6.22"
+gem "listen", "~> 3.7.0"
+gem "theme-check", "~> 1.14.0"
+
+# None of these can actually be used in a development copy of dev
+# They are all for CI and tests
+# `dev` uses no gems
+group :development, :test do
+  gem "pry-byebug"
+  gem "byebug"
+  gem "rubocop-shopify", require: false
+  gem "rubocop-minitest", require: false
+  gem "rubocop-rake", require: false
+  gem "iniparse", "~> 1.5"
+  gem "colorize", "~> 0.8.1"
+  gem "octokit", "~> 4.0"
+  gem "bundler", ">= 2.3.11"
+  gem "rake", "~> 12.3", ">= 12.3.3"
+  gem "minitest", "~> 5.0"
 end
 
-# Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
-# and associated library.
-install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
-  gem "tzinfo", "~> 1.2"
-  gem "tzinfo-data"
+group :test do
+  gem "mocha", require: false
+  gem "minitest-reporters", require: false
+  gem "minitest-fail-fast", require: false
+  gem "fakefs", ">= 1.0", require: false
+  gem "webmock", require: false
+  gem "timecop", require: false
+  gem "rack", require: false
+  gem "cucumber", "~> 7.0", require: false
 end
-
-# Performance-booster for watching directories on Windows
-gem "wdm", :install_if => Gem.win_platform?
