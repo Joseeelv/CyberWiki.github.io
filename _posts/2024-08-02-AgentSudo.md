@@ -12,11 +12,7 @@ dificulty: Fácil
 ---
 
 # Agent Sudo
-
-Created: October 19, 2023 9:51 PM
-Enlace:: https://tryhackme.com/room/agentsudoctf
-Hecho : Jose Luis 
-Status: Done
+Enlace: https://tryhackme.com/room/agentsudoctf
 
 # Task 1: Author note
 
