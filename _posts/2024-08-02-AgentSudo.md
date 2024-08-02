@@ -86,9 +86,9 @@ Al realizar la conexión *ftp* nos pide una contraseña. Haremos uso de la herra
 
 <div style="text-align: center;">
 
-  ```bash
+  ````bash
     hydra -l chris -p /ruta_wordlist ftp://ip_máquina
-  ```
+  ````
 </div>
 <div style="text-align: center;">
     <img src="./Labs/AgentSudo/a.png" alt="Untitled" />
