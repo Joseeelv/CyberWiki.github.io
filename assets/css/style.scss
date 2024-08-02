@@ -320,15 +320,7 @@ a.navbar-item.is-active {
     .subtitle {
         letter-spacing: 0.05rem;
     }
-    .columns {
-        margin: 0;
-    }
-    .content-column {
-        padding-left: 1.5rem; /* Espacio entre la imagen y el contenido */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
+
     #description {
         margin-bottom: 1.25vmax;
     }
