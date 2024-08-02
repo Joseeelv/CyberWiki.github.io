@@ -353,12 +353,12 @@ a.navbar-item.is-active {
         max-width: -webkit-fill-available;
     }
 
-    #post .columns {
+    .columns {
         margin-left: 1rem; /* Reduce el espacio entre columnas */
         margin-right: 1rem; /* Reduce el espacio entre columnas */
       }
       
-      #post .column {
+    .column {
         padding-left: 1rem; /* Ajusta el espacio interno izquierdo de la columna */
         padding-right: 1rem; /* Ajusta el espacio interno derecho de la columna */
       }
