@@ -320,6 +320,10 @@ a.navbar-item.is-active {
     .subtitle {
         letter-spacing: 0.05rem;
     }
+    .column {
+        display: flex;
+        align-items: flex-start; /* Alinea los elementos al inicio de la columna */
+    }
 
     #description {
         margin-bottom: 1.25vmax;

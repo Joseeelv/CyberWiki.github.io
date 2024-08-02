@@ -16,23 +16,26 @@
         </a>
         <hr class="has-background-black">
         <div class="columns is-variable is-5">
+          <!-- Columna para la imagen -->
           <div class="column is-6">
             <figure class="image is-16by9 has-shadow">
               <img src="{{page.post-image}}" alt="{{page.title}}" id="post-image">
             </figure>
           </div>
-          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
+        
+          <!-- Columna para el contenido -->
+          <div class="column is-6 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
             {% unless page.description.size == 0 %}
             <p id="description" class="content is-small has-text-weight-medium is-uppercase">
               {{page.description | strip | strip_html | strip_newlines }}
-              <!-- Enlace añadido aquí -->
-              <p class="subtitle is-uppercase is-6 has-text-weight-normal has-text-black-ter">Enlace de la room: 
-                <b><a href="{{ page.enlace | escape }}" target="page.enlace">{{page.title}}</a></b>
-              </p>
-                {% endunless %}
-              <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Dificultad de la room: 
-                <b>{{ page.difficulty | escape }}</b>
-              </p>
+            </p>
+            <p class="subtitle is-uppercase is-6 has-text-weight-normal has-text-black-ter">Enlace de la room: 
+              <b><a href="{{ page.enlace | escape }}" target="page.enlace">{{page.title}}</a></b>
+            </p>
+            {% endunless %}
+            <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Dificultad de la room: 
+              <b>{{ page.difficulty | escape }}</b>
+            </p>
             <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Publicado en
               <b>{{ page.date | date: "%-B %d, %Y" }}</b> by <a href="{% if site.author-url %}{{site.author-url}}{% else %}{{site.url}}{{site.baseurl}}/#about{% endif %}" target="_blank"><b class="has-text-link"><u>{{site.author-name}}</u></b>
               </a>
@@ -48,14 +51,9 @@
               {% endfor %}
             </p>
             {%- endunless -%}
-            {% assign words = content | number_of_words %}
-            {%- unless content.size == 0 -%}
-            <!-- <p class="subtitle is-uppercase"><i class="fas fa-clock"></i> <b class="has-text-link">
-                {{ words | divided_by:180 }} min
-              </b>READ</p> -->
-            {%- endunless -%}
           </div>
         </div>
+<!-- CONTENIDO DE LA PAGINA         -->
         <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
           <p>{{ content }}</p>
         </div>
