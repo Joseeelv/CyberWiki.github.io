@@ -357,17 +357,14 @@ a.navbar-item.is-active {
         margin-top: 5vmax;
     }
 
-    .image, .content {
-        margin-bottom: 20px;
-      }
-
-      .columns {
+    .column {
         display: flex;
+        flex-direction: column;
         justify-content: center;
       }
       
-      .column.is-6 {
-        flex: 1;
+      .image, .content {
+        margin-bottom: 20px;
       }
 }
 
