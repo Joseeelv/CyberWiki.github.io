@@ -1,6 +1,6 @@
-- name: TryHackMe Write-Ups
-  link: "/assets/Labs/MrRobotCFT/MrRobotCFT.md"
-  image:
+- name: Escalar Privilegios en Linux
+  link: "../_post/EPL.md"
+  image: "../assets/Labs/EPL/p.png"
   description:
 # - name: Second Project
 #   link:
