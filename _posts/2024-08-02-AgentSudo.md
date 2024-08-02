@@ -12,7 +12,7 @@ dificulty: Fácil
 ---
 
 # Agent Sudo
-Enlace: https://tryhackme.com/room/agentsudoctf
+Enlace de la room: [Agent Sudo](https://tryhackme.com/room/agentsudoctf)
 
 # Task 1: Author note
 
