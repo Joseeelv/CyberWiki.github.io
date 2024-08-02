@@ -3,6 +3,16 @@
 
 @import "main.scss";
 
+.site-title {
+    display: flex;
+    align-items: center;
+  }
+
+.site-title img {
+margin-right: 8px; /* Espacio entre el icono y el título */
+}
+  
+
 #navbar {
     opacity: 0.95;
 }
