@@ -17,11 +17,11 @@
         <hr class="has-background-black">
         <div class="columns is-variable is-5 has-text-centered">
           <div class="column is-6" style="width: 50%;">
-            <div style="text-align: left; ">
-              <img src="{{page.post-image}}" alt="{{page.title}}" id="post-image" style="width: -50%;">
+            <div style="text-align: center; ">
+              <img src="{{page.post-image}}" alt="{{page.title}}" id="post-image">
             </div>
           </div>
-          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile" style="text-align: left; width: 50%;" ">
+          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile" style="text-align: left;" ">
             {% unless page.description.size == 0 %}
             <p id="description" class="content is-small has-text-weight-medium is-uppercase">
               {{page.description | strip | strip_html | strip_newlines }}
