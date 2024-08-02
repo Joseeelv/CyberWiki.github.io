@@ -28,7 +28,6 @@
               <!-- Enlace añadido aquí -->
               <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Enlace de la room: 
                 <b>{{ page.enlace | escape }}</b>
-                {% endunless %}
             <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Publicado en
               <b>{{ page.date | date: "%-B %d, %Y" }}</b> by <a href="{% if site.author-url %}{{site.author-url}}{% else %}{{site.url}}{{site.baseurl}}/#about{% endif %}" target="_blank"><b class="has-text-link"><u>{{site.author-name}}</u></b>
               </a>
