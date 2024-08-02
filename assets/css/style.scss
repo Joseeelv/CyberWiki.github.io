@@ -356,6 +356,19 @@ a.navbar-item.is-active {
     #disqus_thread {
         margin-top: 5vmax;
     }
+
+    .image, .content {
+        margin-bottom: 20px;
+      }
+
+      .columns {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .column.is-6 {
+        flex: 1;
+      }
 }
 
 #page-section {
