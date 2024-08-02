@@ -1,5 +1,11 @@
-# WhatATheme
+
 markdown: kramdown
+
+lang:
+  - en
+  - es
+
+baseurl: docs/
 
 # URL of the Site
 url: 'https://joseeelv.github.io/'
@@ -7,6 +13,7 @@ url: 'https://joseeelv.github.io/'
 baseurl: 
 
 # Title of the Site
+icon: "/assets/images/favicon.png"
 title: CyberWiki
 # Description of the Site
 description: Bienvenido a mi web de hacking
