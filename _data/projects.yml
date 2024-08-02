@@ -1,6 +1,6 @@
 - name: Escalar Privilegios en Linux
-  link: https://joseeelv.github.io//projects/EPL
-  image: "../assets/images/Labs/EPL/p.png"
+  link: https://joseeelv.github.io//
+  image: "../assets/images/Rooms/EPL/p.png"
   description: Módulo sobre las diferentes formas de escalar privilegios en un sistema Linux.
 # - name: Second Project
 #   link:
