@@ -1,6 +1,6 @@
 - name: Escalar Privilegios en Linux
   link: 
-  image: 
+  image: "../assets/images/Labs/EPL/p.png"
   description:
 # - name: Second Project
 #   link:
