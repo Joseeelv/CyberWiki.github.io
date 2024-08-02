@@ -5,7 +5,7 @@ lang:
   - en
   - es
 
-baseurl: docs/
+baseurl: /
 
 # URL of the Site
 url: 'https://joseeelv.github.io/'
