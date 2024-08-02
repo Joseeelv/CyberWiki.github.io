@@ -26,8 +26,8 @@
             <p id="description" class="content is-small has-text-weight-medium is-uppercase">
               {{page.description | strip | strip_html | strip_newlines }}
               <!-- Enlace añadido aquí -->
-              <p class="subtitle is-6 has-text-weight-normal has-text-black-ter">Enlace de la room: 
-                <b><a href="{{ page.enlace | escape }}" target="page.enlace">{{Visita la room}}</a></b>
+              <p class="subtitle is-uppercase is-6 has-text-weight-normal has-text-black-ter">Enlace de la room: 
+                <b><a href="{{ page.enlace | escape }}" target="page.enlace">Visita la room</a></b>
               </p>
                 {% endunless %}
               <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Dificultad de la room: 
