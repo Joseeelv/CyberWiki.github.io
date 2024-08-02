@@ -356,28 +356,27 @@ a.navbar-item.is-active {
     #disqus_thread {
         margin-top: 5vmax;
     }
-    .columns {
-        margin-left: -1rem; /* Reduce el espacio entre columnas */
-        margin-right: -1rem; /* Reduce el espacio entre columnas */
+    .column {
+        padding-left: -.5rem; /* Ajustar el padding interno de la columna */
+        padding-right: -.5rem; /* Ajustar el padding interno de la columna */
       }
       
-      .column {
-        padding-left: 1rem; /* Ajusta el espacio interno izquierdo de la columna */
-        padding-right: 1rem; /* Ajusta el espacio interno derecho de la columna */
+      /* Reducir el espacio específico entre la imagen y el contenido */
+      .column.is-6 {
+        margin-bottom: 0; /* Eliminar margen inferior de la columna con la imagen */
+          margin-left: flex; /* Reducir el espacio entre columnas */
+        margin-right: flex; /* Reducir el espacio entre columnas */
       }
       
-      /* Ajusta el espacio entre columnas a tu gusto */
-      @media screen and (min-width: 768px) {
-        .columns.is-variable.is-5 {
-          margin-left: -0.5rem;
-          margin-right: -0.5rem;
-        }
-      
-        .column.is-6, .column.is-5 {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-        }
+      .column.is-5 {
+        margin-top: 10; /* Eliminar margen superior de la columna con el contenido */
       }
+      
+      /* Ajustar margen y padding de la figura e imagen */
+      .figure.image {
+        margin-bottom: 0; /* Eliminar margen inferior de la figura */
+      }
+      
 }
 
 #page-section {
