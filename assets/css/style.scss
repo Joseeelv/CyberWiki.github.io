@@ -314,7 +314,7 @@ a.navbar-item.is-active {
     }
     #post-image {
         border-radius: 0.25rem;
-        max-width: 50%;
+        max-width: 100%; /* Asegura que la imagen no exceda el ancho de la columna */
         height: auto;
     }
     .subtitle {
