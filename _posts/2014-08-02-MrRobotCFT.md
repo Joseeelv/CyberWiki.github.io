@@ -2,7 +2,7 @@
 title: Mr Robot CTF
 layout: post
 post-image: "../assets/images/Labs/MrRobotCTF/mr.png"
-description: En esta room se basa en la serie de Mr. Robot. Se realiza un escaneo de puertos, se descubren directorios ocultos, se encuentra una clave en el archivo robots.txt, se obtienen credenciales de acceso a un panel de login de WordPress, se realiza una revershell PHP para obtener acceso remoto, se encuentran y se obtienen claves adicionales, se descifra una contraseña encriptada, se escalan privilegios a root y se encuentra la última clave para completar el ejercicio.
+description: Esta room se basa en la serie de Mr. Robot. Se realiza un escaneo de puertos, se descubren directorios ocultos, se encuentra una clave en el archivo robots.txt, se obtienen credenciales de acceso a un panel de login de WordPress, se realiza una revershell PHP para obtener acceso remoto, se encuentran y se obtienen claves adicionales, se descifra una contraseña encriptada, se escalan privilegios a root y se encuentra la última clave para completar el ejercicio.
 difficulty: Media
 enlace: https://tryhackme.com/r/room/mrrobot
 tags:
