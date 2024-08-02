@@ -314,7 +314,7 @@ a.navbar-item.is-active {
     }
     #post-image {
         border-radius: 0.25rem;
-        max-width: 100%; /* Asegura que la imagen no exceda el ancho de la columna */
+        max-width: 50%;
         height: auto;
     }
     .subtitle {
@@ -352,29 +352,6 @@ a.navbar-item.is-active {
         word-break: break-word;
         max-width: -webkit-fill-available;
     }
-
-   .columns {
-  margin-left: -1rem; /* Reduce el espacio entre columnas */
-  margin-right: -1rem; /* Reduce el espacio entre columnas */
-}
-
-.column {
-  padding-left: 1rem; /* Ajusta el espacio interno izquierdo de la columna */
-  padding-right: 1rem; /* Ajusta el espacio interno derecho de la columna */
-}
-
-/* Ajusta el espacio entre columnas a tu gusto */
-@media screen and (min-width: 768px) {
-  .columns.is-variable.is-5 {
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-  }
-
-  .column.is-6, .column.is-5 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-}    
 
     #disqus_thread {
         margin-top: 5vmax;
