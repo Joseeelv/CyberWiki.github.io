@@ -86,6 +86,10 @@ defaults:
     values:
       layout: page
 
+collections:
+  projects:
+    output: true
+
 # Exclude
 exclude:
   - .sass-cache/
