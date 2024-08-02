@@ -27,7 +27,7 @@
               {{page.description | strip | strip_html | strip_newlines }}
               <!-- Enlace añadido aquí -->
               <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Enlace de la room: 
-                <b>{{ page.enlace | escape }}</b>
+                <b><a href="{{ page.enlace | escape }}" target="_blank" rel="noopener noreferrer">{{ page.enlace | escape }}</a></b>
                 {% endunless %}
               <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Dificultad de la room: 
                 <b>{{ page.difficulty | escape }}</b>
