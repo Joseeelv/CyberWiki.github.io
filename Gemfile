@@ -3,7 +3,8 @@ source "https://rubygems.org"
 
 gem "bugsnag", "~> 6.22"
 gem "listen", "~> 3.7.0"
-gem "theme-check", "~> 1.14.0"
+
+
 
 # None of these can actually be used in a development copy of dev
 # They are all for CI and tests
@@ -20,6 +21,9 @@ group :development, :test do
   gem "bundler", ">= 2.3.11"
   gem "rake", "~> 12.3", ">= 12.3.3"
   gem "minitest", "~> 5.0"
+  gem 'jekyll', '~> 4.3.3'
+  gem 'theme-check', '~> 1.11.0'
+  gem 'liquid', '~> 4.0'
 end
 
 group :test do
