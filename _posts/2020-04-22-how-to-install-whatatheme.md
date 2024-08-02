@@ -8,12 +8,12 @@ tags:
 - Exploit
 - Fuerza-bruta
 - Hash cracking
+dificulty: Fácil
 ---
 
 # Agent Sudo
 
 Created: October 19, 2023 9:51 PM
-Dificultad: Fácil
 Enlace:: https://tryhackme.com/room/agentsudoctf
 Hecho : Jose Luis 
 Status: Done
