@@ -353,6 +353,18 @@ a.navbar-item.is-active {
         max-width: -webkit-fill-available;
     }
 
+    .columns {
+        display: flex;
+        align-items: center; /* Alinea verticalmente los elementos dentro de las columnas */
+        justify-content: center; /* Centra las columnas horizontalmente */
+      }
+      
+      .column {
+        display: flex;
+        flex-direction: column; /* Alinea los elementos hijos en una columna vertical */
+        align-items: center; /* Centra horizontalmente el contenido dentro de la columna */
+      }
+
     #disqus_thread {
         margin-top: 5vmax;
     }
