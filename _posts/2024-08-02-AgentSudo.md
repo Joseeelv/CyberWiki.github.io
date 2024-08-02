@@ -134,7 +134,8 @@ Encontraremos un *archivo.txt* dentro del *.zip,* procedemos a abrirlo.
 <div style="text-align: center;">
     <img src="./Labs/AgentSudo/c.png" alt="Untitled" />
 </div>
-Nos dice que la imagen se la enviemos a un usuario, pero está encriptado, para ello, vamos a [cyberchef.com](https://gchq.github.io/CyberChef/) para obtenerlo.
+
+Nos dice que la imagen se la enviemos a un usuario, pero está encriptado. Para descifrarlo, vamos a utilizar la herramienta [CyberChef](https://gchq.github.io/CyberChef/).
 
 Ahora nos centramos en el archivos cuya extensión es ‘*.jpg*’.
 
