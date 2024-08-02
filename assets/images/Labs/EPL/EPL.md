@@ -3,12 +3,11 @@ layout: project
 title: Escalar Privilegios en Linux
 image: "../assets/images/Labs/EPL/p.png"
 description: Módulo sobre las diferentes formas de escalar privilegios en un sistema Linux.
+difficulty:
+enlace: https://tryhackme.com/r/room/linprivesc
 ---
 # Escalar Privilegios en Linux
 
-Etiquetas: Apuntes, Enumerate, Linux
-Enlace Lab: https://tryhackme.com/r/room/linprivesc
-Estado: Done
 
 Escalar privilegios consiste en explotar una vulnerabilidad del sistema para ganar acceso no autorizado desde una cuenta con pocos permisos (privilegios) a una con mayor número de los mismos, siendo el *root* aquella cuenta la cual tiene todos los permisos en el sistema.
 
