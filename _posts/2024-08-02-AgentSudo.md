@@ -3,13 +3,13 @@ title: Agent Sudo
 layout: post
 post-image: "/assets/images/agentsudo.png"
 description: El laboratorio "Agent Sudo" de Tryhackme es un desafío de pentesting en el que se utilizan herramientas como Nmap, Hydra y más. Se realiza una enumeración de la máquina para obtener información importante, se busca en la página web y se encuentra un nombre de usuario y una contraseña débil. Se realiza un ataque de fuerza bruta en el servicio FTP y se obtiene acceso. Se descargan archivos y se encuentran pistas para descifrar una imagen y un archivo ZIP. Se obtiene la contraseña del archivo ZIP y se encuentra una contraseña SSH en un archivo de imagen. Se accede al servicio SSH y se encuentra la flag de usuario. Se verifica que el usuario tenga permisos de root y se encuentra un exploit para elevar privilegios. Se ejecuta el exploit y se obtiene acceso root, encontrando la flag final.
+difficulty: Fácil
+url: https://tryhackme.com/room/agentsudoctf
 tags:
 - Enumeración
 - Exploit
 - Fuerza-bruta
 - Hash cracking
-difficulty: Fácil
-url: https://tryhackme.com/room/agentsudoctf
 ---
 
 
