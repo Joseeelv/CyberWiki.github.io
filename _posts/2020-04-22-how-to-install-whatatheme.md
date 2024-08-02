@@ -2,71 +2,160 @@
 title: Agent Sudo
 layout: post
 post-image: "/assets/images/agentsudo.png"
-description: This post will guide you to install WhatATheme on your Jekyll site, follow
-  the easy steps to set up WhatATheme.
+description: El laboratorio "Agent Sudo" de Tryhackme es un desafío de pentesting en el que se utilizan herramientas como Nmap, Hydra y más. Se realiza una enumeración de la máquina para obtener información importante, se busca en la página web y se encuentra un nombre de usuario y una contraseña débil. Se realiza un ataque de fuerza bruta en el servicio FTP y se obtiene acceso. Se descargan archivos y se encuentran pistas para descifrar una imagen y un archivo ZIP. Se obtiene la contraseña del archivo ZIP y se encuentra una contraseña SSH en un archivo de imagen. Se accede al servicio SSH y se encuentra la flag de usuario. Se verifica que el usuario tenga permisos de root y se encuentra un exploit para elevar privilegios. Se ejecuta el exploit y se obtiene acceso root, encontrando la flag final.
 tags:
-- how to
-- setup
-- theme
+- Enumeración
+- Exploit
+- Fuerza-bruta
+- Hash cracking
 ---
 
-# What is WhatATheme?
->You’ll find this post in your ***_posts*** directory. Go ahead and edit it and re-build the site to see your changes. >You can rebuild the site in many different ways, but the most common way is to run `bundle exec jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+# Agent Sudo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VfPa2c9kwhQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Created: October 19, 2023 9:51 PM
+Dificultad: Fácil
+Enlace:: https://tryhackme.com/room/agentsudoctf
+Hecho : Jose Luis 
+Status: Done
+
+# Task 1: Author note
+
+En la tarea 1 solo nos dice que iniciemos la máquina.
+
+# Task 2: Enumerate
+
+Esta tarea consiste en recoger información importante sobre la máquina.
+
+Para ello, primeramente vamos a realizar un escaneo de los puertos de la máquina para ver cuales están abiertos y que protocolos está usando (muy importante más adelante).
+
+Mediante el comando → `nmap -p- -v <ip_maquina>` obtenemos todos los puertos que están abiertos. 
+
+Ahora haremos uso del comando → `nmap -sC -sV -p<Puertos_obtenidos> <ip_maquina>`
+
+![Obtenemos información sobre los puertos abiertos → Servicio, Versión, Estado…](assets/Labs/AgentSudo/Untitled.png)
+
+Obtenemos información sobre los puertos abiertos → Servicio, Versión, Estado…
+
+Como conclusión hemos sacado que hay **3 puertos abiertos (21,22,80).**
+
+Al tener abierto el puerto 80 significa que está haciendo uso del protocolo *HTTP* por tanto, vamos a realizar la petición `http://<ip_maquina>` .
+
+![Hmm, hemos encontrado una pagina web.. ¿Qué contendrá?](assets/Labs/AgentSudo/Untitled%201.png)
+
+Hmm, hemos encontrado una pagina web.. ¿Qué contendrá?
+
+Al haber accedido a una página web podemos realizar una búsqueda de directorios en ella. Para ello, lo realizamos mediante el comando → `gobuster dir --url <ip_maquina> -w /directorio_wordlist`
+
+![No ha habido suerte, no hay ningún directorio oculto…](assets/Labs/AgentSudo/Untitled2.png)
+
+No ha habido suerte, no hay ningún directorio oculto…
+
+Sin embargo, si volvemos a la página web nos da información sobre nuestro codename el cual es **user-agent.**
+
+Pero esto no solo queda aquí, nosotros podemos averiguar quien es ese tal *Agent R*, vamos a probar a realizar un ‘spoofing’ con el comando curl, donde -A es el ‘user-agent y -L sigue cualquier redirección.
+
+![Nos dice que hay 25 empleados, vamos a seguir comprobando para B,C, etc. Así hasta que encontremos algo diferente pero válido](Agent%20Sudo%2079416391d584480fa2ea58814200f767/Untitled%203.png)
+
+Nos dice que hay 25 empleados, vamos a seguir comprobando para B,C, etc. Así hasta que encontremos algo diferente pero válido
+
+![Uiuiuiu, una contraseña débil, vamos a buscarla jejeje.](Agent%20Sudo%2079416391d584480fa2ea58814200f767/Untitled%204.png)
+
+Uiuiuiu, una contraseña débil, vamos a buscarla jejeje.
+
+Cuando llegamos al user-agent ‘C’, encontramos un mensaje diferente, donde nos dice Atención **Chris**.
+
+Perfecto, ahora tenemos un nombre de usuario cuya contraseña es débil.
+
+# Task 3: Hash cracking and brute-force
+
+Si nos acordamos, anteriormente obtuvimos varios servicios que está usando la máquina.
+
+Si juntamos eso con que tenemos un nombre de usuario, podremos realizar una conexión en uno de los servicios.
+
+Al realizar la conexión *ftp* nos pide una contraseña. Haremos uso de la herramienta Hydra la cual mediante fuerza bruta y a partir de un diccionario podremos obtener la contraseña del usuario.
+
+`hydra -l chris -p /ruta_wordlist ftp://ip_máquina`
+
+![Bingo, mediante el diccionario rockyou.txt hemos obtenido la contraseña del usuario chris.](Agent%20Sudo%2079416391d584480fa2ea58814200f767/a.png)
+
+Bingo, mediante el diccionario rockyou.txt hemos obtenido la contraseña del usuario chris.
+
+Gracias a esto, podemos realizar la conexión *ftp* del usuario y su contraseña.
+
+Realizamos un listado de los archivos:
+
+![Vemos que hay 3 archivos, que podremos hacer con ellos..?](Agent%20Sudo%2079416391d584480fa2ea58814200f767/Untitled%205.png)
+
+Vemos que hay 3 archivos, que podremos hacer con ellos..?
+
+Mediante el comando `mget *` de ftp podemos descargar los archivos.
+
+Al encontrar donde se han descargado los archivos, procedemos abrir el fichero ‘*.txt*’ y vemos que nos indica que en las imágenes contienen una contraseña escondida.
+
+Para poder extraer una imagen con extensión ‘*.png*’ → `binwalk -e`, si es ‘*.jpg*’ → `steghide`.
+
+![Perfecto, tenemos un .zip para extraer.](Agent%20Sudo%2079416391d584480fa2ea58814200f767/Untitled%206.png)
+
+Perfecto, tenemos un .zip para extraer.
+
+Como bien sabemos, el .*zip* obtenido está encriptado, haremos uso de las herramientas de *John The Ripper* para poder obtener la contraseña.
+
+Comandos → `zip2john` y `john`
+
+![Voilá, ya tenemos la contraseña del archivo .zip](Agent%20Sudo%2079416391d584480fa2ea58814200f767/b.png)
+
+Voilá, ya tenemos la contraseña del archivo .zip
+
+Encontraremos un *archivo.txt* dentro del *.zip,* procedemos a abrirlo.
+
+![c.png](Agent%20Sudo%2079416391d584480fa2ea58814200f767/c.png)
+
+Nos dice que la imagen se la enviemos a un usuario, pero está encriptado, para ello, vamos a [cyberchef.com](https://gchq.github.io/CyberChef/) para obtenerlo.
+
+Ahora nos centramos en el archivos cuya extensión es ‘*.jpg*’.
+
+![d.png](Agent%20Sudo%2079416391d584480fa2ea58814200f767/d.png)
+
+Leemos el .txt que nos devuelve el archivo .jpg y encontramos una contraseña ssh.
+
+# Task 4: Capture the user flag
+
+Ahora tenemos un usuario y una contraseña ambos los podemos usar en el servicio *ssh* del que hace uso la máquina.
+
+Procedemos a realizar el login → `ssh usuario@ip_maquina`.
+
+![Listamos directorios y BOOM, encontramos la flag.](Agent%20Sudo%2079416391d584480fa2ea58814200f767/f.png)
+
+Listamos directorios y BOOM, encontramos la flag.
+
+PD: Podemos buscar información de la imagen en internet.
+
+# Task 5: Privilege escalation
+
+Por último, podemos comprobar si el usuario James tiene permisos de root → `sudo -l` .
+
+![Untitled](Agent%20Sudo%2079416391d584480fa2ea58814200f767/Untitled%207.png)
+
+Efectivamente, los tiene.
+
+Si tenemos permisos root, podemos comprobar que exploits tiene el comando que puede ejecutar *(ALL, !root) /bin/bash*
+
+![Encontramos información sobre el exploit (CVE,version,etc.), buscando en Internet.](Agent%20Sudo%2079416391d584480fa2ea58814200f767/Untitled%208.png)
+
+Encontramos información sobre el exploit (CVE,version,etc.), buscando en Internet.
+
+Procedemos a comprobar si la versión de sudo permite el exploit.
+
+![Untitled](Agent%20Sudo%2079416391d584480fa2ea58814200f767/Untitled%209.png)
+
+En efecto, por tanto, buscamos información de como ejecutar el exploit.
+
+![Untitled](Agent%20Sudo%2079416391d584480fa2ea58814200f767/Untitled%2010.png)
+
+Procedemos a ser roots, con lo que nos da libertad para navegar entre directorios.
+
+![g.png](Agent%20Sudo%2079416391d584480fa2ea58814200f767/g.png)
+
+Finalmente, en el directorio root encontramos un archivo llamado *root.txt* que contiene la flag final y el nombre del usuario.
 
 ---
-
-**WhatATheme** is a customizable Jekyll Portfolio theme which supports blogging. You can use this theme in order to create an elegant, fully responsive portfolio which includes
-
-### Home Page -
-* A Hero section - A section where you can outsource an image which will work as the background for the particular section; it also will include your name and a tagline which can be easily manipulated via the _config.yml file.
-* An About section - A section where you can include your image and a 60 word paragraph which again you can easily manipulate using the _config.yml file.
-* A Contact section - A section where you can include 3 direct ways to contact<br>
-`Ping on Messenger`<br>
-`Send an Email`<br>
-`Tweet on Twitter`<br>
-The contact section will also include 10 different social media buttons for your audience to follow.<br>
-`Facebook`, `Twitter`, `Instagram`, `LinkedIn`, `GitHub`, `YouTube`, `Reddit`, `Behance`, `Dribbble` & `Spotify`.
-
-### Blog -
-The blog includes a horizontal card list where the latest articles are fetched from the _posts folder automatically in top-down format. It also includes an instant search box which matches your query from the title, description & content of your post and shows the result as soon as you type.<br>
-The blog card includes
-* Post Title
-* 300 words from the content of the post
-* The publish date
-* The time which will be required to read the post.
-
-### Projects -
-The Projects page will include all the projects from the **`projects.yml`** file which is present in the _data folder.<br>
-Projects will be showcased in a card-list format where each card will contain
-* An image related to the project
-* A Project Title
-* A Project Description of about 80 words
-
-### Footer -
-The footer includes
-* A small about the author widget which show the same `Author Image` as mentioned in the about section of the Home page which includes `Name of the Author`, `Around 75 words about the author`.
-* A more link widget which includes a link to any extra page that you've created and a `Subscribe via RSS` link.
-* A Recent posts widget which will include latest 3 posts.
-
-#### Extra Features -
-WhatATheme comes pre installed with
-* **HTML Compressor** - It'll compress all the pages by removing any extra space or blank lines.
-* **Google Analytics** - A web analytics service offered by Google that tracks and reports website traffic. For more information [click here](https://analytics.google.com){:target="blank"}.
-* **Disqus** - A worldwide blog comment hosting service for web sites and online communities that use a networked platform. For more information about Disqus [click here](https://help.disqus.com/en/articles/1717053-what-is-disqus){:target="blank"}
-
-	##### For more information about WhatATheme [click here](https://github.com/thedevslot/WhatATheme/blob/gh-pages/README.md){:target="blank"}.
-
----
-
-# Installation
-### Step 1 - Setting up WhatATheme
-> * Fork the [repository](https://github.com/thedevslot/WhatATheme/tree/master){:target="blankl"}
-> * Go to repository settings and set Github Pages source as master.
-> * Your new site should be ready at [https://username.github.io/WhatATheme/](#){:target="blank"}
-
-### Step 2 - Making changes via **_config.yml**
-> * Open _config.yml file
-> * Fill the available details accordingly
-> * Commit the changes
