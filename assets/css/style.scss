@@ -367,13 +367,12 @@ a.navbar-item.is-active {
       margin-left: -10rem; /* Reducir el espacio entre columnas */
     margin-right: -10rem ; /* Reducir el espacio entre columnas */
   }
-
-      .column.is-5 {
-        margin-top: 10; /* Eliminar margen superior de la columna con el contenido */
-      }
-      
-      /* Ajustar margen y padding de la figura e imagen */
-      .figure.image {
+  
+.column.is-5 {
+    margin-top: 10; /* Eliminar margen superior de la columna con el contenido */
+}
+/* Ajustar margen y padding de la figura e imagen */
+    .figure.image {
         margin-bottom: 0; /* Eliminar margen inferior de la figura */
       }
       
