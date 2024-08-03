@@ -1,10 +1,10 @@
-<nav class="navbar is-black is-fixed-toptop" role="navigation" aria-label="main navigation" id="navbar">
+<nav class="navbar is-black is-fixed-toptop is-rounded" role="navigation" aria-label="main navigation" id="navbar">
     <div class="container">
 
         <!-- logo or branding image on left side -->
        
         <!-- Logo o imagen de marca en el lado izquierdo -->
-        <div class="navbar-brand is-rounded">
+        <div class="navbar-brand">
             <a class="navbar-item"
             href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">
             <img src="{{site.favicon-url  }}" alt="Site Icon" style="width: 24px; height: 24px; vertical-align: middle;">
