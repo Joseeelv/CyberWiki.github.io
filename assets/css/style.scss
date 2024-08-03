@@ -87,7 +87,6 @@ a.navbar-item.is-active {
 a.navbar-item.is-active:hover {
     background-color: rgba(255,255,255,0.25) !important;
     color: grey;
-    border-radius: 50%;
 }
 
 .navbar-link:not(.is-arrowless)::after {
