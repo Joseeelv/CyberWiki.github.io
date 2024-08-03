@@ -87,6 +87,7 @@ a.navbar-item.is-active {
 a.navbar-item.is-active:hover {
     background-color: rgba(255,255,255,0.25) !important;
     color: grey;
+    border-radius: 50%;
 }
 
 .navbar-link:not(.is-arrowless)::after {
@@ -94,28 +95,33 @@ a.navbar-item.is-active:hover {
 }
 
 #hero {
-    background: rgb(0, 0, 0);
-    background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
+    position: relative;
+    background: #000;
+    background: -moz-linear-gradient(0deg, #000 0%, rgba(0,0,0,0.75) 100%);
+    background: -webkit-linear-gradient(0deg, #000 0%, rgba(0,0,0,0.75) 100%);
+    background: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.75) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
-
-    &::before {
-        filter: blur(0.15rem);
-        background-image: url({{site.heroimage}});
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        position: absolute;
-        opacity: 0.25;
-        content: "";
-    }
 }
+#hero::before {
+    filter: blur(0.15rem);
+    background-image: url(https://joseeelv.github.io/assets/images/banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    opacity: 0.25;
+    content: ""
+    }
+ @media (max-width: 768px) {
+        &::before {
+            filter: blur(0.05rem);
+        }
+    }
 
 .title {
     margin: auto 0.75rem !important
