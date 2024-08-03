@@ -30,6 +30,7 @@ a.navbar-item.is-active {
     &:hover {
         background-color: rgba($color: #fff, $alpha: 0.25) !important;
         color: grey;
+        border-radius: 50%;
     }
 }
 
