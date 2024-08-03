@@ -63,9 +63,12 @@ a.navbar-item.is-active {
 
 @media (max-width: 768px) {
     .heroimage img {
-        max-height: 300px; /* Ajusta según tus necesidades */
+        max-height: 300px;
+        display: block !important; /* Asegúrate de que no esté oculto */
+        visibility: visible !important; /* Asegúrate de que sea visible */
     }
 }
+
 
 @media (min-width: 769px) {
     .heroimage img {
