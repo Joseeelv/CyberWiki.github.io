@@ -47,36 +47,6 @@ a.navbar-item.is-active {
     border-color: grey;
 }
 
-.heroimage {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-}
-
-.heroimage img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: none; /* Asegúrate de que no haya restricciones */
-}
-
-@media (max-width: 768px) {
-    .heroimage img {
-        max-height: 300px;
-        display: block !important; /* Asegúrate de que no esté oculto */
-        visibility: visible !important; /* Asegúrate de que sea visible */
-    }
-}
-
-
-@media (min-width: 769px) {
-    .heroimage img {
-        max-height: 600px; /* Ajusta según tus necesidades */
-    }
-}
-
-
 #hero {
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
