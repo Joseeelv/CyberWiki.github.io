@@ -58,21 +58,21 @@ a.navbar-item.is-active {
     width: 100%;
     height: auto;
     display: block;
+    max-height: none; /* Asegúrate de que no haya restricciones */
 }
 
 @media (max-width: 768px) {
     .heroimage img {
-        /* Ajustes específicos para pantallas pequeñas */
-        max-height: 300px; /* Limita la altura máxima en dispositivos móviles si es necesario */
+        max-height: 300px; /* Ajusta según tus necesidades */
     }
 }
 
 @media (min-width: 769px) {
     .heroimage img {
-        /* Ajustes específicos para pantallas grandes */
-        max-height: 600px; /* Limita la altura máxima en pantallas grandes si es necesario */
+        max-height: 600px; /* Ajusta según tus necesidades */
     }
 }
+
 
 #hero {
     background: rgb(0, 0, 0);
