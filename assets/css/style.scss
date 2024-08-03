@@ -116,12 +116,7 @@ a.navbar-item.is-active:hover {
     position: absolute;
     opacity: 0.25;
     content: ""
-    }
- @media (max-width: 768px) {
-        &::before {
-            filter: blur(0.05rem);
-        }
-    }
+}
 
 .title {
     margin: auto 0.75rem !important
