@@ -26,11 +26,12 @@ a.navbar-item:hover,
 a.navbar-item.is-active {
     background-color: rgba($color: #fff, $alpha: 0.25) !important;
     color: white !important;
+    border-radius: 50px; // Agrega esto para que el fondo sea redondeado
 
     &:hover {
         background-color: rgba($color: #fff, $alpha: 0.25) !important;
         color: grey;
-        border-radius: 50%;
+        border-radius: 50px; // Asegúrate de que el hover también sea redondeado
     }
 }
 
