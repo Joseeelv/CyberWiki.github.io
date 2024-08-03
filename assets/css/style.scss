@@ -17,26 +17,27 @@
     left: auto;
 }
 
-a.navbar-item:hover,
-.navbar-link:hover {
-    background-color: rgba($color: #fff, $alpha: 0.25) !important;
+a.navbar-item:hover,.navbar-link:hover {
+    background-color: rgba(255,255,255,0.25) !important;
     color: white !important;
+    border-radius: 25%;
 }
 
 a.navbar-item.is-active {
-    background-color: rgba($color: #fff, $alpha: 0.25) !important;
+    background-color: rgba(255,255,255,0.25) !important;
     color: white !important;
-    border-radius: 50px; // Agrega esto para que el fondo sea redondeado
+     border-radius: 25%;
+}
 
-    &:hover {
-        background-color: rgba($color: #fff, $alpha: 0.25) !important;
-        color: grey;
-        border-radius: 50px; // Asegúrate de que el hover también sea redondeado
-    }
+a.navbar-item.is-active:hover {
+    background-color: rgba(255,255,255,0.25) !important;
+    color: grey;
+     border-radius: 25%;
 }
 
 .navbar-link:not(.is-arrowless)::after {
     border-color: grey;
+    border-radius: 25%;
 }
 
 
