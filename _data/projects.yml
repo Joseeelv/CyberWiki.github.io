@@ -10,6 +10,6 @@
 
 - name: Introducción a Networking
   link: https://joseeelv.github.io//blog/IntroNW
-  image: "../assets/images/Labs/Intro/nw.png"
+  image: "../assets/images/Labs/IntroNetw/nw.png"
   description: En este módulo veremos una introducción sobre la teoría de los modelos OSI y TCP / IP y fundamentos básicos de algunas herramientas básicas de networking.
 
