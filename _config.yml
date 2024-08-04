@@ -45,7 +45,7 @@ disqus-shortname:
 # Name of the Author
 author-name: Jose Luis Venega
 # URL for the Image of the Author
-author-image: 
+author-image: "/assets/images/me.png"
 # 60 Words About the Author
 author-about: Hola, soy Jose Luis Venega Sánchez, estudiante del grado de Ingeniería Informática en la Universidad de Cádiz y soy un apasionado del mundo de la Ciberseguridad.
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
