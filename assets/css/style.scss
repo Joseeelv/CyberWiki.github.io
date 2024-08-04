@@ -142,6 +142,7 @@ a.navbar-item.is-active:hover {
     .single-button {
         display: flex;
         justify-content: center;
+        width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
     }
     
     .button {
@@ -160,6 +161,7 @@ a.navbar-item.is-active:hover {
             margin-bottom: 0.5rem; /* Espacio entre botones en pantallas pequeñas */
         }
     }
+    
 }
 
 #blog {
