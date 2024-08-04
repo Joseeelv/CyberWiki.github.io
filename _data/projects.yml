@@ -4,7 +4,7 @@
   description: Módulo sobre las diferentes formas de escalar privilegios en un sistema Linux.
 
 - name: ¿Qué es Networking?
-  link: https://joseeelv.github.io//blog/NW
+  link: https://joseeelv.github.io//blog/Nw
   image: "../assets/images/Labs/QueEsNetw/nw.png"
   description: Módulo introductorio a las redes e internet.
 
