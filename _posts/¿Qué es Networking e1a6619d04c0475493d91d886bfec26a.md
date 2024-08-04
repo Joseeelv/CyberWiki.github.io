@@ -1,0 +1,92 @@
+# ¿Qué es Networking?
+
+Etiquetas: Apuntes, Redes
+Enlace Lab: https://tryhackme.com/r/room/networkservices
+Estado: Done
+
+Las redes de manera sencilla son cosas conectadas. Por ejemplo, tus amigos cercanos están conectados contigo debido a hobbies, habilidades, gustos similares ó también en el día a día como una red de carreteras, el recorrido que hace un transporte público y más.
+
+En computación es la misma idea pero en vez de conectar ciudades unas con otras conectamos dispositivos que tengan acceso a internet.
+
+Esto nos permite que en el día a día podamos buscar / acceder a información en internet, comunicarnos con otras personas sin estar cerca.
+
+# ¿Qué es Internet?
+
+Internet es una red gigante que contiene muchísimas redes más pequeñas dentro de él.
+
+Hacemos uso de Internet para poder conectar varias redes más pequeñas unas con otras, estás redes pequeñas se denominan ***Redes privadas*** y las redes que hacen que conecten estás redes son llamadas ***Redes públicas*** ó ***Internet***.
+
+# Identificar dispositivos en una Red
+
+Para poder comunicarnos y mantener un orden, los dispositivos deben de tener una identificación y ser identificables en una red.
+
+Por ejemplo: Los humanos nos identificamos a través de nuestro nombre y huellas dactilares, por lo tanto, los dispositivos electrónicos son identificados mediante su dirección IP (*nombre que tendrá el dispositivo en la red*) ó mediante la dirección MAC (*huellas dactilares del dispositivo “no se puede cambiar”*).
+
+## La dirección IP
+
+La dirección IP “Internet Protocol” se usa para identificar un host en una red.
+
+![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled.png)
+
+Una dirección IP se compone de una serie de números del 0-9 divididos en 4 octetos separados por un punto. El valor de estos dígitos dará como resultado la dirección IP del dispositivo.
+
+El número es calculado mediante un proceso llamado ***Subnetting*** (lo veremos más adelante).
+
+Las direcciones IP son únicas para cada dispositivo y siguen un conjunto de estándares conocidos como protocolos. Estos protocolos sostienen las redes y obligan a los dispositivos a comunicarse en el mismo “idioma”.
+
+| Nombre del Dispositivo | Dirección IP | Tipo de red |
+| --- | --- | --- |
+| NOMBRE_ORDENADOR_1 | 192.168.1.33 | Privada |
+| NOMBRE_ORDENADOR_1 | 86.157.52.20 | Pública |
+| NOMBRE_ORDENADOR_2 | 192.168.1.34 | Privada |
+| NOMBRE_ORDENADOR_3 | 86.157.52.20 | Pública |
+
+Como vimos antes existen dos tipos de redes las privadas y las públicas, es decir, que un dispositivo tendrá dos redes una que lo identifique con la red privada a la que pertenece y la pública para que sea identificado en Internet.
+
+Como vemos ambos equipos al pertenecer a la misma red privada se pueden comunicar entre sí, pero a la hora de comunicarse a través de Internet ambas tendrán la misma dirección IP debido a que pertenecen a la misma red privada.
+
+Además la direcciones IP públicas son proporcionadas por un proveedor de servicios ó **ISP.**
+
+Encontramos dos versiones del esquema de direccionamiento de red, anteriormente hemos visto el esquema de una dirección IPv4, pero debido a la gran cantidad de dispositivos que hoy en día están conectados en Internet se creó el esquema de direcciones IPv6.
+
+Mientras que IPv4 puede solamente con 2^32 direcciones, IPv6 puede hasta 2^128 direcciones resolviendo así el problema de escasez de las direcciones IP y además es mucho más eficiente.
+
+![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled%201.png)
+
+Primeros 16 bits asignados al ISP, 8 bits a la subred y 8 bits para hosts.
+
+![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled%202.png)
+
+Primeros 48 bits asignados al ISP, 16 bits a la subred y 64 bits para hosts.
+
+## La dirección MAC
+
+> *Los dispositivos que están conectados a una red siempre tienen una interfaz de red física (microchip que se encuentra en la placa base del mismo), a esta interfaz se le asigna una dirección **única** a la hora de ser fabricado. Esta dirección es la llamada **MAC** ó **Media Control Access.***
+> 
+
+![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled%203.png)
+
+La dirección MAC consta de 12 caracteres hexadecimales dividido en 2 por dos puntos.
+
+Los caracteres *01:3A:1D* corresponde al fabricante de la interfaz de red.
+
+Los caracteres *54:6B:32* corresponden a la dirección única de la interfaz de red.
+
+Podemos hacer uso de esta página Web para consultar el fabricante de la interfaz de red [aquí](https://es.adminsub.net/mac-address-finder).
+
+No obstante, las direcciones MACs pueden ser falsificadas en un proceso llamado suplantación de información. Esto se produce cuando un dispositivo quiere identificarse en la red con la dirección MAC de otro dispositivo, esto a menudo puede romper diseños de seguridad que han sido mal implementados.
+
+# Protocolo ICMP
+
+> *Ping es una de las herramientas de red más fundamentales para nosotros, ya que mediante paquetes ICMP “Internet Control Message Protocol” podemos comprobar si podemos establecer conexión con otros dispositivos. EL comando a utilizar `ping dirección_ip o URL`.*
+> 
+
+En esta captura de pantalla vemos que hemos realizado un PING a la dirección 8.8.8.8 “Servidor DNS de Google” —> `ping 8.8.8.8`.
+
+Vemos que se envían paquetes ICMP los cuales son enviados y recibidos con éxito, junto con el tiempo que tarda en llegar y TTL “*Time To Live*” que es el número de saltos que realiza el paquete antes de llegar al destino.
+
+En las estadísticas podemos ver si se han perdidos paquetes, el tiempo mínimo, máximo y media de la ida y vuelta de los paquetes.
+
+![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled%204.png)
+
+---
