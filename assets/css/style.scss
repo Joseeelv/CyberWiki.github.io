@@ -126,28 +126,40 @@ a.navbar-item.is-active:hover {
     hr {
         background-color: black;
     }
-    .hero-body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
     .buttons-container {
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
     }
     
-    .buttons-container div {
-        margin: 5px;
-    }    
+    .button-pair {
+        display: flex;
+        justify-content: center;
+        gap: 1rem; /* Espacio entre los dos botones */
+        margin-bottom: 1rem; /* Espacio debajo de los dos botones */
+    }
+    
+    .single-button {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .button {
+        min-width: 12rem; /* Ancho mínimo de los botones */
+    }
+    
+    @media (max-width: 768px) {
+        .button-pair {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .button {
+            width: 100%; /* Ancho completo de los botones en pantallas pequeñas */
+            margin-bottom: 0.5rem; /* Espacio entre botones en pantallas pequeñas */
+        }
+    }
 }
 
 #blog {
