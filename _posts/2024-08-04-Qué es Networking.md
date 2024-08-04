@@ -1,8 +1,13 @@
-# ¿Qué es Networking?
-
-Etiquetas: Apuntes, Redes
-Enlace Lab: https://tryhackme.com/r/room/networkservices
-Estado: Done
+---
+title: ¿Qué  es Networking?
+layout: project
+post-image: "../assets/images/Labs/QueEsNetw/nw.png"
+description: Módulo sobre las diferentes formas de escalar privilegios en un sistema Linux.
+enlace: https://tryhackme.com/r/room/whatisnetworking
+difficulty: Media
+tags: 
+  - LAB
+---
 
 Las redes de manera sencilla son cosas conectadas. Por ejemplo, tus amigos cercanos están conectados contigo debido a hobbies, habilidades, gustos similares ó también en el día a día como una red de carreteras, el recorrido que hace un transporte público y más.
 
@@ -26,45 +31,84 @@ Por ejemplo: Los humanos nos identificamos a través de nuestro nombre y huellas
 
 La dirección IP “Internet Protocol” se usa para identificar un host en una red.
 
-![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/QueEsNetw/Untitled.png" alt="Untitled" />
+</div>
 
 Una dirección IP se compone de una serie de números del 0-9 divididos en 4 octetos separados por un punto. El valor de estos dígitos dará como resultado la dirección IP del dispositivo.
 
 El número es calculado mediante un proceso llamado ***Subnetting*** (lo veremos más adelante).
 
 Las direcciones IP son únicas para cada dispositivo y siguen un conjunto de estándares conocidos como protocolos. Estos protocolos sostienen las redes y obligan a los dispositivos a comunicarse en el mismo “idioma”.
-
-| Nombre del Dispositivo | Dirección IP | Tipo de red |
-| --- | --- | --- |
-| NOMBRE_ORDENADOR_1 | 192.168.1.33 | Privada |
-| NOMBRE_ORDENADOR_1 | 86.157.52.20 | Pública |
-| NOMBRE_ORDENADOR_2 | 192.168.1.34 | Privada |
-| NOMBRE_ORDENADOR_3 | 86.157.52.20 | Pública |
+<div style="text-align: center ;">
+  <table>
+    <tr>
+      <th>Nombre del Dispositivo</th>
+      <th>Dirección IP</th>
+      <th>Tipo de red</th>
+    </tr>
+    <tr>
+      <td>NOMBRE_ORDENADOR_1</td>
+      <td>192.168.1.33</td>
+      <td>Privada</td>
+    </tr>
+    <tr>
+      <td>NOMBRE_ORDENADOR_1</td>
+      <td>86.157.52.20</td>
+      <td>Pública</td>
+    </tr>
+    <tr>
+      <td>NOMBRE_ORDENADOR_2</td>
+      <td>192.168.1.34</td>
+      <td>Privada</td>
+    </tr>
+    <tr>
+      <td>NOMBRE_ORDENADOR_3</td>
+      <td>86.157.52.20</td>
+      <td>Pública</td>
+    </tr>
+  </table>
+</div>
 
 Como vimos antes existen dos tipos de redes las privadas y las públicas, es decir, que un dispositivo tendrá dos redes una que lo identifique con la red privada a la que pertenece y la pública para que sea identificado en Internet.
 
 Como vemos ambos equipos al pertenecer a la misma red privada se pueden comunicar entre sí, pero a la hora de comunicarse a través de Internet ambas tendrán la misma dirección IP debido a que pertenecen a la misma red privada.
 
-Además la direcciones IP públicas son proporcionadas por un proveedor de servicios ó **ISP.**
+Además la direcciones IP públicas son proporcionadas por un proveedor de servicios (**ISP**).
 
 Encontramos dos versiones del esquema de direccionamiento de red, anteriormente hemos visto el esquema de una dirección IPv4, pero debido a la gran cantidad de dispositivos que hoy en día están conectados en Internet se creó el esquema de direcciones IPv6.
 
-Mientras que IPv4 puede solamente con 2^32 direcciones, IPv6 puede hasta 2^128 direcciones resolviendo así el problema de escasez de las direcciones IP y además es mucho más eficiente.
+Mientras que IPv4 puede solamente con 2<sup>32</sup>
+ direcciones, IPv6 puede hasta 2<sup>128</sup> direcciones resolviendo así el problema de escasez de las direcciones IP y además es mucho más eficiente.
 
-![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled%201.png)
-
+#### Ejemplo de IPv4 e IPv6:
+ <div style="text-align: center ;">
+  <table>
+    <tr>
+      <th>Red IPv4</th>
+      <th>Red Ipv6</th>
+    </tr>
+    <tr>
+      <td><div style="text-align: center; ">
+    <img src="../assets/images/Labs/QueEsNetw/Untitled 1.png" alt="Untitled" />
+</div>
 Primeros 16 bits asignados al ISP, 8 bits a la subred y 8 bits para hosts.
-
-![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled%202.png)
-
-Primeros 48 bits asignados al ISP, 16 bits a la subred y 64 bits para hosts.
+</td>
+      <td><div style="text-align: center; ">
+    <img src="../assets/images/Labs/QueEsNetw/Untitled 2.png" alt="Untitled" />
+</div>
+  Primeros 48 bits asignados al ISP, 16 bits a la subred y 64 bits para hosts.
+</td>
+  </table>
+</div>
 
 ## La dirección MAC
 
-> *Los dispositivos que están conectados a una red siempre tienen una interfaz de red física (microchip que se encuentra en la placa base del mismo), a esta interfaz se le asigna una dirección **única** a la hora de ser fabricado. Esta dirección es la llamada **MAC** ó **Media Control Access.***
-> 
+> *Los dispositivos que están conectados a una red siempre tienen una interfaz de red física (microchip que se encuentra en la placa base del mismo), a esta interfaz se le asigna una dirección **única** a la hora de ser fabricado. Esta dirección es la llamada **MAC** ó **Media Control Access***.
 
-![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled%203.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/QueEsNetw/Untitled 3.png" alt="Untitled" />
+</div>
 
 La dirección MAC consta de 12 caracteres hexadecimales dividido en 2 por dos puntos.
 
@@ -87,6 +131,8 @@ Vemos que se envían paquetes ICMP los cuales son enviados y recibidos con éxit
 
 En las estadísticas podemos ver si se han perdidos paquetes, el tiempo mínimo, máximo y media de la ida y vuelta de los paquetes.
 
-![Untitled](%C2%BFQue%CC%81%20es%20Networking%20e1a6619d04c0475493d91d886bfec26a/Untitled%204.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/QueEsNetw/Untitled 4.png" alt="Untitled" />
+</div>
 
 ---
