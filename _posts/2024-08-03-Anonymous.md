@@ -14,7 +14,7 @@ tags:
 <div style="text-align: center; ">
 
 ```bash
-sudo nmap -p- -open -sS -sV -sC -n -Pn -vvv --min-rate 5000 10.10.188.84 -oN escaneo
+sudo nmap -p- -open -sS -sV -sC -n -Pn -vvv --min-rate 5000 <ip-victima> -oN escaneo
 ```
 
 </div>
