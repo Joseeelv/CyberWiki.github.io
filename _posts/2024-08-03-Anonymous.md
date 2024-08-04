@@ -1,7 +1,7 @@
 ---
 title: Anonymous
 layout: post
-post-image: "../assets/images/Rooms/AgentSudo/anonymous.png"
+post-image: "../assets/images/Rooms/Anonymous/anonymous.png"
 description: Try to get the two flags! Root the machine and prove your understanding of the fundamentals! This is a virtual machine meant for beginners. Acquiring both flags will require some basic knowledge of Linux and privilege escalation methods.
 difficulty: Media
 enlace: https://tryhackme.com/r/room/anonymous
@@ -12,10 +12,11 @@ tags:
 - Exploit
 ---
 
-
 ```bash
 sudo nmap -p- -open -sS -sV -sC -n -Pn -vvv --min-rate 5000 10.10.188.84 -oN escaneo
 ```
+>> Si quieres puedes guardar el resultado del análisis (opción `-oN`) en un fichero para poder consultar la información y poder limpiar la terminal.
+
 <div style="text-align: center; ">
     <img src="../assets/images/Rooms/Anonymous/1.png" alt="Foto1" />
 </div>
