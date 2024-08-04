@@ -65,6 +65,24 @@ a.navbar-item.is-active:hover {
         content: "";
     }
 }
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #hero::before {
+        background-attachment: scroll; /* Cambiar el comportamiento de fondo fijo a desplazable */
+        background-size: cover; /* Asegurarse de que la imagen cubra todo el área */
+    }
+}
+
+@media (max-width: 480px) {
+    #hero::before {
+        background-attachment: scroll; /* Cambiar el comportamiento de fondo fijo a desplazable */
+        background-size: cover; /* Asegurarse de que la imagen cubra todo el área */
+        filter: blur(0.1rem); /* Reducir el desenfoque si es necesario */
+        opacity: 0.3; /* Ajustar la opacidad para mejorar la visibilidad */
+    }
+}
+
 .title {
     margin: auto 0.75rem!important;
 }
