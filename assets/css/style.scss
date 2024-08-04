@@ -126,6 +126,28 @@ a.navbar-item.is-active:hover {
     hr {
         background-color: black;
     }
+    .hero-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .buttons-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .buttons-container div {
+        margin: 5px;
+    }    
 }
 
 #blog {
