@@ -83,8 +83,8 @@ Si juntamos eso con que tenemos un nombre de usuario, podremos realizar una cone
 
 Al realizar la conexión *ftp* nos pide una contraseña. Haremos uso de la herramienta Hydra la cual mediante fuerza bruta y a partir de un diccionario podremos obtener la contraseña del usuario.
 
-```sh
-    hydra -l chris -p /ruta_wordlist ftp://ip_máquina
+```bash
+hydra -l chris -p /ruta_wordlist ftp://ip_máquina
 ```
 
 <div style="text-align: center;">
