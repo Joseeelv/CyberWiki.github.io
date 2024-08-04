@@ -14,7 +14,7 @@ tags:
 
 
 ```bash
-      sudo nmap -p- -open -sS -sV -sC -n -Pn -vvv --min-rate 5000 <ip-victima> -oN escaneo
+    sudo nmap -p- -open -sS -sV -sC -n -Pn -vvv --min-rate 5000 <ip-victima> -oN escaneo
 ```
 
 > Si quieres puedes guardar el resultado del análisis (opción `-oN`) en un fichero para poder consultar la información y poder limpiar la terminal.
