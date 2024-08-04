@@ -2,7 +2,7 @@
 title: ¿Qué  es Networking?
 layout: project
 post-image: "../assets/images/Labs/QueEsNetw/nw.png"
-description: Módulo sobre las diferentes formas de escalar privilegios en un sistema Linux.
+description: Módulo introductorio a las redes
 enlace: https://tryhackme.com/r/room/whatisnetworking
 difficulty: Media
 tags: 
