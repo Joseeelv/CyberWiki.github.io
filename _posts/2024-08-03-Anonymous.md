@@ -11,10 +11,13 @@ tags:
 - Reverse Shell
 - Exploit
 ---
+<div style="text-align: center; ">
 
 ```bash
 sudo nmap -p- -open -sS -sV -sC -n -Pn -vvv --min-rate 5000 10.10.188.84 -oN escaneo
 ```
+
+</div>
 >> Si quieres puedes guardar el resultado del análisis (opción `-oN`) en un fichero para poder consultar la información y poder limpiar la terminal.
 
 <div style="text-align: center; ">
