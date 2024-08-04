@@ -78,9 +78,7 @@ Ahí tenemos las credenciales, vamos a iniciar sesión:
 
 Estamos dentro, ahora vamos a proceder a buscar las demás keys.
 
-Como sabemos wordpress corre bajo php, por tanto, vamos a realizar una revershell php para poder acceder y tener ejecución remota de comandos, mediante un script encontrado en github
-
-[https://github.com/pentestmonkey/php-reverse-shell](https://github.com/pentestmonkey/php-reverse-shell)
+Como sabemos wordpress corre bajo php, por tanto, vamos a realizar una revershell php para poder acceder y tener ejecución remota de comandos, mediante un script encontrado en github [Pentestmonkey-php-reverse-shell](https://github.com/pentestmonkey/php-reverse-shell)
 
 Ahora pegamos el script encontrado en github en la seccion Appearance → editor →archive:
 
@@ -130,7 +128,7 @@ Además de la key, el home encontramos otro fichero, que es una password:
 </div>  
 
 
-Si le hacemos un cat, obtenemos una contraseña para poder escalar privilegios, pero esta está en encriptada, para ello vamos a hacer uso de una web que nos permite desencriptar contraseñas con hashmd5 [https://crackstation.net/](https://crackstation.net/):
+[Crackstation](https://crackstation.net/):
 
 <div style="text-align: center; ">
     <img src="../assets/images/Rooms/MrRobotCTF/Untitled 17.png" alt="Foto"/>
