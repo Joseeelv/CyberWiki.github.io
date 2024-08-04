@@ -1,21 +1,42 @@
-# Introducción redes LAN
-
-Etiquetas: Apuntes
-Enlace Lab: https://tryhackme.com/r/why-subscribe?roomCode=introtolan
-Estado: Done
+---
+title: Introducción a las redes LAN
+layout: post
+post-image: "../assets/images/Labs/LAN/nw.png"
+description: En este módulo veremos una introducción sobre las redes LAN, las topologías y los componentes que la forman.
+enlace: https://tryhackme.com/r/why-subscribe?roomCode=introtolan
+difficulty: Fácil
+tags: 
+  - LAB
+--- 
 
 # Topologías de las redes LAN
 
-> *Local Area Network ó LAN es una red privada que permite la comunicación e intercambio de datos entre dispositivos a nivel local (distancias cortas).*
-> 
+> Local Area Network ó LAN es una red privada que permite la comunicación e intercambio de datos entre dispositivos a nivel local (distancias cortas).
 
 En redes cuando nos referimos a topología nos referimos al diseño que tiene la red.
 Además estas redes LAN pueden conectarse con otras mediante [routers](Introduccio%CC%81n%20redes%20LAN%208e35f006942e4b05a8f1ff87784d7f14.md).
+
 Existen varias topologías las cuales tienen sus ventajas y desventajas:
 
-## Topología en estrella
+<div style="text-align: center ;">
+  <table>
+    <tr>
+      <th>Topología estrella</th>
+      <th>Topología bus</th>
+      <th>Topología anillo o token ring</th>
+    </tr>
+    <tr>
+      <td>Los dispositivos están conectados individualmente a un dispositivo de red central, normalmente es un **Swith**. Es muy fácil agregar más dispositivos pero si falla el dispositivo central de red la red se cae y los dispositivos dejan de estar conectados haciendo que no puedan enviar ni recibir datos. ![Untitled](Introduccio%CC%81n%20redes%20LAN%208e35f006942e4b05a8f1ff87784d7f14/Untitled.png)</td>
 
----
+      <td>Los dispositivos están conectados a un bus de datos “similar a las hojas en una rama”.Son fáciles de configurar y mantener pero se puede producir un cuello de botella a la hora de compartir muchos datos haciendo que la red no se pueda utilizar.![Untitled](Introduccio%CC%81n%20redes%20LAN%208e35f006942e4b05a8f1ff87784d7f14/Untitled%201.png)</td>
+
+      <td>Los dispositivos de la red están conectados entre sí en una especie de anillo, donde los datos solo viajan en una dirección.Es muy fácil de solucionar problemas de cualquier falla pero es una red muy poco eficiente y se pueden producir cuellos de botellas. ![Untitled](Introduccio%CC%81n%20redes%20LAN%208e35f006942e4b05a8f1ff87784d7f14/Untitled%202.png)</td>
+
+    </tr>
+  </table>
+</div>
+
+## Topología en estrella
 
 Los dispositivos están conectados individualmente a un dispositivo de red central, normalmente es un [Switch](Introduccio%CC%81n%20redes%20LAN%208e35f006942e4b05a8f1ff87784d7f14.md).
 
@@ -25,8 +46,6 @@ Es muy fácil agregar más dispositivos pero si falla el dispositivo central de 
 
 ## Topología de bus
 
----
-
 Los dispositivos están conectados a un bus de datos “similar a las hojas en una rama”.
 
 Son fáciles de configurar y mantener pero se puede producir un cuello de botella a la hora de compartir muchos datos haciendo que la red no se pueda utilizar.
@@ -34,8 +53,6 @@ Son fáciles de configurar y mantener pero se puede producir un cuello de botell
 ![Untitled](Introduccio%CC%81n%20redes%20LAN%208e35f006942e4b05a8f1ff87784d7f14/Untitled%201.png)
 
 ## Topología de anillo ó token
-
----
 
 Los dispositivos de la red están conectados entre sí en una especie de anillo, donde los datos solo viajan en una dirección.
 
@@ -45,8 +62,7 @@ Es muy fácil de solucionar problemas de cualquier falla pero es una red muy poc
 
 ## ¿Qué es un Switch?
 
-> *Los Switches son dispositivos dedicados en la redes los cuales son los encargados de conectar múltiples dispositivos como ordenadores, impresoras y otros dispositivos capaces de hacer uso de Internet. Los switches contienen una serie de puertos donde se conectan estos dispositivos.*
-> 
+> Los Switches son dispositivos dedicados en la redes los cuales son los encargados de conectar múltiples dispositivos como ordenadores, impresoras y otros dispositivos capaces de hacer uso de Internet. Los switches contienen una serie de puertos donde se conectan estos dispositivos.
 
 Son mucho más eficientes que los ***Hubs*** / ***repeaters***  debido a que el switch mantiene un seguimiento del dispositivo que tiene conectado y a que puerto, haciendo que cuando se reciba un paquete el switch lo envíe específicamente al dispositivo destinatario no como el Hub / repetidores que envían ese paquete en cada puerto.
 
