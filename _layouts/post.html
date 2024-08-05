@@ -21,7 +21,7 @@
               <img src="{{page.post-image}}" alt="{{page.title}}" id="post-image">
             </div>
           </div>
-          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile" style="text-align: left;" ">
+          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile" style="text-align: left;">
             {% unless page.description.size == 0 %}
             <p id="description" class="content is-small has-text-weight-medium is-uppercase">
               {{page.description | strip | strip_html | strip_newlines }}
@@ -65,25 +65,95 @@
       </div>
     </div>
   </section>
+
   {% include footer.html %}
+
+  <!-- Modal HTML -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+  </div>
+
+  <!-- JavaScript for Modal -->
+  <script>
+    // Function to open the modal
+    function openModal(imgSrc) {
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("img01");
+
+      modal.style.display = "block";
+      modalImg.src = imgSrc;
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+    // Close the modal if clicked outside of it
+    window.onclick = function(event) {
+      var modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+  <!-- Modal CSS -->
+  <style>
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0; 
+      top: 0; 
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.8); 
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      color: #f1f1f1;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+
+  <!-- Disqus Script -->
+  <script>
+    var disqus_config = function () {
+      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function () { /* DON'T EDIT BELOW THIS LINE */
+      var d = document,
+        s = d.createElement('script');
+      s.src = 'https://{{site.disqus-shortname}}.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
 </body>
-<script>
-  /**
-   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
-  (function () { /* DON'T EDIT BELOW THIS LINE */
-    var d = document,
-      s = d.createElement('script');
-    s.src = 'https://{{site.disqus-shortname}}.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
 
 </html>
