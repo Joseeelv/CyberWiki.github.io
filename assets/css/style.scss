@@ -267,14 +267,6 @@ a.navbar-item.is-active:hover {
     
 }
 
-#results-container {
-    display: none; /* Oculta el contenedor por defecto */
-}
-
-#results-container.show-results {
-    display: block; /* Muestra el contenedor solo cuando hay resultados */
-}
-
 #footer {
     #backtotop {
         transition: all 0.25s ease;
