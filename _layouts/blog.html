@@ -42,11 +42,9 @@ layout: compress
                 fuzzy: false,
                 limit: 1,
                 sort: function() { return 0; },
-                matches: function(item, query) {
-                // Ensure `item` is properly structured and matches the title exactly
-                if (!item || !item.title) return false;
-                return item.title.toLowerCase().includes(query.toLowerCase());
-                }   
+                matches: function (e, t) {
+                    return e.title && e.title.toLowerCase().includes(t.toLowerCase());
+                }
             }
          });
     </script>
