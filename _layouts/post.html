@@ -3,7 +3,7 @@
 <head>
   {% include head.html %}
   <style>
-  /* Modal CSS */
+    /* Modal CSS */
 .modal {
   display: none;
   position: fixed;
@@ -22,25 +22,21 @@
   opacity: 1;
 }
 
-.modal-content-container {
-  position: relative;
+.modal-content {
   margin: auto;
   display: block;
   max-width: 90%;
   max-height: 90%;
   animation-name: zoom;
   animation-duration: 0.6s;
+  position: relative; /* Updated */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @keyframes zoom {
   from { transform: scale(0) }
   to { transform: scale(1) }
-}
-
-.modal-content {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .close {
@@ -61,13 +57,13 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .modal-content-container {
+  .modal-content {
     width: 90%;
   }
 
   .close {
-    top: 5px;
-    right: 5px;
+    top: -15px;
+    right: -15px;
     font-size: 35px;
   }
 }
