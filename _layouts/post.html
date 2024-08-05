@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   {% include head.html %}
+  <style>
+    /* Modal CSS */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .modal.show {
+      opacity: 1;
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+      from { transform: scale(0) }
+      to { transform: scale(1) }
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 
 <body>
   {% include navbar.html %}
-
   <section class="hero is-fullheight has-text-centered" id="post">
     <div class="hero-body">
       <div class="container">
@@ -17,11 +72,11 @@
         <hr class="has-background-black">
         <div class="columns is-variable is-5 has-text-centered">
           <div class="column is-6" style="width: 50%;">
-            <div style="text-align: center;">
-              <img src="{{page.post-image}}" alt="{{page.title}}" id="post-image" onclick="openModal('{{page.post-image}}')">
+            <div style="text-align: center; ">
+              <img src="{{page.post-image}}" alt="{{page.title}}" id="post-image">
             </div>
           </div>
-          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile" style="text-align: left;">
+          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile" style="text-align: left;" ">
             {% unless page.description.size == 0 %}
             <p id="description" class="content is-small has-text-weight-medium is-uppercase">
               {{page.description | strip | strip_html | strip_newlines }}
@@ -29,10 +84,10 @@
               <p class="subtitle is-uppercase is-6 has-text-weight-normal has-text-black-ter">Enlace de la room: 
                 <b><a href="{{ page.enlace | escape }}" target="page.enlace">{{page.title}}</a></b>
               </p>
-            {% endunless %}
-            <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Dificultad de la room: 
-              <b>{{ page.difficulty | escape }}</b>
-            </p>
+                {% endunless %}
+              <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Dificultad de la room: 
+                <b>{{ page.difficulty | escape }}</b>
+              </p>
             <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Publicado en
               <b>{{ page.date | date: "%-B %d, %Y" }}</b> by <a href="{% if site.author-url %}{{site.author-url}}{% else %}{{site.url}}{{site.baseurl}}/#about{% endif %}" target="_blank"><b class="has-text-link"><u>{{site.author-name}}</u></b>
               </a>
@@ -65,18 +120,14 @@
       </div>
     </div>
   </section>
-
   {% include footer.html %}
 
-  <!-- Modal HTML -->
+  <!-- Modal -->
   <div id="myModal" class="modal">
-    <div class="modal-content-wrapper">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="img01">
-    </div>
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
   </div>
 
-  <!-- JavaScript for Modal -->
   <script>
     function openModal(imgSrc) {
       var modal = document.getElementById("myModal");
@@ -104,79 +155,5 @@
       }
     }
   </script>
-
-  <!-- Modal CSS -->
-  <style>
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .modal.show {
-      opacity: 1;
-    }
-
-    .modal-content-wrapper {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 90%;
-      max-height: 80vh;
-      background: white;
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
-    }
-
-    .modal-content {
-      width: 100%;
-      height: auto;
-    }
-
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 25px;
-      color: #f1f1f1;
-      font-size: 35px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
-    }
-  </style>
-
-  <!-- Disqus Script -->
-  <script>
-    var disqus_config = function () {
-      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-
-    (function () { /* DON'T EDIT BELOW THIS LINE */
-      var d = document,
-        s = d.createElement('script');
-      s.src = 'https://{{site.disqus-shortname}}.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-
 </body>
-
 </html>
