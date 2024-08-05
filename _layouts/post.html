@@ -23,14 +23,18 @@
   opacity: 1;
 }
 
-.modal-content-container {
-  position: absolute;
+modal-content-container {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 90%;
-  max-height: 90%;
+  max-height: 80%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   position: relative;
+  overflow: hidden;
 }
 
 .modal-content {
