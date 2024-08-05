@@ -58,14 +58,6 @@ layout: compress
               </div> <hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">`,
           noResultsText: '<div class="subtitle has-text-centered is-uppercase">No Results Found</div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">',
           fuzzy: false,
-          searchStrategy: {
-              fuzzy: false,
-              limit: 1,
-              sort: function() { return 0; },
-              matches: function (e, t) {
-                    return e && e.title && e.title.toLowerCase().includes(t.toLowerCase());
-              }
-          }
       });
   </script>
 </body>
