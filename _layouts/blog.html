@@ -58,15 +58,7 @@ layout: compress
             </div> <hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">`,
         noResultsText: '<div class="subtitle has-text-centered is-uppercase">No Results Found</div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">',
         fuzzy: false,
-        searchStrategy: {
-          fuzzy: false,  // Asegúrate de que la búsqueda difusa está desactivada
-          limit: 1,  // Limita los resultados a uno
-          sort: function() { return 0; },  // No ordenar los resultados
-          matches: function(item, query) {
-              // Solo coincide si el título del post es exactamente igual al query
-              return item && item.title && item.title.toLowerCase() === query.toLowerCase();
-          }
-        }
+        limit: 1,
       });
       </script>
   </body>
