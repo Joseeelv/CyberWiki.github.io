@@ -6,7 +6,7 @@
 - name: ¿Qué es Networking?
   link: https://joseeelv.github.io//blog/Nw
   image: "../assets/images/Labs/QueEsNetw/nw.png"
-  description: Módulo introductorio a las redes e internet.
+  description: Módulo introductorio a las redes, donde veremos que es internet, los tipos de direcciones IP que existe, como diferenciarlas, la dirección MAC, entre otras cosas.
 
 - name: Introducción a Networking
   link: https://joseeelv.github.io//blog/IntroNW
