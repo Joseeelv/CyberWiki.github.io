@@ -63,10 +63,9 @@ layout: compress
               limit: 1,
               sort: function() { return 0; },
               matches: function(item, query) {
-                  const result = item && item.title && item.title.toLowerCase().includes(query.toLowerCase());
-                  // Mostrar el contenedor solo si hay resultados
-                  document.getElementById('results-container').classList.toggle('show-results', result);
-                  return result;
+                // Mostrar el contenedor solo si hay resultados
+                document.getElementById('results-container').classList.toggle('show-results', result);
+                return item && item.title && item.title.toLowerCase().includes(query.toLowerCase());
               }
           }
       });

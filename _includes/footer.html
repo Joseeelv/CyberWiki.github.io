@@ -30,9 +30,9 @@
                 <h3>More Links</h3>
                 {% for sitepage in site.html_pages offset: 4 %}
                 {% unless sitepage.url == '/'  limit: 2 %}
-                <li>
+                <!-- <li>
                     <a href="{{sitepage.url | absolute_url}}">{{sitepage.title}}</a>
-                </li>
+                </li> -->
                 {% endunless %}
                 {% endfor %}
                 <li>
