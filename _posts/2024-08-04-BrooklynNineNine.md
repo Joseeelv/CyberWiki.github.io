@@ -34,7 +34,7 @@ Descargamos el archivo y lo abrimos
 </div>
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 3.png" alt="Untitled"onclick="openModal(this.src)" />
+    <img src="../assets/images/Rooms/BNN/Untitled 3.png" alt="Untitled" onclick="openModal(this.src)" />
 </div>
 Hacemos un ataque de fuerza bruta con el user jake a la conexion shh y sacamos la contraseña:
 
@@ -45,7 +45,7 @@ Hacemos un ataque de fuerza bruta con el user jake a la conexion shh y sacamos l
 Iniciamos sesión en ssh
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 5.png" alt="Untitled"onclick="openModal(this.src)" />
+    <img src="../assets/images/Rooms/BNN/Untitled 5.png" alt="Untitled" onclick="openModal(this.src)" />
 </div>
 
 Estamos dentro y buscamos la user.txt
@@ -59,7 +59,7 @@ Estamos dentro y buscamos la user.txt
 Vamos a sacar vulnerabilidades de root
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 7.png" alt="Untitled"onclick="openModal(this.src)" />
+    <img src="../assets/images/Rooms/BNN/Untitled 7.png" alt="Untitled" onclick="openModal(this.src)" />
 </div>
 
 Vemos que tiene permiso para ejecutar comando con less, buscamos un exploit
