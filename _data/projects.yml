@@ -14,4 +14,10 @@
   description: En este módulo veremos una introducción sobre la teoría de los modelos OSI y TCP / IP y fundamentos básicos de algunas herramientas básicas de networking.
 
   
+- name: Introducción a las redes LAN
+  link: https://joseeelv.github.io//blog/IntroLAN
+  image: "../assets/images/Labs/LAN/lan.png"
+  description: En este módulo veremos una introducción sobre las redes LAN, las topologías y los componentes que la forman.
+
+  
 
