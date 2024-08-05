@@ -40,7 +40,7 @@ layout: compress
             fuzzy:false,
             searchStrategy: {
                 fuzzy: false,
-                limit: 10,
+                limit: 1,
                 sort: function() { return 0; },
                 matches: function(item, query) {
                     var terms = query.toLowerCase().split(/\s+/); // Divide el query en términos
