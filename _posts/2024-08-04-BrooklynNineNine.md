@@ -2,7 +2,7 @@
 title: Brooklyn Nine Nine
 layout: post
 post-image: "../assets/images/Rooms/BNN/bnn.png"
-description: El documento describe los pasos seguidos para obtener acceso al archivo "user.txt" en el desafío de TryHackMe llamado "Brooklyn Nine Nine". Se realiza una enumeración de puertos, se realiza un ataque de fuerza bruta para obtener la contraseña de la conexión SSH y se inicia sesión. Luego, se busca y se encuentra el archivo "user.txt". También se muestra cómo obtener acceso de root utilizando una vulnerabilidad en el comando "less".
+description: En esta room se realiza una enumeración de puertos, se realiza un ataque de fuerza bruta para obtener la contraseña de la conexión SSH y se inicia sesión. Luego, se busca y se encuentra el archivo "user.txt". También se muestra cómo obtener acceso de root utilizando una vulnerabilidad en el comando "less".
 difficulty: Fácil
 enlace: https://tryhackme.com/r/room/brooklynninenine
 tags:
@@ -12,6 +12,7 @@ tags:
 - Fuerza-Bruta
 - Exploit
 ---
+
 # User.txt
 
 Vamosa proceder a escanear los primeros 1024 puertos para enumerarlos:
