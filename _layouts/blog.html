@@ -62,14 +62,12 @@ layout: compress
               fuzzy: false,
               limit: 1,
               sort: function() { return 0; },
-              matches: function(item, query) {
-                // Mostrar el contenedor solo si hay resultados
-                return item && item.title && item.title.toLowerCase().includes(query.toLowerCase());
+              matches: function (e, t) {
+                    return e && e.title && e.title.toLowerCase().includes(t.toLowerCase());
               }
           }
       });
   </script>
-  
 </body>
 
 </html>
