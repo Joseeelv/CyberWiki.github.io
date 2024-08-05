@@ -57,9 +57,9 @@ layout: compress
                   </a>
               </div>`,
           noResultsText: '<div class="subtitle has-text-centered is-uppercase">No Results Found</div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">',
-          fuzzy: true,
+          fuzzy: false,
           searchStrategy: {
-              fuzzy: true,
+              fuzzy: false,
               limit: 1,
               sort: function() { return 0; },
               matches: function(item, query) {
