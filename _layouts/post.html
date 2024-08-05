@@ -4,7 +4,6 @@
   {% include head.html %}
   <style>
     /* Modal CSS */
-/* Modal CSS */
 .modal {
   display: none;
   position: fixed;
@@ -16,37 +15,64 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
 }
 
 .modal.show {
+  display: block;
   opacity: 1;
 }
 
-.modal-content{
-      position: relative;
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 90%;
-      animation-name: zoom;
-      animation-duration: 0.3s;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+.modal-content-container {
+  position: relative;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 80%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
 
-    @keyframes zoom {
-      from { transform: scale(0) }
-      to { transform: scale(1) }
-    }
+.modal-content {
+  width: 100%;
+  height: auto;
+}
 
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
 
+.close:hover,
+.close:focus {
+  color: #bbb;
+}
+
+/* Mobile Styles */
 @media only screen and (max-width: 700px) {
   .modal-content-container {
-    width: 90%;
+    width: 95%;
+    max-width: none;
+    max-height: 80%;
   }
 
+  .close {
+    top: 5px;
+    right: 5px;
+    font-size: 35px;
+  }
 }
+
   </style>
 </head>
 
@@ -118,33 +144,35 @@
   </div>
 
   <script>
-    function openModal(imgSrc) {
-      var modal = document.getElementById("myModal");
-      var modalImg = document.getElementById("img01");
-  
-      modal.style.display = "block";
-      setTimeout(function() {
-        modal.classList.add('show');
-      }, 10); // Delay to trigger the animation
-      modalImg.src = imgSrc;
-    }
-  
-    function closeModal(event) {
-      if (event) event.stopPropagation(); // Prevents closing when clicking the close button
-      var modal = document.getElementById("myModal");
-      modal.classList.remove('show');
-      setTimeout(function() {
-        modal.style.display = "none";
-      }, 300); // Match this duration with the CSS animation duration
-    }
-  
-    // Close modal when clicking outside the content
-    window.onclick = function(event) {
-      var modal = document.getElementById("myModal");
-      if (event.target == modal) {
-        closeModal();
-      }
-    }
+   // Open the modal and set the image source
+function openModal(imgSrc) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+
+  modal.style.display = "block";
+  setTimeout(function() {
+    modal.classList.add('show');
+  }, 10); // Delay to trigger the animation
+  modalImg.src = imgSrc;
+}
+
+// Close the modal
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.classList.remove('show');
+  setTimeout(function() {
+    modal.style.display = "none";
+  }, 300); // Match this duration with the CSS animation duration
+}
+
+// Close modal when clicking outside the content
+window.onclick = function(event) {
+  var modal = document.getElementById("myModal");
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+
   </script>  
 </body>
 </html>
