@@ -40,28 +40,12 @@
       to { transform: scale(1) }
     }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-}
 
 @media only screen and (max-width: 700px) {
   .modal-content-container {
     width: 90%;
   }
-  
+
 }
   </style>
 </head>
@@ -134,17 +118,17 @@
   </div>
 
   <script>
-     function openModal(imgSrc) {
+    function openModal(imgSrc) {
       var modal = document.getElementById("myModal");
       var modalImg = document.getElementById("img01");
-
+  
       modal.style.display = "block";
       setTimeout(function() {
         modal.classList.add('show');
       }, 10); // Delay to trigger the animation
       modalImg.src = imgSrc;
     }
-
+  
     function closeModal(event) {
       if (event) event.stopPropagation(); // Prevents closing when clicking the close button
       var modal = document.getElementById("myModal");
@@ -153,7 +137,7 @@
         modal.style.display = "none";
       }, 300); // Match this duration with the CSS animation duration
     }
-
+  
     // Close modal when clicking outside the content
     window.onclick = function(event) {
       var modal = document.getElementById("myModal");
@@ -161,6 +145,6 @@
         closeModal();
       }
     }
-  </script>
+  </script>  
 </body>
 </html>
