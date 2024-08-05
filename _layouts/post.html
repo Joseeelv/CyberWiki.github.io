@@ -4,6 +4,7 @@
   {% include head.html %}
   <style>
     /* Modal CSS */
+/* Modal CSS */
 .modal {
   display: none;
   position: fixed;
@@ -15,32 +16,29 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s;
 }
 
 .modal.show {
-  display: block;
   opacity: 1;
 }
 
-.modal-content-container {
-  position: relative;
-  margin: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  max-height: 80%;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-}
+.modal-content{
+      position: relative;
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      animation-name: zoom;
+      animation-duration: 0.3s;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-.modal-content {
-  width: 100%;
-  height: auto;
-}
+    @keyframes zoom {
+      from { transform: scale(0) }
+      to { transform: scale(1) }
+    }
 
 .close {
   position: absolute;
@@ -49,21 +47,19 @@
   color: #fff;
   font-size: 40px;
   font-weight: bold;
+  transition: 0.3s;
   cursor: pointer;
-  transition: color 0.3s;
 }
 
 .close:hover,
 .close:focus {
   color: #bbb;
+  text-decoration: none;
 }
 
-/* Mobile Styles */
 @media only screen and (max-width: 700px) {
   .modal-content-container {
-    width: 95%;
-    max-width: none;
-    max-height: 80%;
+    width: 90%;
   }
 
   .close {
@@ -72,7 +68,6 @@
     font-size: 35px;
   }
 }
-
   </style>
 </head>
 
@@ -144,35 +139,33 @@
   </div>
 
   <script>
-   // Open the modal and set the image source
-function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("img01");
+     function openModal(imgSrc) {
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("img01");
 
-  modal.style.display = "block";
-  setTimeout(function() {
-    modal.classList.add('show');
-  }, 10); // Delay to trigger the animation
-  modalImg.src = imgSrc;
-}
+      modal.style.display = "block";
+      setTimeout(function() {
+        modal.classList.add('show');
+      }, 10); // Delay to trigger the animation
+      modalImg.src = imgSrc;
+    }
 
-// Close the modal
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.classList.remove('show');
-  setTimeout(function() {
-    modal.style.display = "none";
-  }, 300); // Match this duration with the CSS animation duration
-}
+    function closeModal(event) {
+      if (event) event.stopPropagation(); // Prevents closing when clicking the close button
+      var modal = document.getElementById("myModal");
+      modal.classList.remove('show');
+      setTimeout(function() {
+        modal.style.display = "none";
+      }, 300); // Match this duration with the CSS animation duration
+    }
 
-// Close modal when clicking outside the content
-window.onclick = function(event) {
-  var modal = document.getElementById("myModal");
-  if (event.target === modal) {
-    closeModal();
-  }
-};
-
-  </script>  
+    // Close modal when clicking outside the content
+    window.onclick = function(event) {
+      var modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
 </body>
 </html>
