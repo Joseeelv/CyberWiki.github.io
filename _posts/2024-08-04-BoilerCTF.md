@@ -15,7 +15,7 @@ tags:
 Primero de todo vamos a realizar un escaneo de la red, para ver que puertos tiene abierto:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 
@@ -23,7 +23,7 @@ Vamos a ver que es esa web:
 
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 1.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 1.png" alt="Untitled"onclick="openModal(this.src)"/>
 </div>
 
 
@@ -32,7 +32,7 @@ Vemos que es una página default de un servicio apache, por tanto, vamos a compr
 
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 2.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 2.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 
@@ -41,14 +41,14 @@ Ya que no hay nada en los directorios ocultos, vamos a intentar iniciar sesión 
 
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 3.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 3.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Lo descargamos y lo abrimos:
 
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 4.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 4.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 
@@ -59,19 +59,19 @@ Como resultado tenemos: *Just wanted to see if you find it. Lol. Remember: Enume
 
 Vamos a mirar en el directorio "/robots.txt":
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 5.png" alt="Robots.txt" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 5.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Hemos encontrado una serie de números ascii que si los pasamos a base64 y MD5 obtnemos la cadena *kidding* (Una perdida de tiempo vamos..).
 
 Vamos a seguir comprobando cosas:
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 6.png" alt="Robots.txt" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 6.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 En el directorio "/joomla", no hay nada relevante a simple vista, pero podemos fuzzear la web para buscar directorios ocultos en la misma.
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 7.png" alt="Robots.txt" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 7.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 En efecto, encontramos una gran cantidad de directorios ocultos dentro del directorio "/joomla".
@@ -79,7 +79,7 @@ En efecto, encontramos una gran cantidad de directorios ocultos dentro del direc
 Vemos que hay un directorio llamado "/_tests", vamos a echarle un ojo:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 8.png" alt="" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 8.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Si buscamos sobre sar2html en Google vamos a encontrar algún exploit en exploit-db que se pueda usar en contra de él. → [exploit-db/Sar2HTML](https://www.exploit-db.com/exploits/47204) (aquí está el exploit).
@@ -87,27 +87,27 @@ Si buscamos sobre sar2html en Google vamos a encontrar algún exploit en exploit
 El exploit nos dice que podemos hacer una ejecución remota de comandos en la barra de navegación debido a `*plot=*`, así que vamos a testearlo:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 9.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 9.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 
 Si hacemos uso de`whoami` , vemos que nos dice que somos www-data (al ser un servidor es correcto), por tanto, vamos a tirar un listado de archivos y ficheros a ver que encontramos:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 10.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 10.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 
 Encontramos varios archivos, pero el más interesante es log.txt, que si hacemos `plot=;cat log.txt` vamos a obtener historial de logins:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 11.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 11.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Por tanto, el usuario es *basterd* y la password es *superduperp@$$*, ahora si podemos realizar una conexión ssh con dichas credenciales:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 12.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 12.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Al entrar vemos un archivo [backup.sh](http://backup.sh), si lo abrimos, encontramos el *user* y *password* de otro usuario,  vamos a pivotar de usuario haciendo `su stoner` y poniendo su contraseña `superduperp@$$no1knows`, ahora si hacemos cd .. , vemos su directorio y podemos acceder a él.
@@ -115,7 +115,7 @@ Al entrar vemos un archivo [backup.sh](http://backup.sh), si lo abrimos, encontr
 Ya tenemos la user_flag:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 13.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 13.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Suponemos que la flag está en el root, por tanto, vamos a escalar privilegios.
@@ -123,19 +123,19 @@ Suponemos que la flag está en el root, por tanto, vamos a escalar privilegios.
 Vamos a comprobar si stoner puede ejecutar algún binario mediante `sudo -l` :
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 14.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 14.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Fuimos engañados otra vez, así que ahora vamos a comprobar si algún binario tiene el SUID activado:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 16.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 16.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Vemos que el binario a usar es el */find* buscamos en Google de ejecutar el exploit y ganamos acceso:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BoilerCTF/Untitled 15.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BoilerCTF/Untitled 15.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Listo hemos encontrado la root_flag así que hemos acabado el reto.

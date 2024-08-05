@@ -18,40 +18,40 @@ tags:
 Vamosa proceder a escanear los primeros 1024 puertos para enumerarlos:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled.png" alt="Untitled" onclick="openModal(this.src)" />
 </div>
 
 Escaneamos la pagina web → no hay nada
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 1.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)"/>
 </div>
 
 Descargamos el archivo y lo abrimos
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 2.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 2.png" alt="Untitled" onclick="openModal(this.src)" />
 </div>
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 3.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 3.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 Hacemos un ataque de fuerza bruta con el user jake a la conexion shh y sacamos la contraseña:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 4.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 4.png" alt="Untitled" onclick="openModal(this.src)"/>
 </div>
 
 Iniciamos sesión en ssh
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 5.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 5.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Estamos dentro y buscamos la user.txt
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 6.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 6.png" alt="Untitled" onclick="openModal(this.src)"/>
 </div>
 
 # Root.txt
@@ -59,25 +59,25 @@ Estamos dentro y buscamos la user.txt
 Vamos a sacar vulnerabilidades de root
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 7.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 7.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Vemos que tiene permiso para ejecutar comando con less, buscamos un exploit
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 8.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 8.png" alt="Untitled" onclick="openModal(this.src)"/>
 </div>
 
 y escribimos `!/bin/sh` y somos root
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 9.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 9.png" alt="Untitled" onclick="openModal(this.src)"/>
 </div>
 
 Listo:
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/BNN/Untitled 10.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/BNN/Untitled 10.png" alt="Untitled" onclick="openModal(this.src)"/>
 </div>
 
 ---

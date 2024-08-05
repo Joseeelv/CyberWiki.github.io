@@ -28,7 +28,7 @@ Mediante el comando → `nmap -p- -v <ip_maquina>` obtenemos todos los puertos q
 Ahora haremos uso del comando → `nmap -sC -sV -p<Puertos_obtenidos> <ip_maquina>`
 
 <div style="text-align: center; ">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled.png" alt="Foto1" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled.png" alt="Untitled"onclick="openModal(this.src)"onclick="openModal(this.src)" />
 </div>
 
 Obtenemos información sobre los puertos abiertos → servicios, versión, estado…
@@ -39,7 +39,7 @@ Al tener abierto el puerto 80 significa que está haciendo uso del protocolo *HT
 
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled1.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled1.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Hmm, hemos encontrado una pagina web.. ¿Qué contendrá?
@@ -48,7 +48,7 @@ Al haber accedido a una página web podemos realizar una búsqueda de directorio
 
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled2.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled2.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 No ha habido suerte, no hay ningún directorio oculto…
@@ -59,14 +59,14 @@ Pero esto no solo queda aquí, nosotros podemos averiguar quien es ese tal *Agen
 
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled3.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled3.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Nos dice que hay 25 empleados, vamos a seguir comprobando para B,C, etc. Así hasta que encontremos algo diferente pero válido
 
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled4.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled4.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Uiuiuiu, una contraseña débil, vamos a buscarla jejeje.
@@ -88,7 +88,7 @@ hydra -l chris -p /ruta_wordlist ftp://ip_máquina
 ```
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/a.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/a.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Bingo, mediante el diccionario rockyou.txt hemos obtenido la contraseña del usuario chris.
@@ -98,7 +98,7 @@ Gracias a esto, podemos realizar la conexión *ftp* del usuario y su contraseña
 Realizamos un listado de los archivos:
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled5.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled5.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Vemos que hay 3 archivos, que podremos hacer con ellos..?
@@ -110,7 +110,7 @@ Al encontrar donde se han descargado los archivos, procedemos abrir el fichero �
 Para poder extraer una imagen con extensión ‘*.png*’ → `binwalk -e`, si es ‘*.jpg*’ → `steghide`.
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled6.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled6.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Perfecto, tenemos un .zip para extraer.
@@ -120,7 +120,7 @@ Como bien sabemos, el .*zip* obtenido está encriptado, haremos uso de las herra
 Comandos → `zip2john` y `john`
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/b.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/b.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Voilá, ya tenemos la contraseña del archivo .zip
@@ -128,7 +128,7 @@ Voilá, ya tenemos la contraseña del archivo .zip
 Encontraremos un *archivo.txt* dentro del *.zip,* procedemos a abrirlo.
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/c.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/c.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Nos dice que la imagen se la enviemos a un usuario, pero está encriptado. Para descifrarlo, vamos a utilizar la herramienta [CyberChef](https://gchq.github.io/CyberChef/).
@@ -136,7 +136,7 @@ Nos dice que la imagen se la enviemos a un usuario, pero está encriptado. Para 
 Ahora nos centramos en el archivos cuya extensión es ‘*.jpg*’.
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/d.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/d.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Leemos el .txt que nos devuelve el archivo .jpg y encontramos una contraseña ssh.
@@ -148,7 +148,7 @@ Ahora tenemos un usuario y una contraseña ambos los podemos usar en el servicio
 Procedemos a realizar el login → `ssh usuario@ip_maquina`.
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/f.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/f.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Listamos directorios y BOOM, encontramos la flag.
@@ -159,7 +159,7 @@ PD: Podemos buscar información de la imagen en internet.
 
 Por último, podemos comprobar si el usuario James tiene permisos de root → `sudo -l` .
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled7.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled7.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Efectivamente, los tiene.
@@ -167,23 +167,23 @@ Efectivamente, los tiene.
 Si tenemos permisos root, podemos comprobar que exploits tiene el comando que puede ejecutar *(ALL, !root) /bin/bash*
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled8.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled8.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 
 Encontramos información sobre el exploit (CVE,version,etc.), buscando en Internet.
 
 Procedemos a comprobar si la versión de sudo permite el exploit.
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled9.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled9.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 En efecto, por tanto, buscamos información de como ejecutar el exploit.
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/Untitled10.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/Untitled10.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 Procedemos a ser roots, con lo que nos da libertad para navegar entre directorios.
 
 <div style="text-align: center;">
-    <img src="../assets/images/Rooms/AgentSudo/g.png" alt="Untitled" />
+    <img src="../assets/images/Rooms/AgentSudo/g.png" alt="Untitled"onclick="openModal(this.src)" />
 </div>
 Finalmente, en el directorio root encontramos un archivo llamado *root.txt* que contiene la flag final y el nombre del usuario.
 
