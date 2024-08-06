@@ -57,11 +57,13 @@ Una vez establecida la conexión, el cliente puede mandarle comandos (SMB) al se
     También podemos hacer uso de la herramienta **Enum4Linux** con la sintaxis → `enum4linux [opc] <ip_target>`
     
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 ## Como explotar el protocolo SMB
 
-Dependiendo de la versión del protocolo podemos encontrar CVEs que nos puedan dar acceso a la ejecución remota de comandos → https://www.cvedetails.com/cve/CVE-2017-7494/
+Dependiendo de la versión del protocolo podemos encontrar CVEs que nos puedan dar acceso a la ejecución remota de comandos → [CVE-2017-7494](https://www.cvedetails.com/cve/CVE-2017-7494/)
 
 También podemos intentar acceder al servidor remotamente mediante una conexión anónima con la herramienta `smbclient //[ip_target]/[directorio] -[opc]`, haciendo uso de la opción `-N`(que hace uso de una *Null Session*). Esto puede ser muy útil si el servidor no tiene un método de autorización configurado.
 
@@ -75,28 +77,42 @@ sudo nmap -p- -open -sC -sS -sV -n -Pn -vvv --min-rate 5000 <ip-objetivo>
 
 Obtenemos los siguientes puertos y servicios:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%201.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
+Tenemos los puertos 22 (servicio ssh), 139 y 445 (servicio smb).
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%202.png)
-
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%203.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 2.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
+Aquí podemos ver información acerca del servicio smb de los puertos 139 y 445.
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 3.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Ahora vamos a explotar el protocolo:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%204.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 4.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Como accedemos como Anonymous, ponemos cualquier contraseña ya que no realiza autenticación.
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%205.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 5.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Ahora, tras haber descargado el **id_rsa** y **id_rsa.pub** vamos a iniciar sesión mediante ssh.
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%206.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 6.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Encontramos que el usuario es **cactus**
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%207.png)
-
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 7.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 Tenemos la flag.
 
 # Protocolo Telnet
@@ -135,33 +151,47 @@ Aunque parezca una tontería, tenemos que tener en cuenta que algunos servicios 
 
 ### Ejemplo práctico:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%208.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 8.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Si escaneamos los primeros 1000 puertos, vemos que no hay ninguno abierto.
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%209.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 9.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Si realizamos la conexión Telnet vemos:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2010.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 10.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Es decir, se ha modificado el puerto para hacer uso de un backdoor que pertenece a un tal *Skidy*.
 
 Vamos a crear un payload que contenga una reverse_shell para poder acceder al servidor:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2011.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 11.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Iniciamos la reverse shell en nuestra máquina:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2012.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 12.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Copiamos el payload en la sesion Telnet:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2013.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 13.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Vemos que ha funcionado y estamos dentro:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2014.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 14.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 # Protocolo FTP
 
@@ -189,7 +219,7 @@ nmap -p 21 <parametros> <ip-objetivo>
 ## Como explotar el protocolo FTP
 
 1. **Uso de CVE y vulnerabilidades:**
-Dependiendo de la versión del protocolo podemos encontrar CVEs (mediante el comando `searchsploit` o en Mitre), como es en el caso de la máquina → [kenobi de THM](TryHackMe%20Write-ups%201c3a270e4ad0415ba214ad3e887287f1/Rooms%20THM%20822bd8047eca40baa53e2eac05302fd4/Kenobi%20238a55363d9a4e21ae2f7d06ddc19210.md), donde explotamos una vulnerabilidad de ProFTPD (tipo de servidor FTP).
+Dependiendo de la versión del protocolo podemos encontrar CVEs (mediante el comando `searchsploit` o en Mitre), como es en el caso de la máquina → [kenobi de THM](https://joseeelv.github.io//blog/Kenobi), donde explotamos una vulnerabilidad de ProFTPD (tipo de servidor FTP).
 
 También podemos hacer uso de `metasploit` para ejecutar vulnerabilidades conocidas.
 2. **Iniciar Sesión de forma anónima:**
@@ -212,24 +242,45 @@ Como este protocolo permite la carga y descarga de archivos, podemos subir un fi
 
 Realizamos un escaneo de la ip dada:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2015.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 15.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
+Puertos y servicios abiertos de la máquina víctima:
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 16.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2016.png)
+Vemos que está corriendo un servicio *vsftpd* en el puerto 21. Como es un servicio del protocolo FTP y este permite conexiones anónimas, vamos a iniciar sesión:
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 17.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-Vemos que está corriendo un servicio *vsftpd* en el puerto 21.
+Perfecto, estamos dentro y vemos que tenemos un archivo de texto, que mediante el comando `get` podemos descargar:
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2017.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 18.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2018.png)
+Lo tenemos descargado en el directorio donde estabamos previamente de iniciar sesión en el servidor *FTP* y haciendo uso de `cat` podemos ver su contenido:
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 19.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2019.png)
+Tenemos un usuario, vamos a sacar su contraseña con un ataque de fuerza bruta con `hydra` en el servicio `ftp` que tenemos abierto:
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 20.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-Tenemos un usuario, vamos a sacar su contraseña con un ataque de fuerza bruta con `hydra`
+Como resultado tenemos al usuario *mike* (previamente obtenido) con su contraseña descifrada.
+Ahora podemos iniciar sesión en el servidor *FTP* como Mike y no como anonimo.
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2020.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 21.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2021.png)
-
-![Untitled](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/Untitled%2022.png)
+Finalmente, iniciamos sesión y vemos que tenemos en el servidor un fichero llamado **ftp.txt**, para obtenerlo en nuestra máquina hacemos lo mismo; con el comando `get` lo descargamos y con `cat` lo abrimos y tenemos nuestra flag:
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/Untitled 22.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 ---
