@@ -35,26 +35,56 @@
   border-radius: 8px;
   animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
   padding: 5px;
+  position: relative; /* Posicionamiento relativo para el botón de cerrar */
 }
-
 /* Animación para el zoom-in del contenido del modal */
 @keyframes zoomIn {
   from {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8); /* Comienza escalado desde el centro */
+    transform: scale(0.8); /* Comienza escalado desde el centro */
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1); /* Termina en el tamaño final desde el centro */
+    transform: scale(1); /* Termina en el tamaño final desde el centro */
   }
 }
+
+/* Aplicar la animación cuando el modal se muestra */
+.modal.show .modal-content {
+  animation: zoomIn 0.3s ease forwards; /* Animación al aparecer */
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ccc;
+  font-size: 40px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
 @media only screen and (max-width: 700px) {
   .modal-content {
     width: 95%; /* Ajusta el ancho para pantallas pequeñas */
     max-width: 95%; /* Limita el ancho máximo para pantallas pequeñas */
-    padding: 5px; /* Ajusta el padding para pantallas pequeñas */
+    padding: 15px; /* Ajusta el padding para pantallas pequeñas */
   }
 
+  .close {
+    top: 5px;
+    right: 5px;
+    font-size: 35px; /* Reduce el tamaño del botón de cerrar en pantallas pequeñas */
+  }
 }
   </style>
 </head>
