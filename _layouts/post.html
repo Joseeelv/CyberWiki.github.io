@@ -187,7 +187,7 @@
     // Close modal when clicking outside the content
     window.onclick = function(event) {
       var modal = document.getElementById("myModal");
-      if (event.target != modal) {
+      if (event.target == modal) {
         closeModal();
       }
     }
