@@ -40,7 +40,7 @@ Una vez establecida la conexión, el cliente puede mandarle comandos (SMB) al se
     
     Podemos realizarlo mediante el uso de la herramienta **Nmap**, el cual si realizamos un escaneo de los puertos de la red, podemos encontrar que el puerto 445 está abierto y se ejecuta un servicio Samba.
     
-    Esto lo podemos ver en la room [kenobi de THM](TryHackMe%20Write-ups%201c3a270e4ad0415ba214ad3e887287f1/Rooms%20THM%20822bd8047eca40baa53e2eac05302fd4/Kenobi%20238a55363d9a4e21ae2f7d06ddc19210.md).
+    Esto lo podemos ver en la room [kenobi de THM](https://joseeelv.github.io//blog/Kenobi).
     
     ```bash
     nmap -p 445 <parametros> <ip-objetivo>
