@@ -152,39 +152,40 @@
   </section>
   {% include footer.html %}
 
-  <!-- Estructura del Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Contenido del Modal</p>
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
   </div>
-</div>
-
 
   <script>
-     // Obtener el modal
-var modal = document.getElementById("myModal");
+     function openModal(imgSrc) {
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("img01");
 
-// Obtener el botón de cerrar
-var span = document.getElementsByClassName("close")[0];
+      modal.style.display = "block";
+      setTimeout(function() {
+        modal.classList.add('show');
+      }, 10); // Delay to trigger the animation
+      modalImg.src = imgSrc;
+    }
 
-// Abrir el modal (esto puede ser un evento de clic en una imagen u otro elemento)
-document.getElementById("openModalButton").onclick = function() {
-  modal.style.display = "block";
-}
+    function closeModal(event) {
+      if (event) event.stopPropagation(); // Prevents closing when clicking the close button
+      var modal = document.getElementById("myModal");
+      modal.classList.remove('show');
+      setTimeout(function() {
+        modal.style.display = "none";
+      }, 300); // Match this duration with the CSS animation duration
+    }
 
-// Cerrar el modal cuando se hace clic en el botón de cerrar
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// Cerrar el modal cuando se hace clic fuera del contenido del modal
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
+    // Close modal when clicking outside the content
+    window.onclick = function(event) {
+      var modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
   </script>
 </body>
 </html>
