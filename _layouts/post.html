@@ -33,11 +33,10 @@
   max-width: 600px; /* Limita el ancho máximo para el contenido del modal */
   max-height: 80vh; /* Limita la altura máxima para evitar que el modal sea demasiado alto */
   background: #fff;
-  border-radius: 8px;
+  border-radius: 3px;
   border: 1px solid #ccc; /* Borde delgado */
   animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
   padding: 20px;
-  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho y alto del elemento */
 }
 
 /* Animación para el zoom-in del contenido del modal */
@@ -73,12 +72,19 @@
 /* Estilos responsivos para pantallas pequeñas */
 @media only screen and (max-width: 700px) {
   .modal-content {
-    width: 95%; /* Ajusta el ancho para pantallas pequeñas */
-    max-width: 95%; /* Limita el ancho máximo para pantallas pequeñas */
-    height: auto; /* Permite el ajuste automático de altura */
-    max-height: 80vh; /* Limita la altura máxima para evitar que el modal sea demasiado alto */
-    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho y alto del elemento */
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8); /* Inicialmente escalado desde el centro */
+  width: 90%;
+  max-width: 600px; /* Limita el ancho máximo para el contenido del modal */
+  max-height: 80vh; /* Limita la altura máxima para evitar que el modal sea demasiado alto */
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ccc; /* Borde delgado */
+  animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
+  padding: 20px;
+}
 
   .close {
     top: 5px;
@@ -181,7 +187,7 @@
     // Close modal when clicking outside the content
     window.onclick = function(event) {
       var modal = document.getElementById("myModal");
-      if (event.target == modal) {
+      if (event.target != modal) {
         closeModal();
       }
     }
