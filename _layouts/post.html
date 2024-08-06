@@ -3,42 +3,45 @@
 <head>
   {% include head.html %}
   <style>
-    /* Modal CSS */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+/* Estilos para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-  /* Clase que muestra el modal */
-  .modal.show {
-    opacity: 1;
-  }
+/* Clase que muestra el modal */
+.modal.show {
+  opacity: 1;
+}
 
-  .modal-content {
-  position: absolute; /* Cambiado a absolute para facilitar el centrado */
+/* Estilos para el contenido del modal */
+.modal-content {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.8); /* Inicialmente escalado desde el centro */
-  max-width: 90%;
-  max-height: 90%;
+  width: 90%;
+  max-width: 600px; /* Limita el ancho máximo para el contenido del modal */
+  max-height: 80vh; /* Limita la altura máxima para evitar que el modal sea demasiado alto */
   background: #fff;
-  border-radius: 3px;
+  border-radius: 8px;
+  border: 1px solid #ccc; /* Borde delgado */
   animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
   padding: 20px;
   box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho y alto del elemento */
 }
 
-  /* Animación para el zoom-in del contenido del modal */
-  @keyframes zoomIn {
+/* Animación para el zoom-in del contenido del modal */
+@keyframes zoomIn {
   from {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.8); /* Comienza escalado desde el centro */
@@ -49,16 +52,42 @@
   }
 }
 
-  /* Estilos responsivos para pantallas pequeñas */
+/* Estilos para el botón de cerrar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
 @media only screen and (max-width: 700px) {
   .modal-content {
     width: 95%; /* Ajusta el ancho para pantallas pequeñas */
-    max-width: 95%; /* Permite que el contenido use todo el ancho disponible */
+    max-width: 95%; /* Limita el ancho máximo para pantallas pequeñas */
     height: auto; /* Permite el ajuste automático de altura */
     max-height: 80vh; /* Limita la altura máxima para evitar que el modal sea demasiado alto */
     padding: 15px; /* Ajusta el padding para pantallas pequeñas */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho y alto del elemento */
+  }
+
+  .close {
+    top: 5px;
+    right: 5px;
+    font-size: 35px; /* Reduce el tamaño del botón de cerrar en pantallas pequeñas */
   }
 }
+
   </style>
 </head>
 
