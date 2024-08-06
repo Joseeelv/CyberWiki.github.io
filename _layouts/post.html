@@ -73,9 +73,16 @@
 /* Estilos responsivos para pantallas pequeñas */
 @media only screen and (max-width: 700px) {
   .modal-content {
-    width: 95%; /* Ajusta el ancho para pantallas pequeñas */
-    max-width: 95%; /* Limita el ancho máximo para pantallas pequeñas */
-    padding: 15px; /* Ajusta el padding para pantallas pequeñas */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 1000px; /* Limita el ancho máximo para el contenido del modal */
+    max-height: 80vh; /* Limita la altura máxima para evitar que el modal sea demasiado alto */
+    background: #cccccc63;
+    border-radius: 8px;
+    animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
+    padding: 5px;
   }
 
   .close {
