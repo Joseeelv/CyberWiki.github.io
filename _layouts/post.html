@@ -24,33 +24,34 @@
   }
 
   .modal-content {
-    position: absolute;
+  position: absolute; /* Cambiado a absolute para facilitar el centrado */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8); /* Comienza escalado */
+  transform: translate(-50%, -50%) scale(0.8); /* Inicialmente escalado desde el centro */
   max-width: 90%;
   max-height: 90%;
   background: #fff;
   border-radius: 8px;
   animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
+  padding: 20px;
 }
 
   /* Animación para el zoom-in del contenido del modal */
   @keyframes zoomIn {
-    from {
-      transform: scale(0.8);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8); /* Comienza escalado desde el centro */
   }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Termina en el tamaño final desde el centro */
+  }
+}
 
   /* Estilos para el botón de cerrar */
   .close {
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-20%, -20%);
     right: 10px;
     color: #fff;
     font-size: 40px;
