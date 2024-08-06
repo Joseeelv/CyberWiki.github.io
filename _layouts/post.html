@@ -24,16 +24,15 @@
   }
 
   .modal-content {
-  position: absolute; /* Cambiado de relative a absolute */
+    position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centra el modal tanto vertical como horizontalmente */
+  transform: translate(-50%, -50%) scale(0.8); /* Comienza escalado */
   max-width: 90%;
   max-height: 90%;
   background: #fff;
   border-radius: 8px;
-  animation: zoomIn 0.3s ease;
-  padding: 20px;
+  animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
 }
 
   /* Animación para el zoom-in del contenido del modal */
