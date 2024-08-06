@@ -26,6 +26,6 @@
 
 - name: Servicios de la red I
   link: https://joseeelv.github.io//blog/ServiciosRedI
-  image: "../assets/images/Labs/ServiciosRedI/sriIpng.png"
+  image: "../assets/images/Labs/ServiciosRedI/srIpng.png"
   description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
 
