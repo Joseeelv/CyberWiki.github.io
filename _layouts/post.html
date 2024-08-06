@@ -37,7 +37,7 @@
   background: #cccccc63;
   border-radius: 8px;
   animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
-  padding: 20px;
+  padding: 5px;
 }
 
 /* Animación para el zoom-in del contenido del modal */
@@ -68,6 +68,19 @@
 .close:focus {
   color: #bbb;
   text-decoration: none;
+}
+/* Estilos responsivos para pantallas pequeñas */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 95%; /* Ajusta el ancho para pantallas pequeñas */
+    padding: 5px; /* Ajusta el padding para pantallas pequeñas */
+  }
+
+  .close {
+    top: 5px;
+    right: 5px;
+    font-size: 35px; /* Reduce el tamaño del botón de cerrar en pantallas pequeñas */
+  }
 }
 
   </style>
