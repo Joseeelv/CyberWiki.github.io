@@ -31,7 +31,7 @@
   max-width: 90%;
   max-height: 90%;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 3px;
   animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
   padding: 20px;
 }
@@ -75,6 +75,7 @@
     height: auto; /* Permite el ajuste automático de altura */
     max-height: 80vh; /* Limita la altura máxima para evitar que el modal sea demasiado alto */
     padding: 15px; /* Ajusta el padding para pantallas pequeñas */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho y alto del elemento */
   }
 }
   </style>
