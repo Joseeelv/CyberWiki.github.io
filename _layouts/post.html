@@ -48,6 +48,7 @@
   }
 }
 
+
   /* Estilos para el botón de cerrar */
   .close {
     position: absolute;
@@ -66,12 +67,16 @@
     text-decoration: none;
   }
 
-  /* Estilos responsivos */
-  @media only screen and (max-width: 700px) {
-    .modal-content {
-      width: 90%;
-    }
+  /* Estilos responsivos para pantallas pequeñas */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 95%; /* Ajusta el ancho para pantallas pequeñas */
+    max-width: none; /* Permite que el contenido use todo el ancho disponible */
+    height: auto; /* Permite el ajuste automático de altura */
+    max-height: 80vh; /* Limita la altura máxima para evitar que el modal sea demasiado alto */
+    padding: 15px; /* Ajusta el padding para pantallas pequeñas */
   }
+}
   </style>
 </head>
 
@@ -85,7 +90,7 @@
         </a>
         <hr class="has-background-black">
         <div class="columns is-variable is-5 has-text-centered">
-          <div class="column is-6" style="width: 50%;">
+          <div class="column is-6">
             <div style="text-align: center; ">
               <img src="{{page.post-image}}" alt="{{page.title}}" id="post-image">
             </div>
