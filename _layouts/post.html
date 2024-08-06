@@ -82,6 +82,13 @@
     font-size: 35px; /* Reduce el tamaño del botón de cerrar en pantallas pequeñas */
   }
 }
+/* Soporte específico para Safari en dispositivos móviles */
+@supports (-webkit-overflow-scrolling: touch) {
+  .modal {
+    /* Safari puede necesitar ajustes adicionales */
+    -webkit-overflow-scrolling: touch;
+  }
+}
 
   </style>
 </head>
