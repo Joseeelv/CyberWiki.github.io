@@ -19,5 +19,9 @@
   image: "../assets/images/Labs/LAN/lan.png"
   description: En este módulo veremos una introducción sobre las redes LAN, las topologías y los componentes que la forman.
 
-  
+- name: Introducción a las SQL injections
+  link: https://joseeelv.github.io//blog/IntroSQLi
+  image: "../assets/images/Labs/SQLi/sqli.png"
+  description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
+
 
