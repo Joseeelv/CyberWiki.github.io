@@ -34,6 +34,7 @@
   border-radius: 3px;
   animation: zoomIn 0.3s ease forwards; /* Animación con el estado final */
   padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho y alto del elemento */
 }
 
   /* Animación para el zoom-in del contenido del modal */
@@ -52,11 +53,10 @@
 @media only screen and (max-width: 700px) {
   .modal-content {
     width: 95%; /* Ajusta el ancho para pantallas pequeñas */
-    max-width: none; /* Permite que el contenido use todo el ancho disponible */
+    max-width: 95%; /* Permite que el contenido use todo el ancho disponible */
     height: auto; /* Permite el ajuste automático de altura */
     max-height: 80vh; /* Limita la altura máxima para evitar que el modal sea demasiado alto */
     padding: 15px; /* Ajusta el padding para pantallas pequeñas */
-    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho y alto del elemento */
   }
 }
   </style>
