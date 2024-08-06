@@ -1,9 +1,13 @@
-# Servicios de la red I
-
-Etiquetas: Apuntes, Redes
-Enlace Lab: https://tryhackme.com/r/room/networkservices
-Estado: Done
-
+---
+title: Servicios de red I
+layout: post
+post-image: "../assets/images/Labs/ServiciosRedI/srIpng.png"
+description: En este laboratorio vamos a aprender sobre como enumerar y explotar una variedad de servicios red como son los protocolos SMB, FTP, Telnet, entre otros.
+difficulty: Fácil
+enlace: https://tryhackme.com/r/room/networkservices
+tags:
+- LAB
+---
 # Protocolo SMB
 
 El *protocolo SMB*  o *Server Message Block protocol* es un protocolo de comunicación cliente - servidor.
@@ -18,7 +22,9 @@ Hace uso del puerto `TCP 445`, pero también puede hacer uso de los puerto  `TCP
 
 ## Como funciona SMB:
 
-![XMnru12.png](Servicios%20de%20la%20red%20I%20a2bd72577f474cb0a13c21fed4f64f21/XMnru12.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/ServiciosRedI/XMnru12.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Los clientes se conectan a los servidores mediante **TCP/IP.**
 
