@@ -1,10 +1,13 @@
-# Introducción a las SQL injection
-
-Etiquetas: Apuntes, SQL
-Enlace Lab: https://tryhackme.com/r/room/sqlilab
-Estado: Done
-
-Este laboratorio es una introducción a los ataques de inyección SQL.
+---
+title: Introducción a las SQL injections
+layout: post
+post-image: "../assets/images/Labs/IntroSQLi/sqli.png"
+description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
+difficulty: Fácil
+enlace: https://tryhackme.com/r/room/sqlilab
+tags:
+- LAB
+---
 
 # Introducción a SQL injection
 
@@ -31,18 +34,20 @@ Lo que hace la consulta anterior es devolver todos los usuarios de la tabla *use
 Cuando hacemos un logueo, la aplicación lleva a cabo la siguiente consulta:
 
 ```sql
-	SELECT uid, name, profileID, salary, passportNr, email, nickName, password FROM users
+	SELECT uid, name, profileID, salary, passportNr, email, nickName, password
+	FROM users
 		WHERE profileID =10 AND password 'ce44iqns...'
 ```
 
-Como vemos en este ejemplo de consulta, vemos que el campo profileID acepta valores / números enteros `profileID =10`, si no hay un tratamiento de esta condición podemos evadir la seguridad haciendo uso de una condición lógica como `1 or 1=1 --`  
+Como vemos en este ejemplo de consulta, vemos que el campo profileID acepta valores / números enteros `profileID =10`, si no hay un tratamiento de esta condición podemos evadir la seguridad haciendo uso de una condición lógica como `1 or 1=1 --`. 
 
 ## SQL Injection 2: **Input Box String**
 
 Est desafío presenta la misma consulta a la hora de realizar un logueo.
 
 ```sql
-	SELECT uid, name, profileID, salary, passportNr, email, nickName, password FROM users
+	SELECT uid, name, profileID, salary, passportNr, email, nickName, password
+	FROM users 
 		WHERE profileID ='10' AND password 'ce44iqns...'
 ```
 
@@ -55,7 +60,8 @@ Para poder evadir la seguridad en este caso, también podemos hacer uso de una c
 Seguimos teniendo la misma consulta, pero ahora no podemos evadir la seguridad de la base de datos inyectando una consulta maliciosa a la aplicación vía login.
 
 ```sql
-	SELECT uid, name, profileID, salary, passportNr, email, nickName, password FROM users
+	SELECT uid, name, profileID, salary, passportNr, email, nickName, password 
+	FROM users 
 		WHERE profileID ='10' AND password 'ce44iqns...'
 ```
 
@@ -88,9 +94,9 @@ Mediante el uso de la herramienta BurpSuite podemos evadir la validación que se
 
 Las URL injection se basan en peticiones **GET**  cuando se envía la petición de login.
 
-![Ejemplo](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled.png)
-
-Ejemplo
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 El login y la validación del cliente se puede evadir desde la URL en la barra de navegación de esta manera: `http://ip_maquina:5000/sesqli3/login?profileID=1'or1=1--&password=a`.
 
@@ -100,7 +106,9 @@ Cuando enviamos la petición de login, se hace uso del método POST del protocol
 
 Podemos o eliminar/desactivar el código JavaScript de validación o mediante BurpSuite interceptar la petición y modificarla.
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%201.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 ### **SQL Injection 5: UPDATE Statement**
 
@@ -112,7 +120,9 @@ Si vemos el código fuente de la página web, podemos identificar las columnas d
 
 Ahora enumeraremos la base de datos vía UPDATE para obtener información de la base de datos. 
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%202.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 2.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Para confirmar que estamos ante una vulnerabilidad podemos realizar una consulta donde inyectamos una consulta y vemos si se ha producido o no.
 
@@ -121,12 +131,12 @@ Si el nombre de las columnas que aparecen no es el correcto, al realizar la inye
 Si los campos se actualizan podemos intentar identificar que base de datos se está usando, lo podemos hacer enviando un payload malicioso. Esto lo podemos para bases de datos MySQL, MSSQL, Oracle y SQLite:
 
 ```sql
-# MySQL and MSSQL*
-',nickName=@@version,email='
-# For Oracle*
-',nickName=(SELECT banner FROM v$version),email='
-# For SQLite*
-',nickName=sqlite_version(),email='
+			# MySQL and MSSQL*
+			',nickName=@@version,email='
+			# For Oracle*
+			',nickName=(SELECT banner FROM v$version),email='
+			# For SQLite*
+			',nickName=sqlite_version(),email='
 ```
 
 Mediante esto vamos a obtener la versión de la misma.
@@ -143,7 +153,9 @@ Vamos a realizar una subconsulta donde haremos uso de la función `group_concat(
 
 Como resultado, tenemos que obtenemos el nombre de la única tabla que existe en la base de datos:
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%203.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 3.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Ahora podemos obtener todos las columnas que componen a dicha tabla:
 
@@ -153,7 +165,9 @@ Ahora podemos obtener todos las columnas que componen a dicha tabla:
 
 Esta consulta nos devuelve todos las columnas de la tabla usertable:
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%204.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 4.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Conociendo el nombre de las columnas, podemos obtener la información que queremos de la base de datos.
 
@@ -166,7 +180,9 @@ Por ejemplo, si queremos obtener el profileID ,name y password de los usuarios p
 
 Resultado de la consulta:
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%205.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 5.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Como vemos las contraseñas están en hasheadas, con la herramienta hash-identifier podemos saber que hash tienen y poder desencriptarlas.
 
@@ -176,9 +192,9 @@ Finalmente podemos actualizar la contraseña del admin a la que queramos mediant
 ', password='<contraseña_hasheada>' WHERE name='Admin'-- -
 ```
 
-### Ejercicios:
-
 # Vulnerable Startup
+
+Vamos a ver ahora un ejemplo práctico de cada ataque de inyección SQL explicados anteriormente:
 
 ## Broken Authentication
 
@@ -188,11 +204,15 @@ Se realiza mediante la modificación de la petición con BurpSuite y el uso de l
 
 Cuando nos loguemos, vemos que tenemos un rol. Además los datos de la consulta se almacenan en las cookies de la sesión del navegador en el campo Storage → *Value* (podemos acceder a ellas mediante F12 o inspeccionando la pagina web:
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%206.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 6.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Estas cookies están encriptadas, así que podemos usar alguna herramienta externa para desencriptarlas.
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%207.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 7.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Después de haber accedido mediante la condición lógica `1' or 1=1-- -`  como username, se puede ver la cookie desencriptada abajo.
 
@@ -219,7 +239,9 @@ Usando `'UNION SELECT 1,2-- -`  como username, coincidimos con el número de col
 
 Y donde antes ponía ‘Logged in as admin’ ahora pone ‘Logged in as 2’.
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%208.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 8.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Mediante el uso de [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/SQLite%20Injection.md) la enumeración de tablas y columnas de una base de datos se hace más ameno debido a que ya no dan los payloads a usar para obtener dicha información.
 
@@ -235,7 +257,9 @@ Si hacemos uso de group_concat() podemos obtener todas las passwords a la vez.
 ' UNION SELECT 1, group_concat(password) FROM users-- -
 ```
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%209.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 9.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Si ahora desencriptamos la cookies de sesión, tendremos todas las contraseñas.
 
@@ -304,7 +328,7 @@ admin' AND SUBSTR((SELECT password FROM users LIMIT 0,1),1,1) = CAST(X'54' as Te
 Siendo esta la petición que finalmente hará la base de datos:
 
 ```sql
-SELECTid, username FROM users WHERE username = 'admin' AND SUBSTR((SELECT password FROM users LIMIT 0,1),1,1) = CAST(X'54' as Text)
+SELECT id, username FROM users WHERE username = 'admin' AND SUBSTR((SELECT password FROM users LIMIT 0,1),1,1) = CAST(X'54' as Text)
 ```
 
 Si la aplicación nos devuelve un redirección 302, significa que hemos encontrado el primer carácter de la contraseña. 
@@ -317,13 +341,17 @@ También podemos hacer uso de la herramienta externa `sqlmap` para llevar a cabo
 sqlmap -u http://MACHINE_IP:5000/challenge3/login --data="username=admin&password=admin" --level=5 --risk=3 --dbms=sqlite --technique=b --dumpy
 ```
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2010.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 10.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 ## Vulnerable Notes
 
 Nos hemos topado con una base de datos que tiene todos los fallos anteriores fixed, por tanto, tendremos que buscar una nueva manera de poder acceder a la base de datos.
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2011.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 11.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Aquí entran las *notes* que son una función donde se pueden añadir nuevas notas. Estas no son directamente vulnerables ya que se insertan notas de forma segura ya que usa *consultas paramétricas*. Con este tipo de consultas, la declaración se especifica con *placeholders* que son “?”.
 
@@ -345,7 +373,9 @@ SELECT title, note FROM notes	WHERE name = '" + nombre de usuario + "'
 
 Esto significa que si añadimos un usuario malicioso, todo estará normal hasta que el usuario navegue a la página de las notas.
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2012.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 12.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Podemos crear un usuario malicioso mediante `' UNION SELECT 1,2'` , donde la aplicación realizará la siguiente consulta:
 
@@ -412,7 +442,9 @@ Esto se resume que en vez de actualizar la contraseña para  `admin' -- -` , la 
 
 Podemos toparnos con una aplicación que tiene un buscador, en este caso de libros. 
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2013.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 13.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Cada vez que se introduce el titulo de un libro (*title*) en dicho buscador se realiza una petición **GET**, siendo la consulta que se manda:
 
@@ -422,7 +454,9 @@ SELECT * FROM books WHERE id = (SELECT id FROM books WHERE title LIKE '"+ title 
 
 Para explotar esta vulnerabilidad lo único que tenemos que hacer es abusar de la cláusula `LIKE` , por ejemplo, inyectando `') or 1=1-- -` :
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2014.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 14.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 ## Book Title 2
 
@@ -430,7 +464,9 @@ Ahora la aplicación realiza una consulta al principio del proceso, luego se uti
 
 Sin embargo, como la segunda consulta hace uso del resultado de la primera y como hemos comentado anteriormente también contiene vulnerabilidades trabajaremos con esta.  Podemos explotar dicha vulnerabilidad haciendo uso de *UNION-based injection* en vez de hacer uso de *Boolean-based blind injection*, ya que podemos hacer la explotación más sencilla y menos ruidosa.
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2015.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 15.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Vemos que tenemos el mismo panel de consulta de libros, es decir, se realiza una petición **GET** para poder recuperar el libro que le estamos pidiendo.
 
@@ -448,13 +484,17 @@ Para llevar a cabo esta vulnerabilidad:
 2. Usamos la cláusula `UNION` para controlar lo que devuelve la primera consulta (dato que se usará en la segunda consulta, el ID vamos).
 3. Podemos insertar este código `' UNION SELECT ' STRING` para ver como se ejecutan ambas consultas.
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2016.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 16.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Vemos el resultado de lo que devuelve cada consulta, en la primera vemos `'STRING%'`, que es usado en la segunda consulta en la cláusula `WHERE`.
 
 Por tanto, en vez de inyectar el código `' UNION SELECT 'STRING` , podemos inyectar `' UNION SELECT '1' -- -` y esto nos devolverá toda la información sobre el libro cuyo ID es 1.
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2017.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 17.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Si no limitamos el resultado a 0 filas, no tendremos el output de la cláusula `UNION`, sino que obtendremos el resultado de la cláusula `LIKE`:
 
@@ -464,7 +504,9 @@ test' UNION SELECT '1'-- -
 
 Ponemos el campo “test” y vemos lo que nos devuelven las dos consultas que realiza la aplicación:
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2018.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 18.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Vemos que en la segunda consulta, la cláusula `WHERE` contiene un ID, anteriormente no sucedía eso, si no que nos devolvía la información del libro en cuestión.
 
@@ -484,7 +526,9 @@ SELECT * FROM book WHERE id = ' ' UNION SELECT '-1' UNION SELECT 1,2,3,4- -
 
 Tendríamos como resultado:
 
-![Untitled](Introduccio%CC%81n%20a%20las%20SQL%20injection%20508e8e21deab4505b36c926f0c1b8447/Untitled%2019.png)
+<div style="text-align: center; ">
+    <img src="../assets/images/Labs/IntroSQLi/Untitled 19.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Ahora podemos hacer:
 
