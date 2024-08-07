@@ -43,3 +43,8 @@
   link: https://joseeelv.github.io//blog/WindowsI
   image: "../assets/images/Labs/WindowsI/windows.webp"
   description: Este módulo introductorio de Windows aborda aspectos fundamentales del sistema operativo Windows, cubriendo su historia, características y componentes clave.
+
+- name: Aspectos Básicos de Windows II
+  link: https://joseeelv.github.io//blog/WindowsII
+  image: "../assets/images/Labs/WindowsII/windows.png"
+  description: Este es el segundo módulo introductorio de Windows que aborda una introducción a las herramientas y configuraciones esenciales del sistema operativo Windows. Se exploran varias utilidades y configuraciones avanzadas que son fundamentales para la administración y optimización del sistema.

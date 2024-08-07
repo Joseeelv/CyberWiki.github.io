@@ -1,35 +1,51 @@
-# Aspectos Básicos de Windows II
-
-Created: September 18, 2023 9:32 PM
-Enlace Lab: https://tryhackme.com/room/windowsfundamentals2x0x
+---
+title: Aspectos Básicos de Windows II
+layout: post
+post-image: "../assets/images/Labs/WindowsII/windows.png"
+description: Este es el segundo módulo introductorio de Windows que aborda una introducción a las herramientas y configuraciones esenciales del sistema operativo Windows. Se exploran varias utilidades y configuraciones avanzadas que son fundamentales para la administración y optimización del sistema.
+enlace: https://tryhackme.com/room/windowsfundamentals2x0x
+difficulty: Fácil
+tags: 
+  - LAB
+---
 
 > En esta parte vamos a ver sobre las Configuración del sistema, Configuración de UAC, supervisar recursos, el registro de Windows, etc.
-> 
 
 # Configuración del sistema
-
-`MSConfig`se usa para la solución avanzada de problemas y su objetivo principal es ayudar a diagnosticar problemas de inicio.
-
-Para acceder a la configuración del sistema primero pulsamos las teclas `Windows + R` y tecleamos `msconfig`, así accederemos a la pestaña de configuración del sistema.
-
-![image-20230919002044114.png](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/image-20230919002044114.png)
+<div style="text-align:left">
+  <table>
+    <tr>
+      <td style="width:50%; vertical-align:top;" >
+        <code>MSConfig</code> se usa para la solución avanzada de problemas y su objetivo principal es ayudar a diagnosticar problemas de inicio.<br><br>Para acceder a la configuración del sistema primero pulsamos las teclas <strong>Windows+R</strong> y tecleamos <code>msconfig</code>, así accederemos a la pestaña de configuración del sistema.
+      </td>
+      <td>
+        <div style="text-align:left;">
+          <img src="../assets/images/Labs/WindowsII/image-20230919002044114.png" alt="Untitled" onclick="openModal(this.src)" style="width:50%;"/>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
 
 Después de realizar esto nos aparecerá una ventana que contiene 5 pestañas: 
-
-- General: Podemos seleccionar el tipo de inicio que tendrá la computadora, seleccionando si queremos que cargar servicios del sistema o elementos de inicio.
-    
-    ![image-20230919002324995.png](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/image-20230919002324995.png)
-    
-- Arranque: Podemos definir varias opciones de arranque para el propio sistema operativo como por ejemplo, que se inicie sin la interfaz de arranque.
-    
-    ![image-20230919002621422.png](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/image-20230919002621422.png)
-    
-- Servicios: Encontramos todos los servicios del sistema ya sean de Windows o de programas de terceros.
-    
-    ![image-20230919002642237.png](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/image-20230919002642237.png)
-    
-- Inicio de Windows: Solo nos muestra una pantalla del administrador de tareas donde se encuentran que procesos se iniciarán cuando se arranque el sistema operativo, pudiendo así seleccionar si queremos que se ejecuten o no.
-- Herramientas: Encontramos todas las herramientas que podemos ejecutar para seguir configurando aun más el sistema operativo.
+<ul>
+  <li><strong>General</strong>: Podemos seleccionar el tipo de inicio que tendrá la computadora, seleccionando si queremos que cargar servicios del sistema o elementos de inicio.</li>
+  <div style="text-align:center;">
+    <img src="../assets/images/Labs/WindowsII/image-20230919002324995.png" alt="Untitled" onclick="openModal(this.src)" />
+  </div>
+  <li><strong>Arranque</strong>: Podemos definir varias opciones de arranque para el propio sistema operativo como por ejemplo, que se inicie sin la interfaz de arranque.</li>
+  <div style="text-align:center;">
+    <img src="../assets/images/Labs/WindowsII/image-20230919002621422.png" alt="Untitled" onclick="openModal(this.src)" />
+  </div>
+  <li><strong> Servicios</strong>: Encontramos todos los servicios del sistema ya sean de Windows o de programas de terceros.</li>
+  <div style="text-align:center;">
+    <img src="../assets/images/Labs/WindowsII/image-20230919002642237.png" alt="Untitled" onclick="openModal(this.src)" />
+  </div>
+  <li><strong>Inicio de Windows</strong>: Solo nos muestra una pantalla del administrador de tareas donde se encuentran que procesos se iniciarán cuando se arranque el sistema operativo, pudiendo así seleccionar si queremos que se ejecuten o no.</li>
+  
+  <li><strong>Herramientas</strong>: Encontramos todas las herramientas que podemos ejecutar para seguir configurando aun más el sistema operativo.</li>
+  
+</ul>
 
 # Cambiar configuración de UAC
 
@@ -45,20 +61,33 @@ Encontramos una barra deslizante que nos permite configurar varios grados de not
 Es otra herramienta pertenecientes a la **Configuración del sistema**.
 
 `Compmgmt` ó Administración de equipos contiene tres secciones principales:
+<div style="text-align:center">
+  <table>
+    <tr>
+      <td style="text-align:left; vertical-align:top; width:70%;"><ol>
+        <li>Herramientas del sistema.</li>
+        <li>Alamacenamiento.</li>
+        <li>Servicios y aplicaciones</li>
+      </ol></td>
+      <td>
+        <div style="text-align:center">
+          <img src="../assets/images/Labs/WindowsII/image-20230919004854284.png" alt="Untitled" onclick="openModal(this.src)" />
+      </div></td>
+    </tr>
+  </table>
+</div>
 
-1. Herramientas del sistema.
-2. Almacenamiento.
-3. Servicios y aplicaciones.
 
-![image-20230919004854284.png](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/image-20230919004854284.png)
 
-## **Herramientas del sistema**
+## Herramientas del sistema
 
 Encontramos el **Programador de tareas** con el cual podemos crear y gestionar tareas (ejecutar una aplicación, un script, ..) comunes que nuestro ordenador llevará a cabo automáticamente en los momentos que se especifique (al inicio o fin de sesión, en un horario determinado,..) muy parecido a `cron` de Linux.
 
 Para crear una tarea cualquiera vamos a **Acciones** que se encuentra en el panel derecho y clicamos en 'Crear tarea'.
 
-![image-20230919004623102.png](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/image-20230919004623102.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Labs/WindowsII/image-20230919004623102.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Ahora el **Visor de eventos** nos permite visualizar los eventos que se han producido en el equipo, estos registros pueden servir para comprender la actividad del sistema.
 El visor contiene tres paneles:
@@ -69,13 +98,13 @@ El visor contiene tres paneles:
 
 En **Carpetas compartidas** encontraremos una lista completa de los recursos y carpetas compartidas donde otros pueden conectarse, en **Sesiones** encontramos una lista de usuarios que están conectados a los recursos compartidos y en **Archivos abiertos** están las carpetas/archivos a los que acceden los usuarios.
 
-En **Usuario y grupos locales** encontramos los usuarios y los grupos del equipo, véase en [Aspectos Básicos de Windows I](Aspectos%20Ba%CC%81sicos%20de%20Windows%20I%20d0f6ee16069c41349091e33f52e2c980.md)
+En **Usuario y grupos locales** encontramos los usuarios y los grupos del equipo, véase en [Aspectos Básicos de Windows I](https://joseeelv.github.io//blog/WindowsI)
 
 En **Rendimiento** encontramos el Monitor de rendimiento `perfom`, este se utiliza para ver los datos de rendimiento en tiempo real o desde un archivo de registro, es una buena manera de solucionar problemas orientados al rendimiento ya sea en equipos locales o remotos.
 
 El **Administrador de dispositivos** nos permite ver y configurar el hardware del equipo, también podemos deshabilitar, buscar actualizaciones de drivers..
 
-## **Almacenamiento**
+## Almacenamiento
 
 Aquí están las **Copias de seguridad de Windows Server** y **Administración de discos**.
 
@@ -85,9 +114,11 @@ En la Administración de discos podemos realizar tareas avanzadas de almacenamie
 - Extender o reducir una partición.
 - Asignar o cambiar un letra de unidad.
 
-![image-20230919010733469.png](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/image-20230919010733469.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Labs/WindowsII/image-20230919010733469.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-## **Servicio y aplicaciones**
+## Servicio y aplicaciones
 
 Encontramos todos los **servicios** del sistema (aplicación que se ejecuta en segundo plano).
 Podemos ver las propiedades, habilitar o deshabilitar un servicio.
@@ -100,42 +131,57 @@ Por otro lado, se encuentra el **Control WMI** (Instrumental de administración 
 
 Esta información la podemos dividir en varias secciones:
 
-- Recursos de hardware.
-- Componentes.
-- Entorno de software.
-
-![Untitled](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/Untitled.png)
-
+<div style="text-align:center">
+  <table>
+    <tr>
+      <td style="text-align:left; vertical-align:top;"><ol>
+        <li>Recursos de hardware.</li>
+        <li>Componentes.</li>
+        <li>Entorno de software.</li>
+      </ol></td>
+      <td>
+        <div style="text-align:center">
+          <img src="../assets/images/Labs/WindowsII/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:300px"  />
+      </div></td>
+    </tr>
+  </table>
+</div>
 En la pestaña por defecto *Resumen del sistema* 
 encontramos información sobre el equipo.
 
-## **Recursos de hardware**
+## Recursos de hardware
 
 Contiene información sobre el hardware del equipo, esta información no es para un usuario casual. 
 
-![Untitled](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/Untitled%201.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Labs/WindowsII/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:300px"/>
+</div>
 
-## **Entorno de software**
+## Entorno de software
 
 En esta sección, podemos ver información relacionada con el sistema operativo, además del software instalado.
 También encontramos las *variables de entorno* (situada en la carpeta Windows\System32 vista en **enlace a pagina**) y *conexiones de red*.
 
-![Untitled](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/Untitled%202.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Labs/WindowsII/Untitled 2.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:300px"/>
+</div>
 
-### **Variables de entorno**
+### Variables de entorno
 
 Almacenan datos que utilizan tanto el sistema operativo como las aplicaciones instaladas en el sistema.
 
 Por ejemplo, la variable `PATH` contiene la dirección/ruta del archivo ejecutable.
 
 Otra manera de acceder a las Variables de entorno mediante el panel de control
-*Panel de control --> Sistema y seguridad --> Sistema --> Configuración avanzada del sistema --> Variables de entorno.*
+*Panel de control → Sistema y seguridad → Sistema → Configuración avanzada del sistema → Variables de entorno.*
 
-## **Componentes**
+## Componentes
 
 Aquí podemos ver la información específica de los componentes hardware del sistema.
 
-![Untitled](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/Untitled%203.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Labs/WindowsII/Untitled 3.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:300px"/>
+</div>
 
 # Monitor de recursos
 
@@ -155,6 +201,7 @@ El comando `hostname` nos devuelve el nombre del equipo, `whoami` nos devuelve e
 El manual de ayuda de cualquier comando se realiza: `nombre_comando /?`, esto nos mostrará información sobre el comando `ipconfig`.
 
 Para borrar lo mostrado por pantalla escribimos el comando `cls`.
+
 El comando `netstat` muestra estadísticas del protocolo TCP/IP, `net` se utiliza para administrar los recursos de la red (permite subcomandos).
 
 # Editor de registro
@@ -165,6 +212,8 @@ Este registro contiene información sobre perfiles de usuario, aplicaciones inst
 
 Realizar cambios en el registro puede afectar a las operaciones normales de la computadora, es decir, el registro está orientado a usuarios avanzados del sistema.
 
-![Untitled](Aspectos%20Ba%CC%81sicos%20de%20Windows%20II%207ffc15fabb5749ba8260b5cc692b1f6c/Untitled%204.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Labs/WindowsII/Untitled 4.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:1000px"/>
+</div>
 
 ---
