@@ -73,18 +73,21 @@ Encontramos varios métodos para las peticiones HTTP(S):
 Encontramos varios estados de las respuestas HTTP(S):
 
 - ***100 - 199 (Información de la respuesta)*** → Le dicen al cliente que la primera parte de la petición es correcta y que puede continuar con la misma (No es muy común).
-- ***200 - 299 (Éxito)*** → Nos informa de que la petición ha sido exitosa.
-    - *200 ‘OK’:* Petición completamente exitosa.
-    - *201* ‘*Created*’: Se ha creado un recurso nuevo.
+
+- ***200 - 299 (Éxito)*** → Nos informa de que la petición ha sido exitosa:
+    - *200 ‘OK’*: Petición completamente exitosa.
+    - *201 ‘Created’*: Se ha creado un recurso nuevo.
 - ***300-399 (Redirección)*** → Redireccionan al cliente a otro recurso (página web diferente o sitio web).
-- ***400 - 499 (Error del cliente)*** → Informan al cliente los errores que se producen.
-    - *401 ‘Not Authorised’:* Informa que necesitamos ser autorizados para realizar la petición (login con permisos en el servidor).
-    - *403 ‘Forbidden’:* NO tenemos permisos para acceder al recurso.
-    - *404 ‘Not Found’:* La página o recurso no existe.
-    - *405 ‘Not Allowed’:* Cuando le mandamos al servidor un método que no entiende o no puede soportar para ese método.
-- ***500 - 599 (Error del servidor)*** → Están reservados para los errores que ocurren en la parte del servidor web.
-    - *500 ‘Internal Error’:* El servidor ha encontrado un error en la petición.
-    - *503 ‘Service Unavailable’:* El servidor no está disponible (ya sea por mantenimiento u otros motivos).
+
+- ***400 - 499 (Error del cliente)*** → Informan al cliente los errores que se producen:
+    - *401 ‘Not Authorised’*: Informa que necesitamos ser autorizados para realizar la petición (login con permisos en el servidor).
+    - *403 ‘Forbidden’*: NO tenemos permisos para acceder al recurso.
+    - *404 ‘Not Found’*: La página o recurso no existe.
+    - *405 ‘Not Allowed’*: Cuando le mandamos al servidor un método que no entiende o no puede soportar para ese método.
+
+- ***500 - 599 (Error del servidor)*** → Están reservados para los errores que ocurren en la parte del servidor web:
+    - *500 ‘Internal Error’*: El servidor ha encontrado un error en la petición.
+    - *503 ‘Service Unavailable’*: El servidor no está disponible (ya sea por mantenimiento u otros motivos).
 
 # Cabeceras
 
@@ -97,8 +100,8 @@ Estas cabeceras son enviadas desde el cliente al servidor, específicamente desd
 - ***Host / dominio*** → Los servidores webs contienen muchas páginas webs, asi que especificamos el host o el dominio de la misma para acceder a ella, de lo contrario nos devuelve la página web por defecto.
 - ***User-Agent*** → Es la versión y el software de nuestro buscador.
 - ***Content-Length*** → Le dice al servidor cuantos datos espera en la petición.
-- **Accept-Encoding** *→* Informa al servidor web los tipos de compresión que el buscador soporta (.zip, tar.gz,etc).
-- **Cookie** → Datos enviados al servidor web que ayuda a recordar la información.
+- ***Accept-Encoding*** → Informa al servidor web los tipos de compresión que el buscador soporta (.zip, tar.gz,etc).
+- ***Cookie*** → Datos enviados al servidor web que ayuda a recordar la información.
 
 ## Cabeceras comunes de las respuestas
 
@@ -113,7 +116,7 @@ Estas cabeceras son recibidas desde el servidor web en respuesta a las peticione
 
 > Las Cookies son datos que se almacenan en nuestras computadoras. Contienen información de los sitios webs a los que hemos accedidos, además ayuda al servidor web a recordar ‘quien eres’.
 
-Cuando las Cookies son almacenadas en nuestros equipos, recibimos una cabecera **Set-Cookie** del servidor web.* 
+Cuando las Cookies son almacenadas en nuestros equipos, recibimos una cabecera **Set-Cookie** del servidor web.
 
 Tienen muchos usos, pero comúnmente son usadas para autenticación. Nunca son una cadena de texto clara donde podemos leer las contraseñas, si no que son un token (código único y secreto que no puede ser rastreado con facilidad).
 
