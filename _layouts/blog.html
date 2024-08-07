@@ -13,14 +13,15 @@
             </div>
         </div>
         <!-- Selector de Ordenación -->
-        <div class="container">
+        <div class="container" style_="texta">
             <div class="field">
-                <label class="label">Ordenar por:</label>
+                <label class="label">Ordenar las rooms por:</label>
                 <div class="control">
                     <div class="select">
                         <select id="sort-selector">
                             <option value="date">Fecha</option>
                             <option value="difficulty">Dificultad</option>
+                            <option value="title">Nombre</option>
                         </select>
                     </div>
                 </div>
@@ -60,7 +61,7 @@
                   Published on <span class="has-text-weight-semibold">{date}</span>
                 </span>
                 <br>
-                <span class="has-text-weight-semibold">Difficulty: {difficulty}</span> 
+                <span class="has-text-weight-semibold difficulty">{difficulty}</span> 
                   | <a href="{enlace}" class="has-text-weight-semibold">Link</a>
               </div>
             </div>
@@ -70,30 +71,44 @@
         fuzzy: false,
         limit: 1,
       });
-
+    
       // Función para ordenar los resultados
       function sortResults(criteria) {
         const container = document.getElementById('results-container');
         const results = Array.from(container.querySelectorAll('.searchResult'));
-        
+    
         results.sort((a, b) => {
-          const aValue = a.querySelector(`.${criteria}`).textContent.trim();
-          const bValue = b.querySelector(`.${criteria}`).textContent.trim();
-
-          if (criteria === 'date') {
-            return new Date(bValue) - new Date(aValue);
-          } else if (criteria === 'difficulty') {
-            return bValue.localeCompare(aValue);
+          let aValue, bValue;
+    
+          switch (criteria) {
+            case 'name':
+              aValue = a.querySelector('.title').textContent.trim().toLowerCase();
+              bValue = b.querySelector('.title').textContent.trim().toLowerCase();
+              return aValue.localeCompare(bValue); // Ordenar alfabéticamente
+    
+            case 'date':
+              aValue = new Date(a.querySelector('.date').textContent.trim());
+              bValue = new Date(b.querySelector('.date').textContent.trim());
+              return bValue - aValue; // Ordenar por fecha descendente
+    
+            case 'difficulty':
+              const difficulties = ['Easy', 'Intermediate', 'Hard'];
+              aValue = difficulties.indexOf(a.querySelector('.difficulty').textContent.trim());
+              bValue = difficulties.indexOf(b.querySelector('.difficulty').textContent.trim());
+              return aValue - bValue; // Ordenar por dificultad ascendente
+    
+            default:
+              return 0;
           }
         });
-
+    
         results.forEach(result => container.appendChild(result));
       }
-
+    
       // Event listener para el selector de ordenación
-      document.getElementById('sort-selector').addEventListener('change', function() {
+      document.getElementById('sort-by').addEventListener('change', function() {
         sortResults(this.value);
       });
-    </script>
+    </script>    
   </body>
 </html>
