@@ -36,7 +36,7 @@ Sea una URL de la forma → `http://user:password@cyberwiki.com:80/networking?id
 - ***Esquema (http)*** → Indica que protocolo se ha usado (*HTTP* ó *HTTPS*).
 - ***Usuario (user:password)*** → Como algunos necesitan la autenticación de login, puedes poner tu usuario para hacer login en la web.
 - ***Dominio (cyberwiki.com)*** → Nombre del [dominio](https://joseeelv.github.io//blog/Enumeraci%C3%B3ndeSubdominios) o dirección IP a la que queremos acceder.
-- ***Puerto (80)*** → Puerto al que nos vamos a conectar. HTTP (80) y HTTPS (443) normalmente.
+- ***Puertos*** → Puerto al que nos vamos a conectar. HTTP (80) y HTTPS (443) normalmente.
 - ***Ruta (networking)*** → Es el nombre del archivo ó recursos al que estamos accediendo.
 - ***Query string (?id=1)*** → Bits adicionales que le podemos enviar a la ruta solicitada, indicando que queremos recibir el recurso cuyo id = 1.
 - ***Fragmento (#task3)*** → Se usa comúnmente para webs con contenido extenso. Hace referencia a una ubicación de la página real solicitada.
@@ -71,23 +71,33 @@ Encontramos varios métodos para las peticiones HTTP(S):
 > Al realizar una petición HTTP(S), el protocolo usado envía una respuesta especificando el estado de la petición.
 
 Encontramos varios estados de las respuestas HTTP(S):
-
-- ***100 - 199 (Información de la respuesta)*** → Le dicen al cliente que la primera parte de la petición es correcta y que puede continuar con la misma (No es muy común).
-
-- ***200 - 299 (Éxito)*** → Nos informa de que la petición ha sido exitosa:
-    - *200 ‘OK’*: Petición completamente exitosa.
-    - *201 ‘Created’*: Se ha creado un recurso nuevo.
-- ***300-399 (Redirección)*** → Redireccionan al cliente a otro recurso (página web diferente o sitio web).
-
-- ***400 - 499 (Error del cliente)*** → Informan al cliente los errores que se producen:
-    - *401 ‘Not Authorised’*: Informa que necesitamos ser autorizados para realizar la petición (login con permisos en el servidor).
-    - *403 ‘Forbidden’*: NO tenemos permisos para acceder al recurso.
-    - *404 ‘Not Found’*: La página o recurso no existe.
-    - *405 ‘Not Allowed’*: Cuando le mandamos al servidor un método que no entiende o no puede soportar para ese método.
-
-- ***500 - 599 (Error del servidor)*** → Están reservados para los errores que ocurren en la parte del servidor web:
-    - *500 ‘Internal Error’*: El servidor ha encontrado un error en la petición.
-    - *503 ‘Service Unavailable’*: El servidor no está disponible (ya sea por mantenimiento u otros motivos).
+<ul>
+  <li><em><strong>200 - 299 (Éxito)</strong></em> → Nos informa de que la petición ha sido exitosa:
+      <ul> 
+        <li><em>*200 ‘OK’</em>: Petición completamente exitosa.</li>
+        <li><em>201 ‘Created’</em>: Se ha creado un recurso nuevo.</li>
+      </ul>
+  </li>
+  <li>
+    <em><strong>300 - 399 (Redirección)</strong></em> → Redireccionan al cliente a otro recurso (página web diferente o sitio web).
+  </li>
+  <li>
+    <em><strong>400 - 499 (Error del cliente)</strong></em> → Informan al cliente los errores que se producen:
+    <ul>
+    <li><em>401 ‘Not Authorised’</em>: Informa que necesitamos ser autorizados para realizar la petición (login con permisos en el servidor).</li>
+    <li><em>403 ‘Forbidden’</em>: NO tenemos permisos para acceder al recurso.</li>
+    <li><em>404 ‘Not Found’</em>: La página o recurso no existe.</li>
+    <li><em>405 ‘Not Allowed’</em>: Cuando le mandamos al servidor un método que no entiende o no puede soportar para ese método.</li>
+    </ul>
+  </li>
+  <li>
+    <em><strong>500 - 599 (Error del servidor)</strong></em> → Están reservados para los errores que ocurren en la parte del servidor web:
+    <ul>
+      <li><em>500 ‘Internal Error’</em>: El servidor ha encontrado un error en la petición.</li>
+      <li><em>503 ‘Service Unavailable’</em>: El servidor no está disponible (ya sea por mantenimiento u otros motivos).</li>
+    </ul>
+  </li>
+</ul>
 
 # Cabeceras
 
