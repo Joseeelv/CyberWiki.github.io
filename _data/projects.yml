@@ -29,3 +29,12 @@
   image: "../assets/images/Labs/ServiciosRedI/srIpng.png"
   description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
 
+- name: Enumeración de Subdominios
+  link: https://joseeelv.github.io//blog/EnumeracióndeSubdominios
+  image: "../assets/images/Labs/EnumeracionSubdominios/subdomain.png"
+  description: En este laboratorio, se exploran varias técnicas y herramientas para descubrir subdominios válidos de un dominio. Se refresca qué es un dominio y cómo los subdominios forman parte de la estructura de una URL
+
+- name: Protocolos HTTP y HTTPS 
+  link: https://joseeelv.github.io//blogProtocolosHTTP(s)
+  image: "../assets/images/Labs/HTTP/http.png"
+  description: En este módulo se exploran los fundamentos de los protocolos HTTP y HTTPS, incluyendo su funcionamiento y diferencias. Se explica cómo las peticiones y respuestas entre navegadores y servidores se estructuran y procesan. Los participantes aprenden sobre la composición de una URL, desglosando sus componentes clave como el esquema, dominio, puerto, ruta, query string y fragmento.

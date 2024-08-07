@@ -1,15 +1,17 @@
-# Protocolo HTTP y HTTPS
-
-Etiquetas: Apuntes, Redes
-Enlace Lab: https://tryhackme.com/r/room/httpindetail
-Estado: Done
-
+---
+title: Protocolos HTTP y HTTPS
+layout: post
+post-image: "../assets/images/Labs/HTTP/http.png"
+description: En este módulo se exploran los fundamentos de los protocolos HTTP y HTTPS, incluyendo su funcionamiento y diferencias. Se explica cómo las peticiones y respuestas entre navegadores y servidores se estructuran y procesan. Los participantes aprenden sobre la composición de una URL, desglosando sus componentes clave como el esquema, dominio, puerto, ruta, query string y fragmento.
+enlace: https://tryhackme.com/r/room/httpindetail
+difficulty: Fácil
+tags: 
+  - LAB
 ---
 
 # ¿Qué es HTTP(s)?
 
-> *El protocolo HTTP(S) ‘HyperText Transfer Protocol’ es el conjunto de reglas que se usan para comunicarse con servidores web para la transmisión de datos de la página web (HTML, imágenes, vídeos, …).*
-> 
+> El protocolo HTTP(S) ‘HyperText Transfer Protocol’ es el conjunto de reglas que se usan para comunicarse con servidores web para la transmisión de datos de la página web (HTML, imágenes, vídeos, …).
 
 Encontramos dos tipos → ***HTTP*** (no seguro) ******y ***HTTPS*** (es la versión segura de HTTP, donde los datos están encriptados).
 
@@ -25,8 +27,7 @@ Para poder realizar esto, debemos de realizar una petición a una página web me
 
 ## URL
 
-> *Una URL ‘Uniform Resource Locator’ nos permite acceder a un recurso en internet.*
-> 
+> Una URL ‘Uniform Resource Locator’ nos permite acceder a un recurso en internet.
 
 Consta de varias funciones, pero no todas aparecen en cada peticiones / solicitudes.
 
@@ -34,16 +35,15 @@ Sea una URL de la forma → `http://user:password@cyberwiki.com:80/networking?id
 
 - ***Esquema (http)*** → Indica que protocolo se ha usado (*HTTP* ó *HTTPS*).
 - ***Usuario (user:password)*** → Como algunos necesitan la autenticación de login, puedes poner tu usuario para hacer login en la web.
-- ***Dominio (cyberwiki.com)***→ Nombre del [dominio](Web%20eb497388c40c4a83809ce93745f88015/Contenidos%20del%20tema%202608ae2d4ffd4b40be78ef3ddef6dde9/Enumeracio%CC%81n%20de%20Subdominios%206f447722dcdd4f389058e1dc8e84e172.md) o dirección IP a la que queremos acceder.
-- ***Puerto (80)***→ Puerto al que nos vamos a conectar. HTTP (80) y HTTPS (443) normalmente.
-- ***Ruta (networking)***→ Es el nombre del archivo ó recursos al que estamos accediendo.
-- ***Query string (?id=1)* →** Bits adicionales que le podemos enviar a la ruta solicitada, indicando que queremos recibir el recurso cuyo id = 1.
+- ***Dominio (cyberwiki.com)*** → Nombre del [dominio](Web%20eb497388c40c4a83809ce93745f88015/Contenidos%20del%20tema%202608ae2d4ffd4b40be78ef3ddef6dde9/Enumeracio%CC%81n%20de%20Subdominios%206f447722dcdd4f389058e1dc8e84e172.md) o dirección IP a la que queremos acceder.
+- ***Puerto (80)*** → Puerto al que nos vamos a conectar. HTTP (80) y HTTPS (443) normalmente.
+- ***Ruta (networking)*** → Es el nombre del archivo ó recursos al que estamos accediendo.
+- ***Query string (?id=1)*** → Bits adicionales que le podemos enviar a la ruta solicitada, indicando que queremos recibir el recurso cuyo id = 1.
 - ***Fragmento (#task3)*** → Se usa comúnmente para webs con contenido extenso. Hace referencia a una ubicación de la página real solicitada.
 
 ## Realizar la petición / solicitud.
 
-> *Una petición HTTP(s) se realiza mediante MetodoPetición/VersionProtocolo.*
-> 
+> Una petición HTTP(s) se realiza mediante MetodoPetición/VersionProtocolo.
 
 Por ejemplo, podemos realizar una petición HTTP → **`GET /HTTP/1.1`**
 
@@ -57,8 +57,7 @@ Estas respuestas será diferentes dependiendo del resultado de la petición.
 
 # Métodos del protocolo HTTP(S)
 
-> *Como hemos comentado anteriormente, las peticiones HTTP(S) se pueden realizar mediante un método, cada método tiene un fin particular en la petición.*
-> 
+> Como hemos comentado anteriormente, las peticiones HTTP(S) se pueden realizar mediante un método, cada método tiene un fin particular en la petición.
 
 Encontramos varios métodos para las peticiones HTTP(S):
 
@@ -69,8 +68,7 @@ Encontramos varios métodos para las peticiones HTTP(S):
 
 # Estados de la respuesta HTTP(S)
 
-> *Al realizar una petición HTTP(S), el protocolo usado envía una respuesta especificando el estado de la petición.*
-> 
+> Al realizar una petición HTTP(S), el protocolo usado envía una respuesta especificando el estado de la petición.
 
 Encontramos varios estados de las respuestas HTTP(S):
 
@@ -90,8 +88,7 @@ Encontramos varios estados de las respuestas HTTP(S):
 
 # Cabeceras
 
-> *Las cabeceras son bits de datos adicionales que podemos enviar a los servidores web cuando realizamos una petición a la misma.*
-> 
+> Las cabeceras son bits de datos adicionales que podemos enviar a los servidores web cuando realizamos una petición a la misma.
 
 ## Cabeceras comunes de las peticiones
 
@@ -101,7 +98,7 @@ Estas cabeceras son enviadas desde el cliente al servidor, específicamente desd
 - ***User-Agent*** → Es la versión y el software de nuestro buscador.
 - ***Content-Length*** → Le dice al servidor cuantos datos espera en la petición.
 - **Accept-Encoding** *→* Informa al servidor web los tipos de compresión que el buscador soporta (.zip, tar.gz,etc).
-- [***Cookie*](Protocolo%20HTTP%20y%20HTTPS%20f30ea0752521461ba3a3ee27d14f0724.md)** → Datos enviados al servidor web que ayuda a recordar la información.
+- [Cookie](Protocolo%20HTTP%20y%20HTTPS%20f30ea0752521461ba3a3ee27d14f0724.md)** → Datos enviados al servidor web que ayuda a recordar la información.
 
 ## Cabeceras comunes de las respuestas
 
@@ -117,7 +114,7 @@ Estas cabeceras son recibidas desde el servidor web en respuesta a las peticione
 > *Las Cookies son datos que se almacenan en nuestras computadoras. Contienen información de los sitios webs a los que hemos accedidos, además ayuda al servidor web a recordar ‘quien eres’.*
 > 
 
-Cuando las Cookies son almacenadas en nuestros equipos, recibimos una cabecera [*Set-Cookie](Protocolo%20HTTP%20y%20HTTPS%20f30ea0752521461ba3a3ee27d14f0724.md) del servidor web.* 
+Cuando las Cookies son almacenadas en nuestros equipos, recibimos una cabecera [Set-Cookie](Protocolo%20HTTP%20y%20HTTPS%20f30ea0752521461ba3a3ee27d14f0724.md) del servidor web.* 
 
 Tienen muchos usos, pero comúnmente son usadas para autenticación. Nunca son una cadena de texto clara donde podemos leer las contraseñas, si no que son un token (código único y secreto que no puede ser rastreado con facilidad).
 

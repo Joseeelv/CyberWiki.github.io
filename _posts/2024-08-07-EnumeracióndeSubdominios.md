@@ -1,6 +1,13 @@
-# Enumeración de Subdominios
-
-Created: September 18, 2023 9:29 PM
+---
+title: Enumeración de Subdominios
+layout: post
+post-image: "../assets/images/Labs/EnumeracionSubdominios/subdomain.png"
+description: En este laboratorio, se exploran varias técnicas y herramientas para descubrir subdominios válidos de un dominio. Se refresca qué es un dominio y cómo los subdominios forman parte de la estructura de una URL.
+enlace: https://tryhackme.com/r/room/subdomainenumeration
+difficulty: Fácil
+tags: 
+  - LAB
+---
 
 La enumeración de subdominios es el proceso de descubrir los subdominios válidos de un dominio.
 Pero primero vamos a refrescar que es un dominio.
@@ -23,7 +30,7 @@ El propósito de los registros de transparencia de certificados (CT) es impedir 
 
 Hay paginas webs que nos ofrecen bases de datos de certificados en las cuales podemos realizar búsquedas que muestran resultados actuales e históricos.
 
-[https://crt.sh/](https://crt.sh/)
+[https://crt.sh/](https://crt.sh/) y 
 [https://transparencyreport.google.com/https/certificates](https://transparencyreport.google.com/https/certificates)
 
 # OSINT - Motores de Búsqueda
@@ -40,22 +47,26 @@ Es un proceso de probar diferentes subdominios en sucesiones muy rápidas, hacie
 
 Hay herramientas potentes para automatizar este proceso:
 
-## **Dnsrecon**
+## Dnsrecon
 
 Es una herramienta que nos ayuda a automatizar el proceso de enumeración de DNS mediante fuerza bruta.
 Viene preinstalada en el sistema operativo Kali Linux, y se utiliza en la terminal escribiendo dnsrecon.
 
-`dnsrecon -d [dominio.com](http://dominio.com/) -D ruta_de_la_wordlist_subdominios -t std -xml ouput.xml`
+```bash
+dnsrecon -d [dominio.com](http://dominio.com/) -D ruta_de_la_wordlist_subdominios -t std -xml ouput.xml
+```
 
 Donde encontramos que dnsrecon escanea un dominio (-d dominio.com), usa una wordlist con subdominios (-D ruta_de_la_wordlist_subdominios), especifica el tipo estándar (-t std) y guarda el resultado en un archivo .xml (-xml output.xml).
 
-## **Sublist3r**
+## Sublist3r
 
 Aquí hacemos uso de hilos y de motores de búsqueda, además no viene preinstalada con Kali.
 
 Ejemplo de búsqueda de subdominios de Kali.org
 
-`sublist3r -d [kali.org](http://kali.org/) -t 3 -e google`
+```bash 
+sublist3r -d [kali.org](http://kali.org/) -t 3 -e google
+```
 
 Vemos que hacer una búsqueda de los subdominios del dominio (-d kali.org), usando el motor de búsqueda de Google (-e google) con 3 hilos (-t 3).
 
@@ -65,6 +76,10 @@ Algunos subdominios pueden ser no ser públicamente detectables a través de los
 
 Con la herramienta ffuf podemos automatizar el proceso de monitorización de la respuesta de la petición que un atacante puede hacer a un sitio web, debido a que la cabecera 'Host' en una petición web contiene que sitio web está solicitando el cliente.
 
-Esta herramienta la vimos anteriormente en [‘Herramientas Automatizadas de Descubrimiento de contenidos*’*](https://www.notion.so/Descubrimiento-de-contenidos-f2a85e0fdf1d4e8da374a923740d8eb4?pvs=21)
+Esta herramienta la vimos anteriormente en [Herramientas Automatizadas de Descubrimiento de contenidos](https://www.notion.so/Descubrimiento-de-contenidos-f2a85e0fdf1d4e8da374a923740d8eb4?pvs=21)
 
-Ejemplo de uso de **ffuf**: `ffuf -w ruta_de_la_wordlist -H cabecera -u ip_maquina -fs filtro_salida`
+Ejemplo de uso de **ffuf**: 
+```bash
+ffuf -w ruta_de_la_wordlist -H cabecera -u ip_maquina -fs filtro_salida
+```
+---
