@@ -81,7 +81,7 @@ Encontramos varios estados de las respuestas HTTP(S):
     <em><strong>300 - 399 (Redirección)</strong></em>→Redireccionan al cliente a otro recurso (página web diferente o sitio web).
   </li>
   <li>
-    <em><strong>400-499(Errordelcliente)</strong></em>→Informanalclienteloserroresqueseproducen:
+    <em><strong>400 - 499 (Error del cliente)</strong></em> → Informan al cliente los errores que se producen:
     <ul>
       <li><em>401 ‘Not Authorised’</em>: Informa que necesitamos ser autorizados para realizar la petición (login con permisos en el servidor).</li>
       <li><em>403 ‘Forbidden’</em>: NO tenemos permisos para acceder al recurso.</li>
@@ -90,7 +90,7 @@ Encontramos varios estados de las respuestas HTTP(S):
     </ul>
   </li>
   <li>
-    <em><strong>500-599(Errordelservidor)</strong></em>→Estánreservadosparaloserroresqueocurrenenlapartedelservidorweb:
+    <em><strong>500 - 599 (Error del servidor)</strong></em> → Están reservados para los errores que ocurren en la parte del servidor web:
     <ul>
       <li><em>500 ‘Internal Error’</em>: El servidor ha encontrado un error en la petición.</li>
       <li><em>503 ‘Service Unavailable’</em>: El servidor no está disponible (ya sea por mantenimiento u otros motivos).</li>
