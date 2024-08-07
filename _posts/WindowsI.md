@@ -1,0 +1,95 @@
+---
+title: Aspectos Básicos de Windows I
+layout: post
+post-image: "../assets/images/Labs/WindowsI/windows.jpeg"
+description: Este módulo introductorio de Windows aborda aspectos fundamentales del sistema operativo Windows, cubriendo su historia, características y componentes clave.
+enlace: https://tryhackme.com/room/windowsfundamentals1xbx
+difficulty: Fácil
+tags: 
+  - LAB
+---
+
+> En esta parte comenzaremos a aprender sobre Windows Desktop, el sistema de ficheros NTFS, como hacer uso del administrador de tareas y más.
+
+# Introducción a Windows
+
+Windows es un S.O complejo debido a que contiene muchos archivos de sistema, utilidades, configuraciones, características, etc..
+
+Fue creado en 1985 y actualmente es el S.O dominante tanto en el uso doméstico como en redes corporativas (empresas). Debido a esto, Windows siempre ha sido el blanco de los hackers y programadores de malware.
+
+# El protocolo RDP (Remote Desktop Protocol)
+
+Nos permite una conexión o ejecución de una aplicación entre una terminal y un servidor Windows. Es muy popular en las máquinas que tienen como S.O Windows.
+Mediante este protocolo haremos la room de tryhackme.
+
+# Sistema de ficheros NTFS
+
+<div style="text-align:left;">
+  <table>
+    <tr>
+      <td style="width:65%;">
+      Antes de NTFS se hacia uso de FAT32 (tabla de asignación de archivos) y HPFS (sistema de archivos de alto rendimiento).<br><br>
+      Hoy en día se sigue haciendo uso de particiones FAT en dispositivos USB, tarjetas microSD, pero no en computadoras.<br><br>
+      NTFS se conoce como un sistema de archivos de registro diario. Si hay un fallo el sistema puede reparar automáticamente las carpetas o archivos perdidos o dañados haciendo uso de la información almacenada en un archivo de registro. Esto no es posible en FAT.<br><br>
+      Es decir, NTFS aborda muchos de las limitaciones que presentaba FAT, como por ejemplo:
+      <ul>
+        <li>Admite archivos de más de 4GB.</li>
+        <li>Se pueden establecer permisos específicos en carpetas o archivos: Control total,modificar, leer, ejecutar, escribir, etc.</li>
+        <li>Permite la compresión de carpetas y archivos.</li>
+        <li>Contiene cifrado (EFS).</li>
+      </ul>
+      Si clicamos con el botón derecho del ratón en un fichero y vamos a la pestaña de propiedades y seguido de la pestaña de seguridad podremos ver los permisos y los grupos que tienen permisos en el mismo.<br><br>
+      Otra característica de NTFS son los flujos de datos alternativos (ADS).<br><br>
+      ADS es un atributo de archivo específico de Windows NTFS que permite que los archivos contengan más de una secuencia de datos.<br><br>
+      De forma nativa el explorador de archivos de Windows no muestra ADS al usuario, pero la Powershell si le brinda la capacidad al usuario de poder ADS con <code>$DATA</code>.
+      Esto hacer que los hackers hagan uso de los ADS para ocultar datos e introducir malware dentro de la máquina.</td>
+      <td><div style="text-align:center;">
+          <img src="../assets/images/Labs/WindowsI/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:350px" />
+        </div>
+        Ejemplo de las propiedades de un Disco Duro que contiene el Sistema Operativo Windows.
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
+# Carpetas Windows\System32
+
+La carpeta Windows contiene el sistema operativo Windows.
+Se encuentra en `c:\Windows`
+
+La carpeta no tiene que residir necesariamente  en la unidad C, puede residir en una unidad que nosotros le indiquemos a la hora de instalar el S.O.
+
+En esta carpeta encontramos la carpeta System32 la cual contiene archivos muy importantes que son críticos para el sistema operativo.
+Si se eliminan archivos dentro de System32 puede hacer que el S.O Windows no funcione.
+
+# Control de cuentas de usuario
+<div style="text-align:left;">
+  <table>
+    <tr>
+      <td style="width:50%;">
+      La gran mayoría de los usuarios son administradores locales, es decir, que pueden realizar cambios en el sistema (root en Linux).<br><br>
+      Un usuario no necesita unos privilegios altos para ejecutar tareas como navegar por internet, hacer uso de documentos Word, entre otros, haciendo que el sistema sea más vulnerable a la hora de ser infectado con malware.<br><br>
+      Para protegernos de esto, Microsoft introdujo el Control de cuentas de usuario (UAC). Esto hace que cuando se inicie sesión como administrador, los permisos que tiene el usuario no son tan elevados, cuando una aplicación necesita de un nivel superior de privilegios para ejecutarse el propio sistema informa al usuario mediante un cuadro de confirmación si se permite o no la ejecución.<br><br>Si nos aparece este icono de escudo, significa que la aplicación requerirá de privilegios de nivel superior:
+      <div style="text-align:center;">
+          <img src="../assets/images/Labs/WindowsI/untitled2.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:100px" />
+        </div>
+      </td>
+      <td>
+        <div style="text-align:center;">
+          <img src="../assets/images/Labs/WindowsI/untitled3.jpg" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:500px" />
+          <br>Ejemplo de un aviso de confirmación de ejecución.
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+# Administrador de tareas
+
+El Administrador de tareas nos proporcionará información sobre las aplicaciones que se están ejecutando en el sistema, en la pestaña procesos.
+
+Encontramos información adicional como el uso de CPU, GPU, memoria RAM las cuales se incluyen en la pestaña rendimiento.
+
+---
