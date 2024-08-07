@@ -12,21 +12,39 @@
                 {% include blogpage-heading.html %}
             </div>
         </div>
+
         <!-- Selector de Ordenación -->
-        <div class="container" style_="texta">
+        <div class="container" style="text-align: center;">
             <div class="field">
                 <label class="label">Ordenar las rooms por:</label>
                 <div class="control">
-                    <div class="select">
-                        <select id="sort-selector">
-                            <option value="date">Fecha</option>
-                            <option value="difficulty">Dificultad</option>
-                            <option value="title">Nombre</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+                  <div class="select">
+                      <select id="sort-selector" style="text-align: center;">
+                          <option value="date">Fecha</option>
+                          <option value="difficulty">Dificultad</option>
+                          <option value="title">Nombre</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
         </div>
+
+        <!-- Multiselect para Filtrado -->
+        <div class="container" style="text-align: center;">
+            <div class="field">
+                <label class="label">Filtrar por:</label>
+                <div class="control">
+                  <div class="select is-multiple">
+                      <select id="filter-selector" multiple style="text-align: center;">
+                          <option value="category1">Categoría 1</option>
+                          <option value="category2">Categoría 2</option>
+                          <option value="category3">Categoría 3</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+        </div>
+        
         <div id="results-container"></div>
         <!--Blog Cards Section-->
         {% for post in site.posts %}
@@ -34,7 +52,6 @@
                  {% include blog-card.html %}
             {% endunless %}
         {% endfor %}
-        </div>
     </section>
     <br>
     <!--Footer begins here-->
@@ -57,7 +74,7 @@
               <div class="content has-text-grey">
                 {description}
                 <hr class="has-background-grey">
-                <span class="has-text-grey">
+                <span class="has-text-grey date">
                   Published on <span class="has-text-weight-semibold">{date}</span>
                 </span>
                 <br>
@@ -71,44 +88,63 @@
         fuzzy: false,
         limit: 1,
       });
-    
+
       // Función para ordenar los resultados
       function sortResults(criteria) {
         const container = document.getElementById('results-container');
         const results = Array.from(container.querySelectorAll('.searchResult'));
-    
+
         results.sort((a, b) => {
           let aValue, bValue;
-    
+
           switch (criteria) {
-            case 'name':
+            case 'title':
               aValue = a.querySelector('.title').textContent.trim().toLowerCase();
               bValue = b.querySelector('.title').textContent.trim().toLowerCase();
               return aValue.localeCompare(bValue); // Ordenar alfabéticamente
-    
+
             case 'date':
-              aValue = new Date(a.querySelector('.date').textContent.trim());
-              bValue = new Date(b.querySelector('.date').textContent.trim());
+              aValue = new Date(a.querySelector('.date').textContent.trim().split('on ')[1]);
+              bValue = new Date(b.querySelector('.date').textContent.trim().split('on ')[1]);
               return bValue - aValue; // Ordenar por fecha descendente
-    
+
             case 'difficulty':
               const difficulties = ['Easy', 'Intermediate', 'Hard'];
               aValue = difficulties.indexOf(a.querySelector('.difficulty').textContent.trim());
               bValue = difficulties.indexOf(b.querySelector('.difficulty').textContent.trim());
               return aValue - bValue; // Ordenar por dificultad ascendente
-    
+
             default:
               return 0;
           }
         });
-    
+
         results.forEach(result => container.appendChild(result));
       }
-    
+
+      // Función para filtrar los resultados
+      function filterResults() {
+        const container = document.getElementById('results-container');
+        const results = Array.from(container.querySelectorAll('.searchResult'));
+        const selectedFilters = Array.from(document.getElementById('filter-selector').selectedOptions).map(option => option.value);
+
+        results.forEach(result => {
+          const tags = result.querySelector('.tags').textContent.trim().split(','); // Asume que las etiquetas están en una clase 'tags' y separadas por comas
+          const matches = selectedFilters.every(filter => tags.includes(filter));
+          result.style.display = matches ? 'block' : 'none';
+        });
+      }
+
       // Event listener para el selector de ordenación
-      document.getElementById('sort-by').addEventListener('change', function() {
+      document.getElementById('sort-selector').addEventListener('change', function() {
         sortResults(this.value);
       });
+
+      // Event listener para el multiselect de filtrado
+      document.getElementById('filter-selector').addEventListener('change', filterResults);
+
+      // Inicializar el filtrado al cargar
+      document.addEventListener('DOMContentLoaded', filterResults);
     </script>    
   </body>
 </html>
