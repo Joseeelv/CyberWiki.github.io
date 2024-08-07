@@ -15,118 +15,165 @@ tags:
 
 Lo primero que vamos a hacer va a ser realizar un escaneo de la ip de la máquina dada.
 
-![2 puertos abiertos, vamos a ver que información tenemos](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled.png)
+<div style="text-align:center;">
+  <table>
+    <tr>
+      <td>
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/RootMe/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:500px;" />
+        </div>
+      </td>
+      <td>
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/RootMe/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:700px;" />
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
 
-2 puertos abiertos, vamos a ver que información tenemos
+Vemos que tenemos información sobre los puertos 80 *HTTP* y 22 *SSH*. Como no tenemos ninguna credencial para iniciar sesión en el servidor mediante *ssh* vamos a buscar información en la web que nos ofrece el puerto 80.
 
-Mediante el comando → `nmap -sC -sV -p22,80- --min-rate 3000 <ip_maquina>`
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/Untitled 2.png" alt="Untitled" onclick="openModal(this.src)" style="width:70%;" />
+</div>
 
-![Hemos encontrado información sobre los puertos 80 y 22.](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%201.png)
+Accedemos a la web pero no vemos nada a simple vista, para poder buscar información vamos a hacer **fuzzing** que consiste en sacar directorios ocultos de una web ,para ello hacemos uso de `gobuster`(una de las tantas herramientas que hay para hacer fuzzing).
 
-Hemos encontrado información sobre los puertos 80 y 22.
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/Untitled 3.png" alt="Untitled" onclick="openModal(this.src)" style="width:70%;" />
+</div>
 
-Como tenemos un puerto 80 “http”, sabemos de antemano que debe de haber una página web.
-
-![En efecto, pero no tenemos nada, o si…](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%202.png)
-
-En efecto, pero no tenemos nada, o si…
-
-Podemos hacer uso de `gobuster` para poder buscar directorios ocultos en la página web.
-
-![Nice, hemos encontrado una gran cantidad de directorios ocultos, vamos a ver en que consiste cada uno](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%203.png)
-
-Nice, hemos encontrado una gran cantidad de directorios ocultos, vamos a ver en que consiste cada uno
+Nice, hemos encontrado una gran cantidad de directorios ocultos, vamos a ver en que consiste cada uno accediendo a ellos:
 
 ## Directorio /css y /js
 
-![Untitled](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%204.png)
-
-![Untitled](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%205.png)
+<div style="text-align:center;">
+  <table>
+    <tr>
+      <td>
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/RootMe/Untitled 4.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:600px;" />
+        </div>
+      </td>
+      <td>
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/RootMe/Untitled 5.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:700px;" />
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
 
 Ambas contienen archivos de configuración de la página web.
 
 ## Directorio /panel
 
-![Untitled](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%206.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/Untitled 6.png" alt="Untitled" onclick="openModal(this.src)" style="width:70%;" />
+</div>
 
 Desde aquí podemos subir archivos a la página web.
 
 ## Directorio /uploads
 
-![Todavía no hay ningun archivo subido](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%207.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/Untitled 7.png" alt="Untitled" onclick="openModal(this.src)" style="width:70%;" />
+</div>
 
-Todavía no hay ningun archivo subido
-
-Vemos todos los archivos que hemos subido al sitio web.
+Vemos todos los archivos que hemos subido al sitio web, que todavía no hay ningun archivo subido.
 
 # Task 3: Getting a shell
 
-En resumen, hemos encontrado mediante `gobuster`varios directorios ocultos. Los más importantes son /panel (subir archivos) y /uploads(acceder y abrirlos).
+En la task anterior hemos encontrado mediante `gobuster`varios directorios ocultos. Los más importantes son `/panel` (subir archivos) y `/uploads`(acceder y abrirlos).
 
 Podemos buscar en Google sobre como subir un archivo “web shell” que realize una reverse-shell.
 
-Yo he buscado en Google *reverse-shell php* → [véase aquí](https://pentestmonkey.net/tools/web-shells/php-reverse-shell).
+Yo he buscado en Google *reverse-shell php* de pentestmonkey → [véase aquí](https://pentestmonkey.net/tools/web-shells/php-reverse-shell).
 
-![Descargamos el archivo .tar.gz que contiene un script en php.](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%208.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/Untitled 8.png" alt="Untitled" onclick="openModal(this.src)" style="width:70%;" />
+</div>
 
-Descargamos el archivo .tar.gz que contiene un script en php.
+Descargamos el archivo .tar.gz que contiene un script en php, procedemos a editar algunos parámetros, para poder hacer que se realice la reverse-shell:
 
-Procedemos a editar algunos parámetros, para poder hacer que se realice la reverse-shell
-
-![a.png](RootMe%203d6b7480c9cd43e199e154c90aca78fe/a.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/a.png" alt="Untitled" onclick="openModal(this.src)" style="width:70%;" />
+</div>
 
 Donde en ***$ip*** (ip de nuestra maquina), ***$port*** (puerto de escucha del netcat).
 
-![b.png](RootMe%203d6b7480c9cd43e199e154c90aca78fe/b.png)
+Primero, en nuestra máquina vamos a habilitar con `netcat` un puerto (puerto que hemos indicado en el script anterior) el cual el servidor se conectará.
+Ahora, procedemos a que el servidor reciba dicho archivo mediante `curl http://ip_victima/uploads/nombre_archivo`, y como vemos lo tenemos subido.
+<div style="text-align:center;">
+  <table>
+    <tr>
+      <td>
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/RootMe/b.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:600px;" />
+        </div>
+      </td>
+      <td>
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/RootMe/Untitled 9.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:700px;" />
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
 
-![Untitled](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%209.png)
+Vemos que empieza a escuchar, hasta que ejecutemos el script subido. Y vemos que realiza la reverse shell y estamos dentro del servidor:
 
-Vemos que empieza a escuchar, hasta que ejecutemos el script subido.
-
-Pinchamos en él mientras tenemos un netcat escuchando en el mismo puerto que hemos puesto.
-
-Tambien podemos realizar un curl desde la consola de la manera —> `curl http://ip_servidor/uploads/nombre_archivo`
-
-![Wow, demasiados directorios.](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%2010.png)
-
-Wow, demasiados directorios.
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/Untitled 10.png" alt="Untitled" onclick="openModal(this.src)" style="width:50%;" />
+</div>
 
 Al hacer el `ls` encontramos muchos directorios, y tenemos que buscar tanto el ‘*user.txt*’ como ‘*root.txt’.*
 
-Para buscar el ‘*user.txt*’, vamos a hacer uso del comando `find ruta -type f -name "nombre_archivo" 2> /dev/null` donde ruta será **“/**” (raíz), “**f**” ( el tipo del archivo y “**2> /dev/null**” (los archivos de errores no aparecen).
+Para buscar el ‘*user.txt*’, vamos a hacer uso del comando `find ruta -type f -name "nombre_archivo" 2> /dev/null` donde ruta será `/` (raíz), `-type f` (el tipo del archivo), `-name "nombre_archivo"` (nombre del archivo a buscar) y `2> /dev/null` (los errores los manda al /dev/null).
 
 Como resultado:
 
-![Hacemos uso de cat y hemos encontrado la flag de user.txt](RootMe%203d6b7480c9cd43e199e154c90aca78fe/c.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/c.png" alt="Untitled" onclick="openModal(this.src)" style="width:70%;" />
+</div>
 
 Hacemos uso de cat y hemos encontrado la flag de user.txt
 
 # Task 4: Privilege escalation
 
-Finalmente, necesitamos obtener la flag perteneciente a *‘root.txt*’, para ello necesitamos escalar privilegio hasta ser roots.
+Finalmente, necesitamos obtener la flag perteneciente a *‘root.txt*’, para ello necesitamos escalar privilegio para poder acceder al directorio y conseguir la flag.
 
-Hay muchas maneras de poder escalar privilegios, por ejemplo, podemos hacer un sudo -l y ver quien tiene permisos (pero esto aqui no funciona ya que estamos en una shell).
+Hay muchas maneras de poder escalar privilegios, por ejemplo, podemos hacer un `sudo -l` y ver que comandos puede ejecutar el usuario como root.
 
-Mediante los archivos que tienen permisos de SUID, podemos buscar alguno que nos permita acceder a permisos de root
+También podemos realizar una búsqueda de los binarios que tienen el bit SUID activado, esto hace que esos binarios siempre se ejecuten con privilegios root.
 
-`find / -type f -user root -perm -u=s 2>/dev/null` . Donde -user (nos especifica el usuario), -perm -u=s(busca los archivos que tengan establecido el bit SUID “Set User ID” en sus permisos, ademas busca desde el directorio raiz y archivos que son ficheros.
+Sea la búsqueda de binarios con el bit SUID: `find / -type f -user root -perm -u=s 2>/dev/null` . Donde `-user` (nos especifica el usuario), `-perm -u=s`(busca los archivos que tengan establecido el bit SUID “Set User ID” en sus permisos), ademas busca desde el directorio raiz y archivos que son ficheros.
 
-![Vaya, python tiene permisos de SUID algo muuuuuy extraño.](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%2011.png)
 
-Vaya, python tiene permisos de SUID algo muuuuuy extraño.
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/Untitled 11.png" alt="Untitled" onclick="openModal(this.src)" style="width:40%;" />
+</div>
 
-Como hemos visto, python tiene permisos de SUID, asi que mediante la página web [https://gtfobins.github.io/gtfobins/python/](https://gtfobins.github.io/gtfobins/python/) podemos buscar información de python en SUID:
+Vemos que el binario `/usr/bin/python` tiene el bit SUID activado, esto es muy raro, ya que python por defecto no tiene dicho permiso. Mediante la página web [GTFObinsPythonSUID](https://gtfobins.github.io/gtfobins/python/#suid) podemos buscar información de python en SUID:
 
-![Untitled](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%2012.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/Untitled 12.png" alt="Untitled" onclick="openModal(this.src)" style="width:40%;" />
+</div>
 
 En la shell vamos a hacer uso del segundo comando, ya que nos permite escalar privilegios de root mediante python.
+Una recomendación es hacer uso de toda la ruta, en vez de poner solamente `python` es mejor poner `/usr/bin/python`.
 
-![Perfecto, somos root.](RootMe%203d6b7480c9cd43e199e154c90aca78fe/Untitled%2013.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/Untitled 13.png" alt="Untitled" onclick="openModal(this.src)"/>
+</div>
 
-Perfecto, somos root.
+Perfecto, hemos escalado privilegios y somos root.
 
 Para acabar, tiramos un `cat /root/root.txt` para ver así la flag.
 
-![d.png](RootMe%203d6b7480c9cd43e199e154c90aca78fe/d.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/RootMe/d.png" alt="Untitled" onclick="openModal(this.src)"/>
+</div>
 
 ---

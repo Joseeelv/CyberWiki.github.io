@@ -66,6 +66,7 @@ Hemos encontrado el directorio `/assets` y `/robots.txt`. Vamos a acceder a ambo
         <div>
           <img src="../assets/images/Rooms/PickleRick/b.png" alt="Untitled" onclick="openModal(this.src)" style="width:200%; max-width:800px;" />
         </div>
+        Contenido del directorio /robots.
       </td>
     </tr>
   </table>
