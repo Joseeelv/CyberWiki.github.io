@@ -35,7 +35,7 @@ Sea una URL de la forma → `http://user:password@cyberwiki.com:80/networking?id
 
 - ***Esquema (http)*** → Indica que protocolo se ha usado (*HTTP* ó *HTTPS*).
 - ***Usuario (user:password)*** → Como algunos necesitan la autenticación de login, puedes poner tu usuario para hacer login en la web.
-- ***Dominio (cyberwiki.com)*** → Nombre del [dominio](Web%20eb497388c40c4a83809ce93745f88015/Contenidos%20del%20tema%202608ae2d4ffd4b40be78ef3ddef6dde9/Enumeracio%CC%81n%20de%20Subdominios%206f447722dcdd4f389058e1dc8e84e172.md) o dirección IP a la que queremos acceder.
+- ***Dominio (cyberwiki.com)*** → Nombre del [dominio](https://joseeelv.github.io//blog/Enumeraci%C3%B3ndeSubdominios) o dirección IP a la que queremos acceder.
 - ***Puerto (80)*** → Puerto al que nos vamos a conectar. HTTP (80) y HTTPS (443) normalmente.
 - ***Ruta (networking)*** → Es el nombre del archivo ó recursos al que estamos accediendo.
 - ***Query string (?id=1)*** → Bits adicionales que le podemos enviar a la ruta solicitada, indicando que queremos recibir el recurso cuyo id = 1.
@@ -49,9 +49,9 @@ Por ejemplo, podemos realizar una petición HTTP → **`GET /HTTP/1.1`**
 
 Vemos que realiza una petición mandando el método GET, haciendo uso de la versión 1.1 del protocolo HTTP.
 
-Estas peticiones pueden tener varios [métodos](Protocolo%20HTTP%20y%20HTTPS%20f30ea0752521461ba3a3ee27d14f0724.md).
+Estas peticiones pueden tener varios **métodos**.
 
-Después de haber realiza la petición anterior, HTTP nos devolverá una respuesta con un [estado](Protocolo%20HTTP%20y%20HTTPS%20f30ea0752521461ba3a3ee27d14f0724.md) indicando si la conexión ha sido exitosa o no.
+Después de haber realiza la petición anterior, HTTP nos devolverá una respuesta con un **estado** indicando si la conexión ha sido exitosa o no.
 
 Estas respuestas será diferentes dependiendo del resultado de la petición.
 
