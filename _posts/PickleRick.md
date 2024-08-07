@@ -1,103 +1,121 @@
-# Pickle Rick
-
-Created: October 23, 2023 5:31 PM
-Etiquetas: Enumeración, Web
-Dificultad: Fácil
-Enlace:: https://tryhackme.com/room/picklerick
-Hecho : Jose Luis 
-Status: Done
-
-> *Pickle Rick es una máquina de Tryhackme, con ambientación en la serie animada Rick  and Morty. En esta máquina debemos obtener los tres ingredientes para que Rick pueda realizar su poción.
-Haremos uso de una máquina con Linux, conocimientos sobre comandos de Linux y uso de herramientas  y conocimientos sobre páginas web.*
-> 
+---
+title: Overpass
+layout: post
+post-image: "../assets/images/Rooms/PickleRick/pickle.png"
+description: Pickle Rick es una máquina de Tryhackme, con ambientación en la serie animada Rick and Morty. En esta máquina debemos obtener los tres ingredientes para que Rick pueda realizar su poción. Haremos uso de una máquina con Linux, conocimientos sobre comandos de Linux y uso de herramientas y conocimientos sobre páginas web.
+difficulty: Fácil
+enlace: https://tryhackme.com/r/room/picklerick
+tags:
+- Enumeración
+- RCE
+- Web
+---
 
 # Task 1: Ingrediente 1
 
 Como hemos leido en la introducción, esta máquina consiste en obtener los tres ingredientes de la poción de Rick.
 
-Primero, vamos a iniciar la máquina y gracias a eso vamos a obtener la IP de la máquina.
-
-Para empezar con este laboratorio vamos a hacer uso de la herramienta → ***Nmap.***
-
+Primero, vamos a iniciar la máquina y gracias a eso vamos a obtener la IP de la máquina.Para empezar con este laboratorio vamos a hacer uso de la herramienta → ***Nmap.***
 Gracias a ella vamos a obtener los puertos que la máquina tiene abiertos para ver si podemos aprovecharnos de eso.
+<div>
+  <table>
+    <tr>
+      <td>
+        Con <code>nmap -p- -v <ip_maquina></code> obtenemos:
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/PickleRick/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px;" />
+        </div>
+      </td>
+      <td>
+        Con <code>nmap -sC -sV -p22,80- -min-rate 3000 <ip_maquina></code> vamos a obtener más información:
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/PickleRick/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px;" />
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
 
-Con `nmap -p- -v <ip_maquina>` obtenemos:
+Perfecto, como vemos, tenemos un puerto 80 *http* (pagina web) y puerto 22 un servicio *ssh*. Como no tenemos ninguna credencial para realizar la conexión via *SSH*, vamos a ver que hay en la página web:
 
-![Tenemos los puertos 22 y 80 abiertos.](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled.png)
-
-Tenemos los puertos 22 y 80 abiertos.
-
-Ahora vamos a hacer uso del comando:
-
-`nmap -sC -sV -p22,80- -min-rate 3000 <ip_maquina>` para obtener información más detallada.
-
-![Perfecto, puerto 80 ‘http’ (pagina web) y puerto 22 un servicio ssh.](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%201.png)
-
-Perfecto, puerto 80 ‘http’ (pagina web) y puerto 22 un servicio ssh.
-
-Como sabemos que hay un servicio http por el puerto 80, vamos a acceder a la página web:
-
-![Untitled](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%202.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/Untitled 2.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 De momento no encontramos información relevante sobre la página web, pero podemos ver el código fuente de la misma para poder encontrar información.
 
-![Bingo, tenemos un Username en un comentario.](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/a.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/a.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-Bingo, tenemos un Username en un comentario.
+Bingo, tenemos un Username en un comentario. Ahora podemos proceder a realizar un escaneo de directorios de la página web. Mediante `gobuster` podemos realizar una búsqueda de directorios, donde podemos encontrar información.
 
-Perfecto, ahora podemos proceder a realizar un escaneo de directorios de la página web.
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/Untitled 3.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-Mediante **gobuster** podemos realizar una búsqueda de directorios, donde podemos encontrar información.
 
-![Untitled](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%203.png)
-
-Hemos encontrado el directorio ‘/assets’ y ‘/robots.txt’. Vamos a acceder a ambos:
-
-![Untitled](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%204.png)
-
-![b.png](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/b.png)
+Hemos encontrado el directorio `/assets` y `/robots.txt`. Vamos a acceder a ambos:
+<div>
+  <table>
+    <tr>
+      <td>
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/PickleRick/Untitled 4.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:400px;" />
+        </div>
+        Contenido del directorio <code>/assets</code>.
+      </td>
+      <td>
+        <div style="text-align:center;">
+          <img src="../assets/images/Rooms/PickleRick/b.png" alt="Untitled" onclick="openModal(this.src)" style="width:250%; max-width:1000px;" />
+        </div>
+        Contenido del directorio <code>/robots.txt</code>.
+      </td>
+    </tr>
+  </table>
+</div>
 
 En robots.txt hemos encontrado una cadena de caracteres, no sabemos si puede ser un nuevo usuario o una contraseña.
 
-Si tenemos un username y una supuesta contraseña, podemos escribir *ip_maquina/login.php* para verificar si hay un login y podemos iniciar sesión con las credenciales obtenidas.
+Si tenemos un username y una supuesta contraseña, podemos escribir *ip_maquina/login.php* para verificar si hay un login ya que existe un servicio *SSH* corriendo y podemos iniciar sesión con las credenciales obtenidas.
 
-![En efecto, hemos podido iniciar sesión con las credeciales.](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%205.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/Untitled 5.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-En efecto, hemos podido iniciar sesión con las credeciales.
+En efecto, hemos podido iniciar sesión con las credeciales. Ahora encontramos como una consola donde podemos introducir comandos; tenemos un RCE (Ejecución Remota de Comandos), por ejemplo, vamos a tirar un listado de los archivos del directorio en el que nos encontramos actualmente mediante `ls -l`:
 
-Ahora encontramos como una consola donde podemos introducir comandos:
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/Untitled 6.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-Si accedemos al archivo.txt encontramos el primer ingrediente.
+Como vemos al listar los archivos encontramos uno llamado *Sup3rS3cretPickl3Ingred.txt*, por tanto si accedemos a la ruta `<ip_maquina>/nombre_archivo.txt` encontramos la primera flag:
 
-![¿Qué pasa si listamos el directorio? → Encontramos el primer ingrediente. NICE!!!](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%206.png)
-
-¿Qué pasa si listamos el directorio? → Encontramos el primer ingrediente. NICE!!!
-
-![c.png](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/c.png)
-
-Obtenemos la primera flag.
-
-Si abrimos el clue.txt, nos dice que sigamos buscando por el sistema (navegar entre directorios)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/c.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 # Task 2: Ingrediente 2
 
-Como vemos, el segundo ingrediente no está en este directorio, por tanto, debemos de navegar por los demás directorios.
+El segundo ingrediente no está en este directorio (como es de esperar),por tanto, debemos de navegar por los demás directorios del servidor en busca de ella.
 
-Para ello vamos a cambiarnos de directorio:
+Vamos a ver si nos podemos cambiar de directorios, con `cd ../../../../`, listamos otra vez y vemos que encontramos más directorios, por tanto, tenemos un **path traversal** en el servidor.
 
-![Hemos encontrado el directorio /home, /root entre otros, pero estos dos son los más importantes.](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%207.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/Untitled 7.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-Hemos encontrado el directorio /home, /root entre otros, pero estos dos son los más importantes.
+Hemos encontrado el directorio `/home`, `/root` entre otros, pero estos dos son los más importantes. Vamos a acceder primeramente al directorio `/home` en busca del siguiente ingrediente.
 
-Vamos a acceder primeramente al directorio ‘/home’ en busca del siguiente ingrediente.
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/Untitled 8.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-![WOW, hemos encontrado otros dos directorios, ‘/rick’ y ‘/ubuntu’.](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%208.png)
+WOW, hemos encontrado otros dos directorios, `/rick` y `/ubuntu`. Si accedemos al directorio `/rick`, vemos que hay un archivo que se llama *second ingredients*
 
-WOW, hemos encontrado otros dos directorios, ‘/rick’ y ‘/ubuntu’.
-
-Si accedemos al directorio rick, vemos que hay un archivo que se llama *second ingredients*
-
-![Perfecto, hemos obtenido el segundo ingrediente de la poción de Rick.](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%209.png)
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/Untitled 9.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
 Perfecto, hemos obtenido el segundo ingrediente de la poción de Rick.
 
@@ -105,18 +123,20 @@ Perfecto, hemos obtenido el segundo ingrediente de la poción de Rick.
 
 Por último, para poder buscar el tercer ingrediente, debemos de buscar en la carpeta ‘root’ que se encuentra en el directorio donde también se encuentra ‘home’, como he comentado antes.
 
-Pero hay un problema, solo puede acceder a ella usuario que tengan permisos de root.
+Pero hay un problema, solo puede acceder a ella usuario que tengan permisos de root, por lo que tendremos que buscar una manera de escalar privilegios para poder acceder a dicho directorio. Si hacemos uso del comando `sudo -l` podemos ver si el usuario actual puede ejecutar algún comando como sudo:
 
-Para ello si ejecutamos el comando → `sudo -l` podemos ver si tenemos permisos de root.
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/Untitled 10.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-![OMG, todos tienen permisos de root, pero no sabemos como acceder a ellos.](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%2010.png)
+Vemos que el usuario actual (www-data) tiene permisos para ejecutar todos los comandos como root → `(ALL) NOPASSWD: ALL`.
 
-OMG, todos tienen permisos de root, pero no sabemos como acceder a ellos.
+Una cosa interesante es que haciendo `sudo su`no hacemos nada, si no que tenemos que realizar una lectura del archivo con privilegios root.
 
-Una cosa interesante es que haciendo `sudo su`no hacemos nada, si no que tenemos que realizar una lectura del archivo en ‘modo’ root.
+<div style="text-align:center;">
+  <img src="../assets/images/Rooms/PickleRick/Untitled 11.png" alt="Untitled" onclick="openModal(this.src)" />
+</div>
 
-![Untitled](Pickle%20Rick%20bd2865beab524d39acb845a9b7e353d9/Untitled%2011.png)
-
-Finalmente encontramos el archivo que contiene el tercer ingrediente, donde ejecutamos el comando → `sudo less /root/"3rd.txt"`.
+Finalmente encontramos el archivo que contiene el tercer ingrediente llamado *3rd.txt*, donde ejecutamos el comando → `sudo less /root/"3rd.txt"`, podremos ver su contenido debido a que ese comando se ejecuta con privilegios root.
 
 ---
