@@ -76,7 +76,7 @@ Encontramos varios estados de las respuestas HTTP(S):
 - ***200 - 299 (Éxito)*** → Nos informa de que la petición ha sido exitosa.
     - *200 ‘OK’:* Petición completamente exitosa.
     - *201* ‘*Created*’: Se ha creado un recurso nuevo.
-- ***300 - 399 (Redirección)*** → Redireccionan al cliente a otro recurso (página web diferente o sitio web).
+- ***300-399 (Redirección)*** → Redireccionan al cliente a otro recurso (página web diferente o sitio web).
 - ***400 - 499 (Error del cliente)*** → Informan al cliente los errores que se producen.
     - *401 ‘Not Authorised’:* Informa que necesitamos ser autorizados para realizar la petición (login con permisos en el servidor).
     - *403 ‘Forbidden’:* NO tenemos permisos para acceder al recurso.
