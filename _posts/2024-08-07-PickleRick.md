@@ -58,12 +58,12 @@ Hemos encontrado el directorio `/assets` y `/robots.txt`. Vamos a acceder a ambo
   <table>
     <tr>
       <td>
-        <div style="text-align:center;">
+        <div>
           <img src="../assets/images/Rooms/PickleRick/Untitled 4.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:600px;" />
         </div>
       </td>
       <td>
-        <div style="text-align:center;">
+        <div>
           <img src="../assets/images/Rooms/PickleRick/b.png" alt="Untitled" onclick="openModal(this.src)" style="width:200%; max-width:800px;" />
         </div>
       </td>
