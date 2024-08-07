@@ -13,7 +13,7 @@ tags:
 
 > El protocolo HTTP(S) ‘HyperText Transfer Protocol’ es el conjunto de reglas que se usan para comunicarse con servidores web para la transmisión de datos de la página web (HTML, imágenes, vídeos, …).
 
-Encontramos dos tipos → ***HTTP*** (no seguro) ******y ***HTTPS*** (es la versión segura de HTTP, donde los datos están encriptados).
+Encontramos dos tipos → ***HTTP*** (no seguro) y ***HTTPS*** (es la versión segura de HTTP, donde los datos están encriptados).
 
 Que los datos estén encriptados nos permite un nivel de seguridad mayor, debido a que las personas no pueden ver los datos que están siendo enviados y recibidos.
 

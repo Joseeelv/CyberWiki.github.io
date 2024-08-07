@@ -32,7 +32,7 @@
 - name: Enumeración de Subdominios
   link: https://joseeelv.github.io//blog/EnumeracióndeSubdominios
   image: "../assets/images/Labs/EnumeracionSubdominios/subdomain.png"
-  description: En este laboratorio, se exploran varias técnicas y herramientas para descubrir subdominios válidos de un dominio. Se refresca qué es un dominio y cómo los subdominios forman parte de la estructura de una URL
+  description: En este laboratorio, se exploran varias técnicas y herramientas para descubrir subdominios válidos de un dominio. Se refresca qué es un dominio y cómo los subdominios forman parte de la estructura de una URL.
 
 - name: Protocolos HTTP y HTTPS 
   link: https://joseeelv.github.io//blog/ProtocolosHTTP(s)
