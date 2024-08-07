@@ -1,6 +1,5 @@
 ---
 ---
-
 @import "main.scss";
 
 #navbar {
@@ -9,7 +8,7 @@
 
 .is-active {
     font-weight: 600;
-    border-radius: 50px
+    border-radius: 50px;
 }
 
 .navbar-dropdown {
@@ -18,29 +17,28 @@
     left: auto;
 }
 
-a.navbar-item:hover,.navbar-link:hover {
-    background-color: rgba(255,255,255,0.25) !important;
+a.navbar-item:hover, .navbar-link:hover {
+    background-color: rgba(255, 255, 255, 0.25) !important;
     color: white !important;
-    border-radius: 50px
+    border-radius: 50px;
 }
 
 a.navbar-item.is-active {
-    background-color: rgba(255,255,255,0.25) !important;
+    background-color: rgba(255, 255, 255, 0.25) !important;
     color: white !important;
-    border-radius: 50px
+    border-radius: 50px;
 }
 
 a.navbar-item.is-active:hover {
-    background-color: rgba(255,255,255,0.25) !important;
+    background-color: rgba(255, 255, 255, 0.25) !important;
     color: grey;
-    border-radius: 50px
+    border-radius: 50px;
 }
 
 .navbar-link:not(.is-arrowless)::after {
     border-color: grey;
-    border-radius: 50px
+    border-radius: 50px;
 }
-
 
 #hero {
     background: rgb(0, 0, 0);
@@ -69,23 +67,24 @@ a.navbar-item.is-active:hover {
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
     #hero::before {
-        background-attachment: scroll; /* Cambiar el comportamiento de fondo fijo a desplazable */
-        background-size: cover; /* Asegurarse de que la imagen cubra todo el área */
+        background-attachment: scroll;
+        background-size: cover;
     }
 }
 
 @media (max-width: 480px) {
     #hero::before {
-        background-attachment: scroll; /* Cambiar el comportamiento de fondo fijo a desplazable */
-        background-size: cover; /* Asegurarse de que la imagen cubra todo el área */
-        filter: blur(0.1rem); /* Reducir el desenfoque si es necesario */
-        opacity: 0.3; /* Ajustar la opacidad para mejorar la visibilidad */
+        background-attachment: scroll;
+        background-size: cover;
+        filter: blur(0.1rem);
+        opacity: 0.3;
     }
 }
 
 .title {
-    margin: auto 0.75rem!important;
+    margin: auto 0.75rem !important;
 }
+
 .subtitle {
     letter-spacing: 0.25rem;
 }
@@ -126,52 +125,54 @@ a.navbar-item.is-active:hover {
     hr {
         background-color: black;
     }
+
     .buttons-container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
+
     .button-pair {
         display: flex;
         justify-content: center;
-        gap: 1rem; /* Espacio entre los dos botones */
-        margin-bottom: 1rem; /* Espacio debajo de los dos botones */
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
-    
+
     .single-button {
         display: flex;
         justify-content: center;
-        width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
-        margin-top: 1rem; /* Espacio arriba del último botón */
+        width: 100%;
+        margin-top: 1rem;
     }
-    
+
     .single-button .button {
-        margin: 0 auto; /* Centra el botón horizontalmente */
-        min-width: 12rem; /* Ancho mínimo de los botones */
+        margin: 0 auto;
+        min-width: 12rem;
     }
-    
+
     .button {
-        min-width: 12rem; /* Ancho mínimo de los botones */
+        min-width: 12rem;
     }
-    
+
     @media (max-width: 768px) {
         .button-pair {
             flex-direction: column;
             align-items: center;
             gap: 0;
         }
-        
+
         .button {
-            width: 100%; /* Ancho completo de los botones en pantallas pequeñas */
-            margin-bottom: 0.5rem; /* Espacio entre botones en pantallas pequeñas */
+            width: 100%;
+            margin-bottom: 0.5rem;
         }
-    
+
         .single-button .button {
-            width: 100%; /* Ancho completo del botón en pantallas pequeñas */
+            width: 100%;
         }
-    }    
+    }
 }
+
 #blog {
     .hero-body {
         padding: 3rem 0.25rem 1rem 0.25rem;
@@ -189,7 +190,7 @@ a.navbar-item.is-active:hover {
         line-height: normal;
         border-radius: 0.25rem;
         box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-        
+
         &:hover {
             transform: scale(0.875);
             box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.25);
@@ -199,7 +200,7 @@ a.navbar-item.is-active:hover {
             transform: scale(1);
             margin: 0 auto 5vmax auto;
             max-width: 90%;
-            
+
             &:hover {
                 transform: scale(1.025);
                 margin-bottom: 5vmax;
@@ -255,7 +256,6 @@ a.navbar-item.is-active:hover {
 
         border: none;
     }
-    
 }
 
 #footer {
@@ -298,7 +298,7 @@ a.navbar-item.is-active:hover {
                 justify-content: center;
                 margin: auto;
                 transition: all 0.25s ease;
-                &:hover{
+                &:hover {
                     transform: scale(1.15);
                 }
             }
@@ -321,10 +321,14 @@ a.navbar-item.is-active:hover {
     .columns {
         .column {
             border-radius: 0.5rem;
+            overflow: hidden; /* Asegura que los bordes de las tarjetas estén recortados */
+            
             .image {
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
+                width: 100%; /* Asegura que la imagen cubra el área */
+                height: auto; /* Ajusta la altura de la imagen */
             }
         }
     }
@@ -334,18 +338,49 @@ a.navbar-item.is-active:hover {
         -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
         box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
         transform: scale(0.95);
-        transition: all 0.5s ease;
-        margin-bottom: 0.5rem !important;
-        display: inline-table;
+        transition: all 0.25s ease;
+        margin-bottom: 1rem; /* Asegura un espaciado adecuado */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 300px; /* Ajusta la altura mínima según sea necesario */
+        overflow: hidden; /* Asegura que el contenido no desborde */
+        
         &:hover {
             transform: scale(0.975);
         }
     }
+
     .card {
         transition: all 0.25s ease;
-        &:hover {
-            background-color: rgba($color: #000000, $alpha: 0.90)!important;
-        }
+        background-color: #000; /* Fondo negro para la tarjeta */
+        border-radius: 0.5rem; /* Bordes redondeados */
+        color: white; /* Color del texto */
+        min-height: 200px; /* Ajusta la altura mínima según sea necesario */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .title {
+        margin: 0.5rem 0;
+        font-size: 1.25rem;
+    }
+
+    .content {
+        font-size: 1rem;
+    }
+
+    .image {
+        width: 100%;
+        height: 200px; /* Ajusta la altura según sea necesario */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
@@ -353,20 +388,25 @@ a.navbar-item.is-active:hover {
     @media (min-width: 768px) {
         margin: auto 2.5vmax;
     }
+
     a {
         text-decoration: underline;
     }
+
     #title {
         text-decoration: none;
     }
+
     .title {
         margin: auto;
     }
+
     #post-image {
         border-radius: 0.25rem;
         max-width: 50%;
         height: auto;
     }
+
     .subtitle {
         letter-spacing: 0.05rem;
     }
@@ -378,20 +418,25 @@ a.navbar-item.is-active:hover {
     .tag {
         margin: 0.15rem auto;
     }
+
     .content {
         ol, ul, blockquote {
             display: inline-block;
         }
-        hr{
+
+        hr {
             background-color: grey;
         }
+
         img, iframe {
             max-width: calc(100% - 25vw);
             margin: 0.25rem auto;
+
             @media (max-width: 768px) {
                 max-width: calc(100% - 5vw);
             }
         }
+
         ul, ol {
             display: inline-block;
         }
