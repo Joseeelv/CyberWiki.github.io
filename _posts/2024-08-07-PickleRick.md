@@ -54,7 +54,7 @@ Bingo, tenemos un Username en un comentario. Ahora podemos proceder a realizar u
 
 
 Hemos encontrado el directorio `/assets` y `/robots.txt`. Vamos a acceder a ambos:
-<div>
+<div sytle="text-align:left;">
   <table>
     <tr>
       <td>
@@ -64,7 +64,7 @@ Hemos encontrado el directorio `/assets` y `/robots.txt`. Vamos a acceder a ambo
       </td>
       <td>
         <div style="text-align:center;">
-          <img src="../assets/images/Rooms/PickleRick/b.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px;" />
+          <img src="../assets/images/Rooms/PickleRick/b.png" alt="Untitled" onclick="openModal(this.src)" style="width:200%; max-width:800px;" />
         </div>
       </td>
     </tr>
