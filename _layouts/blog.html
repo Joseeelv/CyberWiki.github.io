@@ -1,7 +1,3 @@
----
-layout: compress
----
-
 <!DOCTYPE html>
 <html>
 
@@ -14,6 +10,20 @@ layout: compress
         <div class="hero-body">
             <div class="container">
                 {% include blogpage-heading.html %}
+            </div>
+        </div>
+        <!-- Selector de Ordenación -->
+        <div class="container">
+            <div class="field">
+                <label class="label">Ordenar por:</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="sort-selector">
+                            <option value="date">Fecha</option>
+                            <option value="difficulty">Dificultad</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="results-container"></div>
@@ -60,6 +70,30 @@ layout: compress
         fuzzy: false,
         limit: 1,
       });
-      </script>
+
+      // Función para ordenar los resultados
+      function sortResults(criteria) {
+        const container = document.getElementById('results-container');
+        const results = Array.from(container.querySelectorAll('.searchResult'));
+        
+        results.sort((a, b) => {
+          const aValue = a.querySelector(`.${criteria}`).textContent.trim();
+          const bValue = b.querySelector(`.${criteria}`).textContent.trim();
+
+          if (criteria === 'date') {
+            return new Date(bValue) - new Date(aValue);
+          } else if (criteria === 'difficulty') {
+            return bValue.localeCompare(aValue);
+          }
+        });
+
+        results.forEach(result => container.appendChild(result));
+      }
+
+      // Event listener para el selector de ordenación
+      document.getElementById('sort-selector').addEventListener('change', function() {
+        sortResults(this.value);
+      });
+    </script>
   </body>
 </html>
