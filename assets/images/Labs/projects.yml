@@ -1,45 +1,66 @@
-- name: Escalar Privilegios en Linux
-  link: https://joseeelv.github.io//blog/EPL
-  image: "../assets/images/Labs/EPL/p.png"
-  description: Módulo sobre las diferentes formas de escalar privilegios en un sistema Linux.
+# - name: Escalar Privilegios en Linux
+#   link: https://joseeelv.github.io//blog/EPL
+#   image: "../assets/images/Labs/EPL/p.png"
+#   description: Módulo sobre las diferentes formas de escalar privilegios en un sistema Linux.
 
-- name: ¿Qué es Networking?
-  link: https://joseeelv.github.io//blog/Nw
-  image: "../assets/images/Labs/QueEsNetw/nw.png"
-  description: Módulo introductorio a las redes, donde veremos que es internet, los tipos de direcciones IP que existe, como diferenciarlas, la dirección MAC, entre otras cosas.
+# - name: ¿Qué es Networking?
+#   link: https://joseeelv.github.io//blog/Nw
+#   image: "../assets/images/Labs/QueEsNetw/nw.png"
+#   description: Módulo introductorio a las redes, donde veremos que es internet, los tipos de direcciones IP que existe, como diferenciarlas, la dirección MAC, entre otras cosas.
 
-- name: Introducción a Networking
-  link: https://joseeelv.github.io//blog/IntroNW
-  image: "../assets/images/Labs/IntroNetw/nw.png"
-  description: En este módulo veremos una introducción sobre la teoría de los modelos OSI y TCP / IP y fundamentos básicos de algunas herramientas básicas de networking.
+# - name: Introducción a Networking
+#   link: https://joseeelv.github.io//blog/IntroNW
+#   image: "../assets/images/Labs/IntroNetw/nw.png"
+#   description: En este módulo veremos una introducción sobre la teoría de los modelos OSI y TCP / IP y fundamentos básicos de algunas herramientas básicas de networking.
 
   
-- name: Introducción a las redes LAN
-  link: https://joseeelv.github.io//blog/IntroLAN
-  image: "../assets/images/Labs/LAN/lan.png"
-  description: En este módulo veremos una introducción sobre las redes LAN, las topologías y los componentes que la forman.
+# - name: Introducción a las redes LAN
+#   link: https://joseeelv.github.io//blog/IntroLAN
+#   image: "../assets/images/Labs/LAN/lan.png"
+#   description: En este módulo veremos una introducción sobre las redes LAN, las topologías y los componentes que la forman.
 
-- name: Introducción a las SQL injections
-  link: https://joseeelv.github.io//blog/IntroSQLi
-  image: "../assets/images/Labs/IntroSQLi/sqli.png"
-  description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
+# - name: Introducción a las SQL injections
+#   link: https://joseeelv.github.io//blog/IntroSQLi
+#   image: "../assets/images/Labs/IntroSQLi/sqli.png"
+#   description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
 
-- name: Servicios de la red I
-  link: https://joseeelv.github.io//blog/ServiciosRedI
-  image: "../assets/images/Labs/ServiciosRedI/srIpng.png"
-  description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
+# - name: Servicios de la red I
+#   link: https://joseeelv.github.io//blog/ServiciosRedI
+#   image: "../assets/images/Labs/ServiciosRedI/srIpng.png"
+#   description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
 
-- name: Enumeración de Subdominios
-  link: https://joseeelv.github.io//blog/EnumeracióndeSubdominios
-  image: "../assets/images/Labs/EnumeracionSubdominios/subdomain.png"
-  description: En este laboratorio, se exploran varias técnicas y herramientas para descubrir subdominios válidos de un dominio. Se refresca qué es un dominio y cómo los subdominios forman parte de la estructura de una URL.
+# - name: Enumeración de Subdominios
+#   link: https://joseeelv.github.io//blog/EnumeracióndeSubdominios
+#   image: "../assets/images/Labs/EnumeracionSubdominios/subdomain.png"
+#   description: En este laboratorio, se exploran varias técnicas y herramientas para descubrir subdominios válidos de un dominio. Se refresca qué es un dominio y cómo los subdominios forman parte de la estructura de una URL.
 
-- name: Protocolos HTTP y HTTPS 
-  link: https://joseeelv.github.io//blog/ProtocolosHTTP(s)
-  image: "../assets/images/Labs/HTTP/http.png"
-  description: En este módulo se exploran los fundamentos de los protocolos HTTP y HTTPS, incluyendo su funcionamiento y diferencias. Se explica cómo las peticiones y respuestas entre navegadores y servidores se estructuran y procesan. Los participantes aprenden sobre la composición de una URL, desglosando sus componentes clave como el esquema, dominio, puerto, ruta, query string y fragmento.
+# - name: Protocolos HTTP y HTTPS 
+#   link: https://joseeelv.github.io//blog/ProtocolosHTTP(s)
+#   image: "../assets/images/Labs/HTTP/http.png"
+#   description: En este módulo se exploran los fundamentos de los protocolos HTTP y HTTPS, incluyendo su funcionamiento y diferencias. Se explica cómo las peticiones y respuestas entre navegadores y servidores se estructuran y procesan. Los participantes aprenden sobre la composición de una URL, desglosando sus componentes clave como el esquema, dominio, puerto, ruta, query string y fragmento.
 
-- name: Aspectos Básicos de Windows I
-  link: https://joseeelv.github.io//blog/WindowsI
-  image: "../assets/images/Labs/WindowsI/windows.webp"
-  description: Este módulo introductorio de Windows aborda aspectos fundamentales del sistema operativo Windows, cubriendo su historia, características y componentes clave.
+# - name: Aspectos Básicos de Windows I
+#   link: https://joseeelv.github.io//blog/WindowsI
+#   image: "../assets/images/Labs/WindowsI/windows.webp"
+#   description: Este módulo introductorio de Windows aborda aspectos fundamentales del sistema operativo Windows, cubriendo su historia, características y componentes clave.
+
+- name: First Project
+  image: https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_960_720.jpg
+  link:
+  description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas adipisci tempore illo accusantium consequatur doloremque dignissimos quo, maxime eius cum enim recusandae qui, delectus ea autem architecto? Velit natus, tempora, quaerat voluptates consectetur magnam aliquid veritatis cumque tempore ipsam delectus eveniet distinctio hic quod reiciendis excepturi beatae doloribus, recusandae ex sed sapiente aliquam deleniti! Quis commodi culpa doloremque quaerat rem natus! Vero ipsam expedita id at quidem. In sit voluptatibus error cum? Minima sunt porro, architecto natus accusantium earum rerum voluptate recusandae fugit, error consequatur, quibusdam dolore quod minus culpa ipsa laudantium odit distinctio exercitationem dolorum. Sunt iste cumque a quae reprehenderit sed dolorum, culpa hic dolores saepe asperiores illum consectetur vitae tenetur dolorem voluptatum totam in repellat voluptatibus laudantium deleniti quasi. Adipisci animi cupiditate eligendi optio nemo accusantium sed quo expedita modi dolor autem atque natus, non excepturi. Eaque inventore quis aperiam vel quae dicta tenetur, placeat facilis, natus dignissimos molestias quidem dolor ad voluptate nam harum maxime. Commodi illum esse iste eaque, saepe praesentium, vero adipisci necessitatibus tenetur maiores sit voluptate eos facere doloribus. Explicabo neque quibusdam, sint nihil reprehenderit alias asperiores aperiam rem voluptas quas, in qui odio quos similique at. Illo voluptas temporibus enim laudantium quas?
+- name: Second Project
+  link:
+  image: https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_960_720.jpg
+  description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas adipisci tempore illo accusantium consequatur doloremque dignissimos quo, maxime eius cum enim recusandae qui, delectus ea autem architecto? Velit natus, tempora, quaerat voluptates consectetur magnam aliquid veritatis cumque tempore ipsam delectus eveniet distinctio hic quod reiciendis excepturi beatae doloribus, recusandae ex sed sapiente aliquam deleniti! Quis commodi culpa doloremque quaerat rem natus! Vero ipsam expedita id at quidem. In sit voluptatibus error cum? Minima sunt porro, architecto natus accusantium earum rerum voluptate recusandae fugit, error consequatur, quibusdam dolore quod minus culpa ipsa laudantium odit distinctio exercitationem dolorum. Sunt iste cumque a quae reprehenderit sed dolorum, culpa hic dolores saepe asperiores illum consectetur vitae tenetur dolorem voluptatum totam in repellat voluptatibus laudantium deleniti quasi. Adipisci animi cupiditate eligendi optio nemo accusantium sed quo expedita modi dolor autem atque natus, non excepturi. Eaque inventore quis aperiam vel quae dicta tenetur, placeat facilis, natus dignissimos molestias quidem dolor ad voluptate nam harum maxime. Commodi illum esse iste eaque, saepe praesentium, vero adipisci necessitatibus tenetur maiores sit voluptate eos facere doloribus. Explicabo neque quibusdam, sint nihil reprehenderit alias asperiores aperiam rem voluptas quas, in qui odio quos similique at. Illo voluptas temporibus enim laudantium quas?
+- name: Third Project
+  link:
+  image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
+  description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas adipisci tempore illo accusantium consequatur doloremque dignissimos quo, maxime eius cum enim recusandae qui, delectus ea autem architecto? Velit natus, tempora, quaerat voluptates consectetur magnam aliquid veritatis cumque tempore ipsam delectus eveniet distinctio hic quod reiciendis excepturi beatae doloribus, recusandae ex sed sapiente aliquam deleniti! Quis commodi culpa doloremque quaerat rem natus! Vero ipsam expedita id at quidem. In sit voluptatibus error cum? Minima sunt porro, architecto natus accusantium earum rerum voluptate recusandae fugit, error consequatur, quibusdam dolore quod minus culpa ipsa laudantium odit distinctio exercitationem dolorum. Sunt iste cumque a quae reprehenderit sed dolorum, culpa hic dolores saepe asperiores illum consectetur vitae tenetur dolorem voluptatum totam in repellat voluptatibus laudantium deleniti quasi. Adipisci animi cupiditate eligendi optio nemo accusantium sed quo expedita modi dolor autem atque natus, non excepturi. Eaque inventore quis aperiam vel quae dicta tenetur, placeat facilis, natus dignissimos molestias quidem dolor ad voluptate nam harum maxime. Commodi illum esse iste eaque, saepe praesentium, vero adipisci necessitatibus tenetur maiores sit voluptate eos facere doloribus. Explicabo neque quibusdam, sint nihil reprehenderit alias asperiores aperiam rem voluptas quas, in qui odio quos similique at. Illo voluptas temporibus enim laudantium quas?
+- name: Fourth Project
+  link:
+  image: https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_960_720.jpg
+  description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas adipisci tempore illo accusantium consequatur doloremque dignissimos quo, maxime eius cum enim recusandae qui, delectus ea autem architecto? Velit natus, tempora, quaerat voluptates consectetur magnam aliquid veritatis cumque tempore ipsam delectus eveniet distinctio hic quod reiciendis excepturi beatae doloribus, recusandae ex sed sapiente aliquam deleniti! Quis commodi culpa doloremque quaerat rem natus! Vero ipsam expedita id at quidem. In sit voluptatibus error cum? Minima sunt porro, architecto natus accusantium earum rerum voluptate recusandae fugit, error consequatur, quibusdam dolore quod minus culpa ipsa laudantium odit distinctio exercitationem dolorum. Sunt iste cumque a quae reprehenderit sed dolorum, culpa hic dolores saepe asperiores illum consectetur vitae tenetur dolorem voluptatum totam in repellat voluptatibus laudantium deleniti quasi. Adipisci animi cupiditate eligendi optio nemo accusantium sed quo expedita modi dolor autem atque natus, non excepturi. Eaque inventore quis aperiam vel quae dicta tenetur, placeat facilis, natus dignissimos molestias quidem dolor ad voluptate nam harum maxime. Commodi illum esse iste eaque, saepe praesentium, vero adipisci necessitatibus tenetur maiores sit voluptate eos facere doloribus. Explicabo neque quibusdam, sint nihil reprehenderit alias asperiores aperiam rem voluptas quas, in qui odio quos similique at. Illo voluptas temporibus enim laudantium quas?
+- name: Fifth Project
+  link:
+  image: https://cdn.pixabay.com/photo/2016/12/02/02/10/idea-1876659_960_720.jpg
+  description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas adipisci tempore illo accusantium consequatur doloremque dignissimos quo, maxime eius cum enim recusandae qui, delectus ea autem architecto? Velit natus, tempora, quaerat voluptates consectetur magnam aliquid veritatis cumque tempore ipsam delectus eveniet distinctio hic quod reiciendis excepturi beatae doloribus, recusandae ex sed sapiente aliquam deleniti! Quis commodi culpa doloremque quaerat rem natus! Vero ipsam expedita id at quidem. In sit voluptatibus error cum? Minima sunt porro, architecto natus accusantium earum rerum voluptate recusandae fugit, error consequatur, quibusdam dolore quod minus culpa ipsa laudantium odit distinctio exercitationem dolorum. Sunt iste cumque a quae reprehenderit sed dolorum, culpa hic dolores saepe asperiores illum consectetur vitae tenetur dolorem voluptatum totam in repellat voluptatibus laudantium deleniti quasi. Adipisci animi cupiditate eligendi optio nemo accusantium sed quo expedita modi dolor autem atque natus, non excepturi. Eaque inventore quis aperiam vel quae dicta tenetur, placeat facilis, natus dignissimos molestias quidem dolor ad voluptate nam harum maxime. Commodi illum esse iste eaque, saepe praesentium, vero adipisci necessitatibus tenetur maiores sit voluptate eos facere doloribus. Explicabo neque quibusdam, sint nihil reprehenderit alias asperiores aperiam rem voluptas quas, in qui odio quos similique at. Illo voluptas temporibus enim laudantium quas?
