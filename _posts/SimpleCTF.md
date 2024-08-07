@@ -1,16 +1,23 @@
----
-title: RootMe
-layout: post
-post-image: "../assets/images/Rooms/RootMe/rootme.png"
-description: A ctf for beginners, can you root me?
-difficulty: Fácil
-enlace: https://tryhackme.com/r/room/easyctf
-tags:
-- Enumeración
-- 
-- 
----
+# Simple CTF
+
+Created: December 13, 2023 6:00 PM
+Etiquetas: Enumeración, Security
+Dificultad: Fácil
+Enlace:: https://tryhackme.com/room/easyctf
+Hecho : Jose Luis 
+Status: Done
+
+En esta room vamos a proceder a obtener las flags *user.txt* y *root.txt* mediante varias técnicas que vamos a ver a continuación.
+
+Es una simulación de un CTF para principiantes donde el objetivo es encontrar las flags previamente comentadas.
+
 # User.txt
+
+---
+
+Esta room de Tryhackme, trata sobre un CTF ‘Capture The Flag’ para principiantes.
+
+IP máquina objetivo → 10.10.42.145
 
 Primero de todo vamos a realizar un escaneo de puertos para ver que información podemos encontrar.
 

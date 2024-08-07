@@ -21,14 +21,14 @@ Gracias a ella vamos a obtener los puertos que la máquina tiene abiertos para v
   <table>
     <tr>
       <td>
-        Con <code>nmap -p- -v <ip_maquina></code> obtenemos:
         <div style="text-align:center;">
-          <img src="../assets/images/Rooms/PickleRick/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px;" />
+          Con <code>nmap -p- -v <ip_maquina></code> obtenemos:
+          <img src="../assets/images/Rooms/PickleRick/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:200%; max-width:800px;" />
         </div>
       </td>
       <td>
-        Con <code>nmap -sC -sV -p22,80- -min-rate 3000 <ip_maquina></code> vamos a obtener más información:
         <div style="text-align:center;">
+          Con <code>nmap -sC -sV -p22,80- -min-rate 3000 <ip_maquina></code> vamos a obtener más información:
           <img src="../assets/images/Rooms/PickleRick/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px;" />
         </div>
       </td>

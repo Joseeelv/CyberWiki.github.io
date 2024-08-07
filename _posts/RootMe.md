@@ -1,19 +1,15 @@
-# RootMe
-
-Created: October 25, 2023 4:05 PM
-Etiquetas: Security, Web
-Dificultad: Fácil
-Enlace:: https://tryhackme.com/room/rrootme
-Hecho : Jose Luis 
-Status: Done
-
-> *En esta máquina de TryHackMe vamos a tener que hacer uso de una máquina son sistema operativo Linux, en especial Kali, para el uso de diversas herramientas que nos permitirán realizar una serie funcionalidades con el fin de poder realizar la máquina.
-Tendremos que saber usar las herramientas: Nmap, Gobuster, comando find y saber como escalar privilegios.*
-> 
-
-# Task 1: Deploy the machine
-
-En esta tarea no tenemos que hacer nada, solamente iniciar la máquina para los siguientes pasos.
+---
+title: RootMe
+layout: post
+post-image: "../assets/images/Rooms/RootMe/rootme.png"
+description: A ctf for beginners, can you root me?
+difficulty: Fácil
+enlace: https://tryhackme.com/r/room/rrootme
+tags:
+- Enumeración
+- Web
+- 
+---
 
 # Task 2: Reconnaissance
 
