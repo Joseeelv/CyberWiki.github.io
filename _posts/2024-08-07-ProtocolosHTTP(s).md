@@ -45,9 +45,7 @@ Sea una URL de la forma → `http://user:password@cyberwiki.com:80/networking?id
 
 > Una petición HTTP(s) se realiza mediante MetodoPetición/VersionProtocolo.
 
-Por ejemplo, podemos realizar una petición HTTP → **`GET /HTTP/1.1`**
-
-Vemos que realiza una petición mandando el método GET, haciendo uso de la versión 1.1 del protocolo HTTP.
+Por ejemplo, podemos realizar una petición HTTP → `GET /HTTP/1.1`, estocrealiza una petición mandando el método GET, haciendo uso de la versión 1.1 del protocolo HTTP.
 
 Estas peticiones pueden tener varios **métodos**.
 
@@ -61,10 +59,10 @@ Estas respuestas será diferentes dependiendo del resultado de la petición.
 
 Encontramos varios métodos para las peticiones HTTP(S):
 
-- ***Petición GET*** → Se usa para obtener información sobre el servidor web.
-- ***Petición POST*** → Se usa para enviar datos al servidor web, creando nuevos registros.
-- ***Petición PUT*** → Se usa para enviar datos al servidor web, actualizando la información.
-- ***Petición DELETE***  → Se usa para eliminar información o registros del servidor web.
+- Petición ***GET*** → Se usa para obtener información sobre el servidor web.
+- Petición ***POST*** → Se usa para enviar datos al servidor web, creando nuevos registros.
+- Petición ***PUT*** → Se usa para enviar datos al servidor web, actualizando la información.
+- Petición ***DELETE***  → Se usa para eliminar información o registros del servidor web.
 
 # Estados de la respuesta HTTP(S)
 
@@ -80,19 +78,19 @@ Encontramos varios estados de las respuestas HTTP(S):
       </ul>
   </li>
   <li>
-    <em><strong>300 - 399 (Redirección)</strong></em> → Redireccionan al cliente a otro recurso (página web diferente o sitio web).
+    <em><strong>300 - 399 (Redirección)</strong></em>→Redireccionan al cliente a otro recurso (página web diferente o sitio web).
   </li>
   <li>
-    <em><strong>400 - 499 (Error del cliente)</strong></em> → Informanalclienteloserroresqueseproducen:
+    <em><strong>400-499(Errordelcliente)</strong></em>→Informanalclienteloserroresqueseproducen:
     <ul>
-    <li><em>401 ‘Not Authorised’</em>: Informa que necesitamos ser autorizados para realizar la petición (login con permisos en el servidor).</li>
-    <li><em>403 ‘Forbidden’</em>: NO tenemos permisos para acceder al recurso.</li>
-    <li><em>404 ‘Not Found’</em>: La página o recurso no existe.</li>
-    <li><em>405 ‘Not Allowed’</em>: Cuando le mandamos al servidor un método que no entiende o no puede soportar para ese método.</li>
+      <li><em>401 ‘Not Authorised’</em>: Informa que necesitamos ser autorizados para realizar la petición (login con permisos en el servidor).</li>
+      <li><em>403 ‘Forbidden’</em>: NO tenemos permisos para acceder al recurso.</li>
+      <li><em>404 ‘Not Found’</em>: La página o recurso no existe.</li>
+      <li><em>405 ‘Not Allowed’</em>: Cuando le mandamos al servidor un método que no entiende o no puede soportar para ese método.</li>
     </ul>
   </li>
   <li>
-    <em><strong>500 - 599 (Error del servidor)</strong></em> → Estánreservadosparaloserroresqueocurrenenlapartedelservidorweb:
+    <em><strong>500-599(Errordelservidor)</strong></em>→Estánreservadosparaloserroresqueocurrenenlapartedelservidorweb:
     <ul>
       <li><em>500 ‘Internal Error’</em>: El servidor ha encontrado un error en la petición.</li>
       <li><em>503 ‘Service Unavailable’</em>: El servidor no está disponible (ya sea por mantenimiento u otros motivos).</li>
