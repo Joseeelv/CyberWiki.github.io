@@ -139,15 +139,15 @@ Esta información la podemos dividir en varias secciones:
         <li>Componentes.</li>
         <li>Entorno de software.</li>
       </ol></td>
-      <td>
+      <td style="text-align:center; vertical-align:top;">
         <div style="text-align:center">
           <img src="../assets/images/Labs/WindowsII/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:300px"  />
-      </div></td>
+        </div>
+        En la pestaña por defecto Resumen del sistema encontramos información sobre el equipo.
+      </td>
     </tr>
   </table>
 </div>
-En la pestaña por defecto *Resumen del sistema* 
-encontramos información sobre el equipo.
 
 ## Recursos de hardware
 
