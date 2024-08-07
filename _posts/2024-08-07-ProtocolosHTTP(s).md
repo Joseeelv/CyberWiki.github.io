@@ -72,9 +72,10 @@ Encontramos varios métodos para las peticiones HTTP(S):
 
 Encontramos varios estados de las respuestas HTTP(S):
 <ul>
+  <li><em><strong>100 - 199 (Información de la respuesta)</strong></em> → Le dicen al cliente que la primera parte de la petición es correcta y que puede continuar con la misma (No es muy común).</li>
   <li><em><strong>200 - 299 (Éxito)</strong></em> → Nos informa de que la petición ha sido exitosa:
       <ul> 
-        <li><em>*200 ‘OK’</em>: Petición completamente exitosa.</li>
+        <li><em>200 ‘OK’</em>: Petición completamente exitosa.</li>
         <li><em>201 ‘Created’</em>: Se ha creado un recurso nuevo.</li>
       </ul>
   </li>
@@ -82,7 +83,7 @@ Encontramos varios estados de las respuestas HTTP(S):
     <em><strong>300 - 399 (Redirección)</strong></em> → Redireccionan al cliente a otro recurso (página web diferente o sitio web).
   </li>
   <li>
-    <em><strong>400 - 499 (Error del cliente)</strong></em> → Informan al cliente los errores que se producen:
+    <em><strong>400 - 499 (Error del cliente)</strong></em> → Informanalclienteloserroresqueseproducen:
     <ul>
     <li><em>401 ‘Not Authorised’</em>: Informa que necesitamos ser autorizados para realizar la petición (login con permisos en el servidor).</li>
     <li><em>403 ‘Forbidden’</em>: NO tenemos permisos para acceder al recurso.</li>
@@ -91,7 +92,7 @@ Encontramos varios estados de las respuestas HTTP(S):
     </ul>
   </li>
   <li>
-    <em><strong>500 - 599 (Error del servidor)</strong></em> → Están reservados para los errores que ocurren en la parte del servidor web:
+    <em><strong>500 - 599 (Error del servidor)</strong></em> → Estánreservadosparaloserroresqueocurrenenlapartedelservidorweb:
     <ul>
       <li><em>500 ‘Internal Error’</em>: El servidor ha encontrado un error en la petición.</li>
       <li><em>503 ‘Service Unavailable’</em>: El servidor no está disponible (ya sea por mantenimiento u otros motivos).</li>
