@@ -1,0 +1,45 @@
+- name: Escalar Privilegios en Linux
+  link: https://joseeelv.github.io//blog/EPL
+  image: "../assets/images/Labs/EPL/p.png"
+  description: Módulo sobre las diferentes formas de escalar privilegios en un sistema Linux.
+
+- name: ¿Qué es Networking?
+  link: https://joseeelv.github.io//blog/Nw
+  image: "../assets/images/Labs/QueEsNetw/nw.png"
+  description: Módulo introductorio a las redes, donde veremos que es internet, los tipos de direcciones IP que existe, como diferenciarlas, la dirección MAC, entre otras cosas.
+
+- name: Introducción a Networking
+  link: https://joseeelv.github.io//blog/IntroNW
+  image: "../assets/images/Labs/IntroNetw/nw.png"
+  description: En este módulo veremos una introducción sobre la teoría de los modelos OSI y TCP / IP y fundamentos básicos de algunas herramientas básicas de networking.
+
+  
+- name: Introducción a las redes LAN
+  link: https://joseeelv.github.io//blog/IntroLAN
+  image: "../assets/images/Labs/LAN/lan.png"
+  description: En este módulo veremos una introducción sobre las redes LAN, las topologías y los componentes que la forman.
+
+- name: Introducción a las SQL injections
+  link: https://joseeelv.github.io//blog/IntroSQLi
+  image: "../assets/images/Labs/IntroSQLi/sqli.png"
+  description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
+
+- name: Servicios de la red I
+  link: https://joseeelv.github.io//blog/ServiciosRedI
+  image: "../assets/images/Labs/ServiciosRedI/srIpng.png"
+  description: En este laboratorio veremos una introducción a los ataques de SQL injections, así como algunos ejemplos prácticos de como podemos aplicarlas.
+
+- name: Enumeración de Subdominios
+  link: https://joseeelv.github.io//blog/EnumeracióndeSubdominios
+  image: "../assets/images/Labs/EnumeracionSubdominios/subdomain.png"
+  description: En este laboratorio, se exploran varias técnicas y herramientas para descubrir subdominios válidos de un dominio. Se refresca qué es un dominio y cómo los subdominios forman parte de la estructura de una URL.
+
+- name: Protocolos HTTP y HTTPS 
+  link: https://joseeelv.github.io//blog/ProtocolosHTTP(s)
+  image: "../assets/images/Labs/HTTP/http.png"
+  description: En este módulo se exploran los fundamentos de los protocolos HTTP y HTTPS, incluyendo su funcionamiento y diferencias. Se explica cómo las peticiones y respuestas entre navegadores y servidores se estructuran y procesan. Los participantes aprenden sobre la composición de una URL, desglosando sus componentes clave como el esquema, dominio, puerto, ruta, query string y fragmento.
+
+- name: Aspectos Básicos de Windows I
+  link: https://joseeelv.github.io//blog/WindowsI
+  image: "../assets/images/Labs/WindowsI/windows.webp"
+  description: Este módulo introductorio de Windows aborda aspectos fundamentales del sistema operativo Windows, cubriendo su historia, características y componentes clave.
