@@ -33,8 +33,6 @@ Gracias a ella vamos a obtener los puertos que la máquina tiene abiertos para v
     </tr>
   </table>
 </div>
-        Con <code>nmap -p- -v <ip_maquina></code> obtenemos:
-        Con <code>nmap -sC -sV -p22,80- -min-rate 3000 <ip_maquina></code>:
 
 Perfecto, como vemos, tenemos un puerto 80 *http* (pagina web) y puerto 22 un servicio *ssh*. Como no tenemos ninguna credencial para realizar la conexión via *SSH*, vamos a ver que hay en la página web:
 
@@ -61,15 +59,13 @@ Hemos encontrado el directorio `/assets` y `/robots.txt`. Vamos a acceder a ambo
     <tr>
       <td>
         <div style="text-align:center;">
-          <img src="../assets/images/Rooms/PickleRick/Untitled 4.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:400px;" />
+          <img src="../assets/images/Rooms/PickleRick/Untitled 4.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:600px;" />
         </div>
-        Contenido del directorio <code>/assets</code>.
       </td>
       <td>
         <div style="text-align:center;">
-          <img src="../assets/images/Rooms/PickleRick/b.png" alt="Untitled" onclick="openModal(this.src)" style="width:250%; max-width:1000px;" />
+          <img src="../assets/images/Rooms/PickleRick/b.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px;" />
         </div>
-        Contenido del directorio <code>/robots.txt</code>.
       </td>
     </tr>
   </table>
