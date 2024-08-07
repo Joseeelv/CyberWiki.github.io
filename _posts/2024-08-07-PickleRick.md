@@ -1,7 +1,7 @@
 ---
-title: Overpass
+title: Pickle Rick
 layout: post
-post-image: "../assets/images/Rooms/PickleRick/pickle.png"
+post-image: "../assets/images/Rooms/PickleRick/pickle.jpeg"
 description: Pickle Rick es una máquina de Tryhackme, con ambientación en la serie animada Rick and Morty. En esta máquina debemos obtener los tres ingredientes para que Rick pueda realizar su poción. Haremos uso de una máquina con Linux, conocimientos sobre comandos de Linux y uso de herramientas y conocimientos sobre páginas web.
 difficulty: Fácil
 enlace: https://tryhackme.com/r/room/picklerick
