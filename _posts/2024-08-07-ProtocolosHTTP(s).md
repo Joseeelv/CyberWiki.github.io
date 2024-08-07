@@ -98,7 +98,7 @@ Estas cabeceras son enviadas desde el cliente al servidor, específicamente desd
 - ***User-Agent*** → Es la versión y el software de nuestro buscador.
 - ***Content-Length*** → Le dice al servidor cuantos datos espera en la petición.
 - **Accept-Encoding** *→* Informa al servidor web los tipos de compresión que el buscador soporta (.zip, tar.gz,etc).
-- [Cookie](Protocolo%20HTTP%20y%20HTTPS%20f30ea0752521461ba3a3ee27d14f0724.md)** → Datos enviados al servidor web que ayuda a recordar la información.
+- **Cookie** → Datos enviados al servidor web que ayuda a recordar la información.
 
 ## Cabeceras comunes de las respuestas
 
@@ -111,10 +111,9 @@ Estas cabeceras son recibidas desde el servidor web en respuesta a las peticione
 
 # Cookies
 
-> *Las Cookies son datos que se almacenan en nuestras computadoras. Contienen información de los sitios webs a los que hemos accedidos, además ayuda al servidor web a recordar ‘quien eres’.*
-> 
+> Las Cookies son datos que se almacenan en nuestras computadoras. Contienen información de los sitios webs a los que hemos accedidos, además ayuda al servidor web a recordar ‘quien eres’.
 
-Cuando las Cookies son almacenadas en nuestros equipos, recibimos una cabecera [Set-Cookie](Protocolo%20HTTP%20y%20HTTPS%20f30ea0752521461ba3a3ee27d14f0724.md) del servidor web.* 
+Cuando las Cookies son almacenadas en nuestros equipos, recibimos una cabecera **Set-Cookie** del servidor web.* 
 
 Tienen muchos usos, pero comúnmente son usadas para autenticación. Nunca son una cadena de texto clara donde podemos leer las contraseñas, si no que son un token (código único y secreto que no puede ser rastreado con facilidad).
 
