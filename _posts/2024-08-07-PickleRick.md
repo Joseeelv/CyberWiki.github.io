@@ -21,13 +21,11 @@ Gracias a ella vamos a obtener los puertos que la máquina tiene abiertos para v
   <table>
     <tr>
       <td>
-        Con <code>nmap -p- -v <ip_maquina></code> obtenemos:
         <div style="text-align:center;">
-          <img src="../assets/images/Rooms/PickleRick/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:200%; max-width:800px;" />
+          <img src="../assets/images/Rooms/PickleRick/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:1000px;" />
         </div>
       </td>
       <td>
-        Con <code>nmap -sC -sV -p22,80- -min-rate 3000 <ip_maquina></code>:
         <div style="text-align:center;">
           <img src="../assets/images/Rooms/PickleRick/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px;" />
         </div>
@@ -35,6 +33,8 @@ Gracias a ella vamos a obtener los puertos que la máquina tiene abiertos para v
     </tr>
   </table>
 </div>
+        Con <code>nmap -p- -v <ip_maquina></code> obtenemos:
+        Con <code>nmap -sC -sV -p22,80- -min-rate 3000 <ip_maquina></code>:
 
 Perfecto, como vemos, tenemos un puerto 80 *http* (pagina web) y puerto 22 un servicio *ssh*. Como no tenemos ninguna credencial para realizar la conexión via *SSH*, vamos a ver que hay en la página web:
 
