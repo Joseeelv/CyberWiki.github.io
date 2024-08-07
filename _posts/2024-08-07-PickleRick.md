@@ -17,18 +17,18 @@ Como hemos leido en la introducción, esta máquina consiste en obtener los tres
 
 Primero, vamos a iniciar la máquina y gracias a eso vamos a obtener la IP de la máquina.Para empezar con este laboratorio vamos a hacer uso de la herramienta → ***Nmap.***
 Gracias a ella vamos a obtener los puertos que la máquina tiene abiertos para ver si podemos aprovecharnos de eso.
-<div>
+<div style="text-align:left;">
   <table>
     <tr>
       <td>
+        Con <code>nmap -p- -v <ip_maquina></code> obtenemos:
         <div style="text-align:center;">
-          Con <code>nmap -p- -v <ip_maquina></code> obtenemos:
           <img src="../assets/images/Rooms/PickleRick/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:200%; max-width:800px;" />
         </div>
       </td>
       <td>
+        Con <code>nmap -sC -sV -p22,80- -min-rate 3000 <ip_maquina></code>:
         <div style="text-align:center;">
-          Con <code>nmap -sC -sV -p22,80- -min-rate 3000 <ip_maquina></code> vamos a obtener más información:
           <img src="../assets/images/Rooms/PickleRick/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px;" />
         </div>
       </td>
