@@ -39,7 +39,7 @@
   image: "../assets/images/Labs/HTTP/http.png"
   description: En este módulo se exploran los fundamentos de los protocolos HTTP y HTTPS, incluyendo su funcionamiento y diferencias. Se explica cómo las peticiones y respuestas entre navegadores y servidores se estructuran y procesan. Los participantes aprenden sobre la composición de una URL, desglosando sus componentes clave como el esquema, dominio, puerto, ruta, query string y fragmento.
 
-# - name: Aspectos Básicos de Windows I
-#   link: https://joseeelv.github.io//blog/WindowsI
-#   image: "../assets/images/Labs/WindowsI/windows.jpeg"
-#   description: Este módulo introductorio de Windows aborda aspectos fundamentales del sistema operativo Windows, cubriendo su historia, características y componentes clave.
+- name: Aspectos Básicos de Windows I
+  link: https://joseeelv.github.io//blog/WindowsI
+  image: "../assets/images/Labs/WindowsI/windows.jpeg"
+  description: Este módulo introductorio de Windows aborda aspectos fundamentales del sistema operativo Windows, cubriendo su historia, características y componentes clave.
