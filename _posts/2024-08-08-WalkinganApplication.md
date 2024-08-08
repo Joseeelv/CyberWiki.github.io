@@ -1,6 +1,13 @@
-# Recorrer una solicitud
-
-Created: September 18, 2023 9:25 PM
+---
+title: Recorrido de una Aplicación web
+layout: post
+post-image: "../assets/images/Labs/RecorrerSolicitud/console.png"
+description: Este laboratorio se centra en la revisión manual de una aplicación web para detectar problemas de seguridad utilizando solo las herramientas integradas del navegador. Estas herramientas son esenciales porque a menudo pueden revelar vulnerabilidades que las herramientas automáticas pasan por alto.
+enlace: https://tryhackme.com/room/walkinganapplication
+difficulty: Fácil
+tags: 
+  - LAB
+---
 
 Vamos a aprender a revisar manualmente una aplicación web para poder detectar problemas de seguridad haciendo solo de las herramientas integradas del buscador.
 
@@ -21,11 +28,15 @@ Para acceder al código fuente de la página web —> *view-source:URL_pagina_we
 
 ### Ejemplo con la página web de Google
 
-![Untitled](Recorrer%20una%20solicitud%2078e306fd0ac64986b45d644fba3657c2/Untitled.png)
+<div style="text-align:center; ">
+  <img src="../assets/images/Labs/RecorrerSolicitud/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:300px"/>
+</div>
 
-Como resultado tenemos (pequeño extracto):
+Pequeño extracto del código fuente de la web de [Google](https://Google.com):
 
-![Untitled](Recorrer%20una%20solicitud%2078e306fd0ac64986b45d644fba3657c2/Untitled%201.png)
+<div style="text-align:center; ">
+  <img src="../assets/images/Labs/RecorrerSolicitud/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%;"/>
+</div>
 
 En el código fuente de la página web podemos encontrar comentarios realizados por el desarrollador del sitio web, estos comentarios vienen dados por `<! -- comentario -->`
 
@@ -70,3 +81,4 @@ Podemos hacer uso de *Breakpoints* para forzar al navegador que se pare antes de
 Desde la pestaña de red ‘N*etwork’* podemos hacer un seguimiento de las peticiones / solicitudes que realiza la página web. Si hacemos click en la pestaña de Red y seguidamente actualizamos la página web, veremos todos los archivos que solicita la misma.
 
 AJAX es un método para enviar y recibir datos de red en un fondo de aplicación web sin interferir cambiando la página web actual
+---
