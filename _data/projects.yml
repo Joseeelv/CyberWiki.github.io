@@ -48,4 +48,8 @@
   link: https://joseeelv.github.io//blog/WindowsII
   image: "../assets/images/Labs/WindowsII/windows.png"
   description: Este es el segundo módulo introductorio de Windows que aborda una introducción a las herramientas y configuraciones esenciales del sistema operativo Windows. Se exploran varias utilidades y configuraciones avanzadas que son fundamentales para la administración y optimización del sistema.
-  
+
+- name: Aspectos Básicos de Windows III
+  link: https://joseeelv.github.io//blog/WindowsIII
+  image: "../assets/images/Labs/WindowsIII/windows.svg"
+  description: Este módulo es el tercer y último introductorio de Windows. En este laboratorio, exploramos diversas herramientas integradas en Windows diseñadas para proteger y asegurar los equipos. La seguridad en Windows se gestiona a través de varias aplicaciones y configuraciones clave.
