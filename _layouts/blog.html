@@ -67,66 +67,85 @@
         </div>
         </a>
         </div>`,
-    noResultsText: '<div class="subtitle has-text-centered is-uppercase">No Results Found</div>',
-    fuzzy: false,
+        noResultsText: '<div class="subtitle has-text-centered is-uppercase">No Results Found</div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">',
+        fuzzy: false,
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new MutationObserver(function(mutationsList, observer) {
+        const resultsContainer = document.getElementById('results-container');
+        const searchResults = resultsContainer.querySelectorAll('.searchResult');
+
+        // Remove existing final separators to avoid duplicates
+        resultsContainer.querySelectorAll('.final-separator').forEach(el => el.remove());
+
+        if (searchResults.length > 0) {
+            const lastResult = searchResults[searchResults.length - 1];
+            const hr = document.createElement('hr');
+            hr.className = 'has-background-black final-separator';
+            hr.style.margin = '0.5rem 5rem 2.5rem 5rem';
+            lastResult.parentNode.insertBefore(hr, lastResult.nextSibling);
+        }
+    });
+
+    observer.observe(document.getElementById('results-container'), { childList: true });
 });
 
       // Función para ordenar los resultados
-      function sortResults(criteria) {
-        const container = document.getElementById('results-container');
-        const results = Array.from(container.querySelectorAll('.searchResult'));
+      // function sortResults(criteria) {
+      //   const container = document.getElementById('results-container');
+      //   const results = Array.from(container.querySelectorAll('.searchResult'));
 
-        results.sort((a, b) => {
-          let aValue, bValue;
+      //   results.sort((a, b) => {
+      //     let aValue, bValue;
 
-          switch (criteria) {
-            case 'title':
-              aValue = a.querySelector('.title').textContent.trim().toLowerCase();
-              bValue = b.querySelector('.title').textContent.trim().toLowerCase();
-              return aValue.localeCompare(bValue); // Ordenar alfabéticamente
+      //     switch (criteria) {
+      //       case 'title':
+      //         aValue = a.querySelector('.title').textContent.trim().toLowerCase();
+      //         bValue = b.querySelector('.title').textContent.trim().toLowerCase();
+      //         return aValue.localeCompare(bValue); // Ordenar alfabéticamente
 
-            case 'date':
-              aValue = new Date(a.querySelector('.date').textContent.trim().split('on ')[1]);
-              bValue = new Date(b.querySelector('.date').textContent.trim().split('on ')[1]);
-              return bValue - aValue; // Ordenar por fecha descendente
+      //       case 'date':
+      //         aValue = new Date(a.querySelector('.date').textContent.trim().split('on ')[1]);
+      //         bValue = new Date(b.querySelector('.date').textContent.trim().split('on ')[1]);
+      //         return bValue - aValue; // Ordenar por fecha descendente
 
-            case 'difficulty':
-              const difficulties = ['Easy', 'Intermediate', 'Hard'];
-              aValue = difficulties.indexOf(a.querySelector('.difficulty').textContent.trim());
-              bValue = difficulties.indexOf(b.querySelector('.difficulty').textContent.trim());
-              return aValue - bValue; // Ordenar por dificultad ascendente
+      //       case 'difficulty':
+      //         const difficulties = ['Easy', 'Intermediate', 'Hard'];
+      //         aValue = difficulties.indexOf(a.querySelector('.difficulty').textContent.trim());
+      //         bValue = difficulties.indexOf(b.querySelector('.difficulty').textContent.trim());
+      //         return aValue - bValue; // Ordenar por dificultad ascendente
 
-            default:
-              return 0;
-          }
-        });
+      //       default:
+      //         return 0;
+      //     }
+      //   });
 
-        results.forEach(result => container.appendChild(result));
-      }
+      //   results.forEach(result => container.appendChild(result));
+      // }
 
       // Función para filtrar los resultados
-      function filterResults() {
-        const container = document.getElementById('results-container');
-        const results = Array.from(container.querySelectorAll('.searchResult'));
-        const selectedFilters = Array.from(document.getElementById('filter-selector').selectedOptions).map(option => option.value);
+      // function filterResults() {
+      //   const container = document.getElementById('results-container');
+      //   const results = Array.from(container.querySelectorAll('.searchResult'));
+      //   const selectedFilters = Array.from(document.getElementById('filter-selector').selectedOptions).map(option => option.value);
 
-        results.forEach(result => {
-          const tags = result.querySelector('.tags').textContent.trim().split(','); // Asume que las etiquetas están en una clase 'tags' y separadas por comas
-          const matches = selectedFilters.every(filter => tags.includes(filter));
-          result.style.display = matches ? 'block' : 'none';
-        });
-      }
+      //   results.forEach(result => {
+      //     const tags = result.querySelector('.tags').textContent.trim().split(','); // Asume que las etiquetas están en una clase 'tags' y separadas por comas
+      //     const matches = selectedFilters.every(filter => tags.includes(filter));
+      //     result.style.display = matches ? 'block' : 'none';
+      //   });
+      // }
 
       // Event listener para el selector de ordenación
-      document.getElementById('sort-selector').addEventListener('change', function() {
-        sortResults(this.value);
-      });
+      // document.getElementById('sort-selector').addEventListener('change', function() {
+      //   sortResults(this.value);
+      // });
 
       // Event listener para el multiselect de filtrado
-      document.getElementById('filter-selector').addEventListener('change', filterResults);
+      // document.getElementById('filter-selector').addEventListener('change', filterResults);
 
       // Inicializar el filtrado al cargar
-      document.addEventListener('DOMContentLoaded', filterResults);
+      // document.addEventListener('DOMContentLoaded', filterResults);
     </script>    
   </body>
 </html>
