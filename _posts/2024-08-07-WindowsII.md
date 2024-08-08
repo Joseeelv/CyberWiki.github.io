@@ -64,14 +64,14 @@ Es otra herramienta pertenecientes a la **Configuración del sistema**.
 <div style="text-align:center">
   <table>
     <tr>
-      <td style="text-align:left; vertical-align:top; width:70%;"><ol>
+      <td style="text-align:left; vertical-align:top;"><ol>
         <li>Herramientas del sistema.</li>
         <li>Alamacenamiento.</li>
         <li>Servicios y aplicaciones</li>
       </ol></td>
       <td>
         <div style="text-align:center">
-          <img src="../assets/images/Labs/WindowsII/image-20230919004854284.png" alt="Untitled" onclick="openModal(this.src)" />
+          <img src="../assets/images/Labs/WindowsII/image-20230919004854284.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:300px"  />
       </div></td>
     </tr>
   </table>
