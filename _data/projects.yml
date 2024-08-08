@@ -32,7 +32,7 @@
 - name: Servicios de la red II
   link: https://joseeelv.github.io//blog/ServiciosRedII
   image: "../assets/images/Labs/ServiciosRedII/srII.png"
-  description: El laboratorio tiene como objetivo enseñar la enumeración y explotación de tres protocolos de red: NFS (Network File System), SMTP (Simple Mail Transfer Protocol) y MySQL. Los participantes aprenderán a identificar vulnerabilidades y realizar ataques utilizando herramientas comunes en pruebas de penetración y administración de sistemas.
+  description: El laboratorio tiene como objetivo enseñar la enumeración y explotación de tres protocolos de red; NFS (Network File System), SMTP (Simple Mail Transfer Protocol) y MySQL. Los participantes aprenderán a identificar vulnerabilidades y realizar ataques utilizando herramientas comunes en pruebas de penetración y administración de sistemas.
 
 - name: Enumeración de Subdominios
   link: https://joseeelv.github.io//blog/EnumeracióndeSubdominios
