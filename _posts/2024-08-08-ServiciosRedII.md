@@ -28,11 +28,11 @@ Una vez montado los directorios compartidos que queremos en nuestro propio equip
 ## Como enumerar el protocolo NFS
 <ol>
   <li><strong>Uso del comando showmount:</strong>
-  Podemos hacer uso del comando <code>showmount -e <ip_servidor></code> para ver los directorios compartidos del servidor.</li><br>
+  Podemos hacer uso del comando <code>showmount -e ip_servidor</code> para ver los directorios compartidos del servidor.</li><br>
   <li><strong>Uso de la herramienta Nmap:</strong>
     Podemos realizar un escaneo de puertos para ver si está abierto un puerto que haga uso de un servicio NFS.</li><br>
   <li><strong>Uso de rcpinfo:</strong>
-    Mediante la herramienta <strong>rcpinfo</strong> podemos obtener información sobre los servicios RPC con el comando <code>rcpinfo -p <ip-servidor></code>.</li><br>
+    Mediante la herramienta <strong>rcpinfo</strong> podemos obtener información sobre los servicios RPC con el comando <code>rcpinfo -p ip_servidor</code>.</li><br>
   <li><strong>Escaneo manual de Directorios:</strong>
     Como hemos comentado antes, los directorios que un servidor va a compartir se configuran en el fichero <code>/etc/exports</code>, por tanto, si realizamos una lectura del mismo encontraremos que recursos comparten y más información.</li><br>
   <li><strong>Uso del comando nfsstat:</strong>
