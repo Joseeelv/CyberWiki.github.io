@@ -18,17 +18,17 @@ Windows Update es un servicio proporcionado por Microsoft que nos permite instal
 Podemos acceder a Windows Update de dos formas:
 <table>
   <tr>
-    <td style="text-align:left; vertical-align:top; width:600px"><ol>
+    <td style="text-align:left; vertical-align:top; width:700px"><ol>
         <li>En Configuración en la sección <em>Actualización y seguridad</em>.</li>
         <li>Haciendo uso del uso del comando: <code>control /name Microsoft.WindowsUpdate</code> ya sea en el <code>cmd</code> (<a href="https://joseeelv.github.io//blog/WindowsII">Símbolo del sistema</a>) de la combinación de teclas de Ejecutar `Windows + R` que nos llevará a la Configuración de Windows (arriba).</li>
       </ol>
-      <div style="text-align:center;">
+      <div style="text-align:left;">
         <img src="../assets/images/Labs/WindowsIII/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:400px"/>
       </div>
     </td>
     <td style="vertical-align:top;">
       <div style="text-align:center; ">
-        <img src="../assets/images/Labs/WindowsIII/image-20230922102018818.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:1000px"/>
+        <img src="../assets/images/Labs/WindowsIII/image-20230922102018818.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:500px"/>
       </div>
     </td>
   </tr>
@@ -57,44 +57,42 @@ En esta sección de <em>Seguridad de Windows</em> podemos realizar escaneos/aná
 <table>
   <tr>
     <td style="text-align:left; vertical-align:top; width:800px">
-    <h2>Tipos de análisis</h2>
-    <ul>
-      <li><strong>Análisis / escaneo rápido</strong>: comprueba las carpetas donde se pueden encontrar comúnmente las amenazas.</li>
-      <li><strong>Análisis / escaneo completo</strong>: se comprueba todas las carpetas, archivos y programas en ejecución que se encuentran en el equipo, este es un análisis mucho más lento pero más seguro.</li>
-      <li><strong>Análisis / escaneo personalizado</strong>: el usuario es libre de personalizar el análisis (los archivos o carpetas que se desean verificar).</li>
-    </ul>
-    <h2>Historial de protección</h2>
-    Contiene todas las acciones que <em>Windows Defender</em> ha tomado a la hora de haberse realizado un análisis.<br>
-    Si el antivirus encuentra/detecta un fragmento de malware, este los registrará en el historial de protección.<br><br>
-    <strong>Amenazas en cuarentena</strong>: estas amenazas se han aislado del sistema y se ha impedido la ejecución en el equipo. Serán eliminadas periódicamente.<br><br>
-    También podemos realizar las acciones de <strong>quitar</strong> (elimina la amenaza del dispositivo) ó <strong>restaurar</strong> (vuelve a colocar el archivo en la carpeta donde se encontraba y el antivirus lo volverá a detectar como una amenaza).<br><br>
-    <strong>Amenazas permitidas</strong>: son elementos identificados como amenazas pero se les permite la ejecución en el equipo.
-    <h2>Configuración de protección contra virus y amenazas</h2>
-    Aquí podemos administrar la configuración de la protección del equipo:
-    <ul>
-      <li><strong>Protección en tiempo real</strong>: localiza y evita que se ejecute malware en el equipo.</li>
-      <li><strong>Protección entregada en la nube</strong>: ofrece una mayor protección y más rápida debido a que el equipo tiene acceso a las definiciones (contenida en la nube) más actualizadas de las amenazas. El equipo no obstante debe de tener conexión a internet para poder acceder a dicha nube.</li>
-      <li><strong>Envío automático de muestras</strong>: si el equipo está conectado a la nube, podemos hacer que 'Defender' envíe automáticamente archivos sospechosos a Windows para comprobar si hay amenazas potenciales.</li>
-      <li><strong>Acceso controlado a carpetas</strong>: podemos proteger archivos, carpetas, espacios de memoria del equipo de cambios no autorizados provocado por aplicaciones de terceros.</li>
-      <li><strong>Exclusiones</strong>: podemos indicarle a 'Defender' una serie de carpetas de confianza las cuales no analizará.</li>
-      <li><strong>Notificaciones</strong>: 'Defender' nos enviará notificaciones cuando encuentre alguna amenaza en el sistema para que se realice una acción frente a ella y del estado del equipo.</li>
-    </ul>
-    <h2>Protección frente a ransomware</h2>
-    <blockquote>
-      <p><em>Un ransomware es un tipo de malware dedicado a la encriptación de carpetas, archivos o equipos al completo con el fin de obtener los datos del usuario infectado.</em></p>
-    </blockquote>
-    Para ello, <em>Windows Defender<em> nos permite configurar el acceso a carpetas de forma controlada:<br><br>
-    <strong>Acceso controlado a carpetas<strong>: para que el equipo esté protegido contra ransomware se requiere que esta función esté habilitada, además de la protección a tiempo real.
+      <h2>Tipos de análisis</h2>
+      <ul>
+        <li><strong>Análisis / escaneo rápido</strong>: comprueba las carpetas donde se pueden encontrar comúnmente las amenazas.</li>
+        <li><strong>Análisis / escaneo completo</strong>: se comprueba todas las carpetas, archivos y programas en ejecución que se encuentran en el equipo, este es un análisis mucho más lento pero más seguro.</li>
+        <li><strong>Análisis / escaneo personalizado</strong>: el usuario es libre de personalizar el análisis (los archivos o carpetas que se desean verificar).</li>
+      </ul>
+      <h2>Historial de protección</h2>
+      Contiene todas las acciones que <em>Windows Defender</em> ha tomado a la hora de haberse realizado un análisis.<br>
+      Si el antivirus encuentra/detecta un fragmento de malware, este los registrará en el historial de protección.<br><br>
+      <strong>Amenazas en cuarentena</strong>: estas amenazas se han aislado del sistema y se ha impedido la ejecución en el equipo. Serán eliminadas periódicamente.<br><br>
+      También podemos realizar las acciones de <strong>quitar</strong> (elimina la amenaza del dispositivo) ó <strong>restaurar</strong> (vuelve a colocar el archivo en la carpeta donde se encontraba y el antivirus lo volverá a detectar como una amenaza).<br><br>
+      <strong>Amenazas permitidas</strong>: son elementos identificados como amenazas pero se les permite la ejecución en el equipo.
+      <h2>Configuración de protección contra virus y amenazas</h2>
+      Aquí podemos administrar la configuración de la protección del equipo:
+      <ul>
+        <li><strong>Protección en tiempo real</strong>: localiza y evita que se ejecute malware en el equipo.</li>
+        <li><strong>Protección entregada en la nube</strong>: ofrece una mayor protección y más rápida debido a que el equipo tiene acceso a las definiciones (contenida en la nube) más actualizadas de las amenazas. El equipo no obstante debe de tener conexión a internet para poder acceder a dicha nube.</li>
+        <li><strong>Envío automático de muestras</strong>: si el equipo está conectado a la nube, podemos hacer que 'Defender' envíe automáticamente archivos sospechosos a Windows para comprobar si hay amenazas potenciales.</li>
+        <li><strong>Acceso controlado a carpetas</strong>: podemos proteger archivos, carpetas, espacios de memoria del equipo de cambios no autorizados provocado por aplicaciones de terceros.</li>
+        <li><strong>Exclusiones</strong>: podemos indicarle a 'Defender' una serie de carpetas de confianza las cuales no analizará.</li>
+        <li><strong>Notificaciones</strong>: 'Defender' nos enviará notificaciones cuando encuentre alguna amenaza en el sistema para que se realice una acción frente a ella y del estado del equipo.</li>
+      </ul>
+      <h2>Protección frente a ransomware</h2>
+      <blockquote>
+        <p><em>Un ransomware es un tipo de malware dedicado a la encriptación de carpetas, archivos o equipos al completo con el fin de obtener los datos del usuario infectado.</em></p>
+      </blockquote>
+      Para ello, <em>Windows Defender</em> nos permite configurar el acceso a carpetas de forma controlada:<br><br>
+      <strong>Acceso controlado a carpetas</strong>: para que el equipo esté protegido contra ransomware se requiere que esta función esté habilitada, además de la protección a tiempo real.
     </td>
     <td>
       <div style="text-align:center; ">
-        <img src="../assets/images/Labs/WindowsIII/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:1200px"/>
+        <img src="../assets/images/Labs/WindowsIII/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px"/>
       </div>
     </td>
   </tr>
 </table>
-
-
 
 # Firewall y protección de red
 
