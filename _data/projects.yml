@@ -56,5 +56,5 @@
 
 - name: Descubrir Contenidos Web
   link: https://joseeelv.github.io//blog/DC
-  image: "../assets/images/Labs/DC/hacking.svg"
+  image: "../assets/images/Labs/DC/hacking.png"
   description: Este laboratorio se centra en la exploración y descubrimiento de contenido oculto o no destinado al acceso público en sitios web, un proceso crucial para pentesters.
