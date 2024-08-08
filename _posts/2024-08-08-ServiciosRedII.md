@@ -2,7 +2,7 @@
 title: Servicios de red II
 layout: post
 post-image: "../assets/images/Labs/ServiciosRedII/srII.png"
-description: El laboratorio tiene como objetivo enseñar la enumeración y explotación de tres protocolos de red: NFS (Network File System), SMTP (Simple Mail Transfer Protocol) y MySQL. Los participantes aprenderán a identificar vulnerabilidades y realizar ataques utilizando herramientas comunes en pruebas de penetración y administración de sistemas.
+description: El laboratorio tiene como objetivo enseñar la enumeración y explotación de tres protocolos de red; NFS (Network File System), SMTP (Simple Mail Transfer Protocol) y MySQL. Los participantes aprenderán a identificar vulnerabilidades y realizar ataques utilizando herramientas comunes en pruebas de penetración y administración de sistemas.
 difficulty: Fácil
 enlace: https://tryhackme.com/r/room/networkservices2
 tags:
