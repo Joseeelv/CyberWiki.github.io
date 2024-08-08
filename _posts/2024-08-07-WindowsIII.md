@@ -88,7 +88,7 @@ En esta sección de <em>Seguridad de Windows</em> podemos realizar escaneos/aná
     </td>
     <td>
       <div style="text-align:center; ">
-        <img src="../assets/images/Labs/WindowsIII/Untitled 1.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:800px"/>
+        <img src="../assets/images/Labs/WindowsIII/Untitled 1.png" alt="Untitled" style="width:100%; max-width:800px"/>
       </div>
     </td>
   </tr>
