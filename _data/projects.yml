@@ -55,11 +55,11 @@
   description: Este módulo es el tercer y último introductorio de Windows. En este laboratorio, exploramos diversas herramientas integradas en Windows diseñadas para proteger y asegurar los equipos. La seguridad en Windows se gestiona a través de varias aplicaciones y configuraciones clave.
 
 - name: Descubrir Contenidos Web
-  link: https://joseeelv.github.io//blog/DC
+  link: https://joseeelv.github.io//blog Descubrimientodecontenidos
   image: "../assets/images/Labs/DC/hacking.png"
   description: Este laboratorio se centra en la exploración y descubrimiento de contenido oculto o no destinado al acceso público en sitios web, un proceso crucial para pentesters.
 
 - name: Recorrido de una Aplicación Web
-  link: https://joseeelv.github.io//blog/RecorrerSolicitud
+  link: https://joseeelv.github.io//blog/WalkinganApplication
   image: "../assets/images/Labs/RecorrerSolicitud/console.png"
   description: Este laboratorio se centra en la revisión manual de una aplicación web para detectar problemas de seguridad utilizando solo las herramientas integradas del navegador. Estas herramientas son esenciales porque a menudo pueden revelar vulnerabilidades que las herramientas automáticas pasan por alto.
