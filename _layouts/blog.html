@@ -69,19 +69,6 @@
         </div>`,
     noResultsText: '<div class="subtitle has-text-centered is-uppercase">No Results Found</div>',
     fuzzy: false,
-    success: function(results) {
-        const resultsContainer = document.getElementById('results-container');
-        const searchResults = resultsContainer.getElementsByClassName('searchResult');
-        
-        // Add the separator only after the last search result
-        if (searchResults.length > 0) {
-            const lastResult = searchResults[searchResults.length - 1];
-            const hr = document.createElement('hr');
-            hr.className = 'has-background-black';
-            hr.style.margin = '0.5rem 5rem 2.5rem 5rem';
-            lastResult.appendChild(hr);
-        }
-    }
 });
 
       // Función para ordenar los resultados
