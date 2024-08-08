@@ -66,28 +66,9 @@
           </div>
         </div>
         </a>
-        </div>`,
+        </div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">`,
         noResultsText: '<div class="subtitle has-text-centered is-uppercase">No Results Found</div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">',
         fuzzy: false,
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const observer = new MutationObserver(function(mutationsList, observer) {
-        const resultsContainer = document.getElementById('results-container');
-        const searchResults = resultsContainer.querySelectorAll('.searchResult');
-
-        // Remove existing final separators to avoid duplicates
-        resultsContainer.querySelectorAll('.final-separator').forEach(el => el.remove());
-
-        if (searchResults.length > 0) {
-            const lastResult = searchResults[searchResults.length - 1];
-            const hr = document.createElement('hr');
-            hr.className = 'has-background-black final-separator';
-            hr.style.margin = '0.5rem 5rem 2.5rem 5rem';
-            lastResult.parentNode.insertBefore(hr, lastResult.nextSibling);
-        }
-    });
-
-    observer.observe(document.getElementById('results-container'), { childList: true });
 });
 
       // Función para ordenar los resultados
