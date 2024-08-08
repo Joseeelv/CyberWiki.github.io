@@ -1,6 +1,13 @@
-# Descubrimiento de contenidos
-
-Created: September 18, 2023 9:25 PM
+---
+title: Descubrimiento de Contenidos Web
+layout: post
+post-image: "../assets/images/Labs/DC/hacking.png"
+description: Este laboratorio se centra en la exploración y descubrimiento de contenido oculto o no destinado al acceso público en sitios web, un proceso crucial para pentesters.
+enlace: https://tryhackme.com/room/contentdiscovery
+difficulty: Fácil
+tags: 
+  - LAB
+---
 
 Para un pentester el contenido que se puede descubrir son cosas que no se presentan de inmediato y que no siempre fueron destinadas al acceso público.
 
@@ -23,14 +30,14 @@ Para acceder a él —> *https://nombre_pagina_web/robots.txt*
 Favicon es una pequeño icono que muestra la barra de direcciones del navegador o en la pestaña utilizada para marcar un sitio web. 
 
 En el caso de Google sería:
-
-![Untitled](Descubrimiento%20de%20contenidos%20b5c7a1b23f874ec2996ca0187db6613a/Untitled.png)
+<div style="text-align:center; ">
+  <img src="../assets/images/Labs/DC/Untitled.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:300px"/>
+</div>
 
 Al construir una página web, si el desarrollador no reemplaza este icono por uno personalizado, en este caso el de Google, podemos saber que framework se está utilizando.
 
 OWASP contiene una base de datos con todos los iconos usados:
-
-[](https://wiki.owasp.org/index.php/OWASP_favicon_database)
+[Favicon-DB](https://wiki.owasp.org/index.php/OWASP_favicon_database)
 
 Si un sitio web no usa un icono personalizado, en el código fuente de la página web podemos encontrar como se llama el favicon, pudiendo así descargarlo y obtener el MD5 hash y cotejarlo con la base de datos de OWASP.
 
@@ -108,3 +115,5 @@ Podemos hacer uso de estás herramientas junto con las wordlist para poder descu
 ### GOBUSTER
 
 `gobuster dir --url http://ip_maquina/ -w ruta_de_la_wordlist`
+
+---

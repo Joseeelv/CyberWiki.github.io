@@ -110,7 +110,7 @@ Nos ofrece una vista de las redes a las que está conectado el equipo, se puede 
 
 <table>
   <tr>
-    <td style="vertical-align:top; text-align:left;">
+    <td style="vertical-align:top; text-align:left; width:50%">
     Podemos agregar una excepción para la aplicación que está siendo bloqueada por el firewall o también podemos asignar un puerto específico.<br><br>
     Podemos ver la configuración actual de cualquier perfil de firewall, si es privado y/o público y en la opción ‘Detalles’ podemos ver el nombre y una breve descripción sobre el perfil.
     <div style="text-align:center;">
@@ -118,8 +118,8 @@ Nos ofrece una vista de las redes a las que está conectado el equipo, se puede 
     </div>
     </td>
     <td>
-    <div style="text-align:center; vertical-align:top;">
-      <img src="../assets/images/Labs/WindowsIII/Untitled 3.png" alt="Untitled" onclick="openModal(this.src)" />
+    <div style="text-align:left; vertical-align:top;">
+      <img src="../assets/images/Labs/WindowsIII/Untitled 3.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:600px" />
     </div>
     </td>
   </tr>
