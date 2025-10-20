@@ -1,132 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 {% include head.html %}
 
-  <body>
-    {% include navbar.html %}
+<body>
+  {% include navbar.html %}
 
-    <section class="hero is-fullheight" id="blog">
-        <div class="hero-body">
-            <div class="container">
-                {% include blogpage-heading.html %}
-            </div>
-        </div>
+  <section class="hero is-fullheight" id="blog">
+    <div class="hero-body">
+      <div class="container">
+        {% include blogpage-heading.html %}
+      </div>
+    </div>
 
-        <!-- Selector de Ordenación
-        <div class="container" style="text-align: center;">
-            <div class="field">
-                <label class="label">Ordenar las rooms por:</label>
-                <div class="control">
-                  <div class="select">
-                      <select id="sort-selector" style="text-align: center;">
-                          <option value="date">Fecha</option>
-                          <option value="difficulty">Dificultad</option>
-                          <option value="title">Nombre</option>
-                      </select>
-                  </div>
-              </div>
-          </div>
-        </div>        -->
-        <div id="results-container"></div>
-        <!--Blog Cards Section-->
-        {% for post in site.posts %}
-            {% unless post.tags contains "LAB" %}
-                 {% include blog-card.html %}
-            {% endunless %}
-        {% endfor %}
-    </section>
-    <br>
-    <!--Footer begins here-->
-    {% include footer.html %}
-    <script src="{{site.url}}{{site.baseurl}}/assets/js/simple-jekyll-search.js"></script>
-
-    <script>
-      SimpleJekyllSearch({
-    searchInput: document.getElementById('search'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '{{site.url}}{{site.baseurl}}/search.json',
-    searchResultTemplate: `
-        <div style="border: 0.15rem dashed black" class="searchResult columns has-text-centered" id="blog-card">
-        <div class="column is-marginless is-paddingless is-one-third-desktop is-one-third-fullhd is-one-third-tablet">
-        <div class="image is-16by9" style="background-image: url({image});"></div>
-        </div>
-        <a href="{url}">
-        <div class="column has-text-left-desktop has-text-left-tablet">
-          <h1 class="title is-size-4-touch">{title}</h1>
-          <div class="content has-text-grey">
-            {description}
-            <hr class="has-background-grey">
-            <span class="has-text-grey date">
-              Published on <span class="has-text-weight-semibold">{date}</span>
-            </span>
-            <br>
-            <span class="has-text-weight-semibold difficulty">{difficulty}</span> 
-              | <a href="{enlace}" class="has-text-weight-semibold">Link</a>
+    <!-- Selector de ordenación opcional - comenta si no lo usas -->
+    <!--
+    <div class="container has-text-centered">
+      <div class="field is-inline-flex">
+        <label class="label is-uppercase has-text-weight-semibold mr-3">Ordenar las rooms por:</label>
+        <div class="control">
+          <div class="select">
+            <select id="sort-selector">
+              <option value="date">Fecha</option>
+              <option value="difficulty">Dificultad</option>
+              <option value="title">Nombre</option>
+            </select>
           </div>
         </div>
-        </a>
-        </div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">`,
-        noResultsText: '<div class="subtitle has-text-centered is-uppercase">No Results Found</div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">',
-        fuzzy: false,
-});
+      </div>
+    </div>
+    -->
 
-      // Función para ordenar los resultados
-      // function sortResults(criteria) {
-      //   const container = document.getElementById('results-container');
-      //   const results = Array.from(container.querySelectorAll('.searchResult'));
+    <div id="results-container" class="container mt-5"></div>
 
-      //   results.sort((a, b) => {
-      //     let aValue, bValue;
+    <!-- Blog Cards -->
+    <div id="blog-card-list" class="container mt-6">
+      {% for post in site.posts %}
+      {% unless post.tags contains "LAB" %}
+      {% include blog-card.html %}
+      {% endunless %}
+      {% endfor %}
+    </div>
 
-      //     switch (criteria) {
-      //       case 'title':
-      //         aValue = a.querySelector('.title').textContent.trim().toLowerCase();
-      //         bValue = b.querySelector('.title').textContent.trim().toLowerCase();
-      //         return aValue.localeCompare(bValue); // Ordenar alfabéticamente
+  </section>
 
-      //       case 'date':
-      //         aValue = new Date(a.querySelector('.date').textContent.trim().split('on ')[1]);
-      //         bValue = new Date(b.querySelector('.date').textContent.trim().split('on ')[1]);
-      //         return bValue - aValue; // Ordenar por fecha descendente
+  {% include footer.html %}
 
-      //       case 'difficulty':
-      //         const difficulties = ['Easy', 'Intermediate', 'Hard'];
-      //         aValue = difficulties.indexOf(a.querySelector('.difficulty').textContent.trim());
-      //         bValue = difficulties.indexOf(b.querySelector('.difficulty').textContent.trim());
-      //         return aValue - bValue; // Ordenar por dificultad ascendente
+  <script src="/assets/js/search.js"></script>
 
-      //       default:
-      //         return 0;
-      //     }
-      //   });
+</body>
 
-      //   results.forEach(result => container.appendChild(result));
-      // }
-
-      // Función para filtrar los resultados
-      // function filterResults() {
-      //   const container = document.getElementById('results-container');
-      //   const results = Array.from(container.querySelectorAll('.searchResult'));
-      //   const selectedFilters = Array.from(document.getElementById('filter-selector').selectedOptions).map(option => option.value);
-
-      //   results.forEach(result => {
-      //     const tags = result.querySelector('.tags').textContent.trim().split(','); // Asume que las etiquetas están en una clase 'tags' y separadas por comas
-      //     const matches = selectedFilters.every(filter => tags.includes(filter));
-      //     result.style.display = matches ? 'block' : 'none';
-      //   });
-      // }
-
-      // Event listener para el selector de ordenación
-      // document.getElementById('sort-selector').addEventListener('change', function() {
-      //   sortResults(this.value);
-      // });
-
-      // Event listener para el multiselect de filtrado
-      // document.getElementById('filter-selector').addEventListener('change', filterResults);
-
-      // Inicializar el filtrado al cargar
-      // document.addEventListener('DOMContentLoaded', filterResults);
-    </script>    
-  </body>
 </html>

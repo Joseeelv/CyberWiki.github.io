@@ -5,10 +5,11 @@ gem "bugsnag", "~> 6.22"
 gem "listen", "~> 3.7.0"
 gem 'jekyll', '~> 4.3.3'
 gem 'rake', '~> 13.0.6'
-gem 'sass-embedded', '~> 1.77.8'
+gem "jekyll-sass-converter", ">= 2.0"
 gem 'jekyll-admin', '~> 0.11'
 gem 'jekyll-feed', '~> 0.15'
 gem 'webrick', '~> 1.7'
+gem 'ffi', '~> 1.17'
 
 # None of these can actually be used in a development copy of dev
 # They are all for CI and tests

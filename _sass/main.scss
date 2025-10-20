@@ -1,80 +1,87 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css');
 
+/* Variables globales, colores */
+$primary-font: 'Space Grotesk', sans-serif;
+$mono-font: 'Fira Mono', monospace;
 
-html,
-body {
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth !important;
-    transition: all 0.25s ease;
+$neon-blue: #00e0ff;
+$neon-green: #00ff99;
+$neon-red: #ff0055;
+$neon-orange: #ff6600;
+$background-dark: #050505;
+
+/* Reset básico */
+html, body {
+  font-family: $primary-font;
+  scroll-behavior: smooth !important;
+  transition: all 0.25s ease;
+  background: $background-dark;
+  color: #e0e0e0;
 }
 
-.post-body {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-
-
-/* width */
+/* scrollbar styling */
 ::-webkit-scrollbar {
-    width: 0.5vmax !important;
+  display: none;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
-    background: white !important;
+  display: none;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #363636 !important;
+  display: none;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: black !important;
+  display: none;
 }
 
+/* Placeholder estilado */
 ::placeholder {
-    font-family: 'Poppins', sans-serif;
+  font-family: $primary-font;
 }
 
+/* Navbar tweaks */
 #navbar {
-    .navbar-burger {
-        span:nth-child(2) {
-            left: calc(50%);
-            width: 8px;
-        }
+  .navbar-burger {
+    span:nth-child(2) {
+      left: calc(50%);
+      width: 8px;
     }
+  }
 }
 
+/* Activar clase activa */
 .is-active {
-    font-weight: bold;
+  font-weight: bold;
 }
 
+/* Ajustes botones en columnas */
 .columns {
-    .button {
-        margin: 0.5rem !important;
-    }
+  .button {
+    margin: 0.5rem !important;
+  }
 }
 
+/* Separadores */
 hr {
-    margin: 1rem auto;
-    height: 1px;
+  margin: 1rem auto;
+  height: 1px;
 }
 
+/* Margen columnas */
 .column {
-    margin: auto 0.5rem;
-    padding: 0.5rem;
+  margin: auto 0.5rem;
+  padding: 0.5rem;
 }
 
+/* Búsqueda resultados */
 .searchResult {
-    a {
-        .title {
-            text-decoration: underline;
-        }
+  a {
+    .title {
+      text-decoration: underline;
     }
+  }
 }

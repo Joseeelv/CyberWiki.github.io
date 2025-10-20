@@ -13,7 +13,7 @@ layout: compress
       "image" : "{{post.post-image}}",
       "difficulty" : "{{ post.difficulty | escape }}",
       "enlace" : "{{post.enlace | escape }}",
-      "skills"     : "{{ post.tags | join: ', ' }}",
+      "skills"     : "{{ page.skills | join: ' | ' | escape }}",
       "os" : "{{ post.title | escape }}"
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}

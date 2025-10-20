@@ -1,0 +1,36 @@
+#page-section {
+  background: #0a0a0a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.neon-title {
+  color: #00e0ff;
+  font-family: 'Orbitron', 'Rajdhani', 'IBM Plex Mono', monospace;
+  text-shadow: 0 0 15px #00e0ffcc, 0 0 25px #00ff99cc;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+}
+
+.neon-divider {
+  width: 200px;
+  margin: 1rem auto 2rem auto;
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, #00e0ff, #00ff99, #00e0ff);
+  box-shadow: 0 0 20px #00e0ffcc, 0 0 30px #00ff99cc;
+  border-radius: 12px;
+}
+
+.neon-content {
+  color: #cccccc;
+  font-family: 'Rajdhani', 'IBM Plex Mono', monospace;
+  font-size: 1.2rem;
+  line-height: 1.58;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}

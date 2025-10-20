@@ -3,28 +3,29 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html>
-{% include head.html %}
+<html lang="en">
+  {% include head.html %}
 
-<body>
+  <body>
     <section class="hero is-fullheight has-text-centered has-background-black-ter">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title is-1 is-uppercase has-text-weight-bold has-text-white">
-                    {{page.title}}
-                </h1>
-                <h3 class="is-uppercase has-text-weight-medium is-marginless has-text-grey-light">
-                    {{content}}
-                </h3>
-                <hr>
-                <div class="columns is-marginless is-inline-flex-desktop">
-                    <a href="{{site.url}}{{site.baseurl}}/"
-                        class="button is-white column is-rounded is-outlined is-uppercase has-text-weight-normal">Home</a>
-                    </a>
-                </div>
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h1 class="page-title title is-1 is-uppercase has-text-weight-bold has-text-white">
+            {{ page.title }}
+          </h1>
+          <h3 class="page-subtitle is-uppercase has-text-weight-medium is-marginless has-text-grey-light">
+            {{ content }}
+          </h3>
+          <hr class="page-divider">
+          <div class="columns is-centered">
+            <div class="column is-narrow">
+              <a href="{{ site.url }}{{ site.baseurl }}/" class="button is-white is-outlined is-uppercase is-rounded has-text-weight-normal page-btn">
+                Home
+              </a>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>

@@ -1,131 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   {% include head.html %}
 </head>
 
 <body>
   {% include navbar.html %}
+
   <section class="hero is-fullheight has-text-centered" id="post">
     <div class="hero-body">
       <div class="container">
-        <a href="{{ page.url | relative_url }}" class="has-text-black" id="title">
-          <h1 class="title has-text-centered is-2 has-text-weight-semibold ">{{ page.title }}</h1>
+
+        <a href="{{ page.url | relative_url }}" class="post-title-link">
+          <h1 class="title is-2 has-text-weight-semibold has-text-centered">{{ page.title }}</h1>
         </a>
-        <hr class="has-background-black">
+        <hr class="divider">
+
         <div class="columns is-variable is-5 has-text-centered">
           <div class="column is-6">
-            <div style="text-align: center;">
-              <img src="{{ page.post-image }}" alt="{{ page.title }}" id="post-image">
-            </div>
+            <figure class="image is-16by9" id="post-image-wrapper">
+              <a href="{{ page.enlace }}" target="_blank">
+                <img src="{{ page.post-image }}" alt="{{ page.title }}" id="post-image" />
+              </a>
+            </figure>
           </div>
-          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile" style="text-align: left;">
+
+          <div
+            class="column is-5 subtitle has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-centered-mobile post-meta">
             {% unless page.description.size == 0 %}
-            <p id="description" class="content is-small has-text-weight-medium is-uppercase">
+            <p id="description" class="content has-text-weight-medium is-uppercase" style="font-size: medium;">
               {{ page.description | strip | strip_html | strip_newlines }}
             </p>
-            <p class="subtitle is-uppercase is-6 has-text-weight-normal has-text-black-ter">LAB LINK: 
-              <b><a href="{{ page.enlace | escape }}" target="page.enlace">{{ page.title }}</a></b>
-            </p>
+
             {% endunless %}
-            <!-- Dificultad -->
-            <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Difficulty: 
-              <b>
-                <span class="tag difficulty {{ page.difficulty | downcase }}">
-                  {{ page.difficulty }}
-                </span>
-              </b>
+
+            <p class="post-label">
+              <b>Difficulty: </b>
+              <span class="tag difficulty {{ page.difficulty | downcase }}" style="font-size: 15px;">{{ page.difficulty
+                }}</span>
             </p>
 
-            <!-- Sistema Operativo -->
             {% if page.os %}
-            <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Operating System: 
-              <b>{{ page.os }}</b>
+            <p class="post-label os-label">
+              <b>Operating System: </b>
+              <span class="os-icon" data-os="{{ page.os | escape }}" style="font-size: 30px;"></span>
             </p>
             {% endif %}
 
-            <!-- Skills -->
             {% if page.skills %}
-            <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Skills: 
-              <b>{{ page.skills | join: ', ' }}</b>
+            <p class="post-label">
+              <b>Skills: </b>
+              {% for skill in page.skills %}
+              "{{ skill }}"{% if forloop.last == false %}, {% endif %}
+              {% endfor %}
             </p>
             {% endif %}
+
           </div>
         </div>
-        <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile post-body">
-          <p>{{ content }}</p>
+        <hr class="divider">
+        <div
+          class="content post-body has-text-justified-desktop has-text-justified-fullhd has-text-justified-tablet has-text-left-mobile">
+          {{ content }}
         </div>
+        <hr class="divider">
         {% unless site.disqus-shortname == "" %}
-        <div class="disqus-comments" id="disqus_thread"></div>
+        <section class="section disqus-comments" id="disqus_thread"></section>
         {% endunless %}
       </div>
     </div>
   </section>
+
   {% include footer.html %}
 
   <!-- Modal -->
-  <div id="myModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="img01">
+  <div id="myModal" class="modal" role="dialog" aria-modal="true" tabindex="-1" aria-hidden="true">
+    <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
+    <img class="modal-content" id="img01" alt="Expanded Image">
   </div>
 
-  <!-- Prism.js Script -->
+  <!-- Prism.js -->
   <script src="../prism.js"></script>
-  <script>
-    function copyToClipboard(event) {
-      const button = event.target;
-      const codeContainer = button.closest('.code-container');
-      const codeElement = codeContainer.querySelector('code');
-    
-      if (!codeElement) {
-        console.error('No se encontró el elemento <code> para copiar.');
-        return;
-      }
 
-      const code = codeElement.textContent;
-
-      navigator.clipboard.writeText(code).then(() => {
-        button.textContent = 'Copied!';
-
-        setTimeout(() => {
-          button.textContent = 'Copy';
-        }, 2000); // 2000 ms = 2 segundos
-
-      }).catch(err => {
-        console.error('Error al copiar al portapapeles: ', err);
-      });
-    }
-
-    document.querySelectorAll('.copy-button').forEach(button => {
-      button.addEventListener('click', copyToClipboard);
-    });
-
-    function openModal(imgSrc) {
-      var modal = document.getElementById("myModal");
-      var modalImg = document.getElementById("img01");
-
-      modal.style.display = "block";
-      setTimeout(function() {
-        modal.classList.add('show');
-      }, 10); // Delay to trigger the animation
-      modalImg.src = imgSrc;
-    }
-
-    function closeModal(event) {
-      if (event) event.stopPropagation();
-      var modal = document.getElementById("myModal");
-      modal.classList.remove('show');
-      setTimeout(function() {
-        modal.style.display = "none";
-      }, 300); // Match this duration with the CSS animation duration
-    }
-
-    window.onclick = function(event) {
-      var modal = document.getElementById("myModal");
-      if (event.target == modal) {
-        closeModal();
-      }
-    }
-  </script>
+  <script src="/assets/js/copy.js"></script>
+  <script src="/assets/js/icon.js"></script>
+  <script src="/assets/js/myModal.js"></script>
 </body>
+
 </html>

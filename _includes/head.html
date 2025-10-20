@@ -1,19 +1,63 @@
 <head>
     {% include meta.html %}
-    <title>{{site.title}}</title>
-    <link rel="stylesheet" href="{% if site.baseurl %}{{site.baseurl}}{% else %}{% endif %}/assets/css/style.css">
-      <!-- Incluye el CSS de Prism.js -->
-    <link rel="stylesheet" href="../prism.css">
-    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>{{ site.title }}</title>
     
-    <link rel="shortcut icon" href="{% if site.favicon-url %}{{site.favicon-url}}{% else %}{{ 'assets/images/favicon.png' | absolute_url }}{% endif %}" type="image/x-icon">
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var titleElement = document.getElementById('page-title');
-            var icon = "/assest/images/favicon.png"; // Puedes usar cualquier emoji o icono aquí
-            titleElement.textContent = icon + " " + titleElement.textContent;
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+    href="{% if site.favicon-url %}{{ site.favicon-url }}{% else %}{{ 'assets/images/favicon.png' | absolute_url }}{% endif %}"
+    type="image/x-icon">
+    <!-- Font Awesome Icons (latest official version only) -->
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+    
+    <!-- Main styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+    <!-- Prism.js code highlighting -->
+    <link rel="stylesheet" href="prism.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Meta responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Navbar Style-->
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+
+    <!-- 404 Style-->
+    <link rel="stylesheet" href="/assets/css/404.css">
+
+    <!-- Blog Style-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <!-- Page Style-->
+    <link rel="stylesheet" href="/assets/css/page.css">
+
+    <!-- Post Style-->
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+    <!-- Search Style-->
+    <link rel="stylesheet" href="/assets/css/search.css">
+
+    <!-- About Style-->
+    <link rel="stylesheet" href="/assets/css/about.css">
+
+    <!-- Dynamic cyber favicon in title (optional, commented) -->
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = ["🤑", "👋🏽", "⚠️"];
+            const baseTitle = document.title;
+            let i = 0;
+
+            setInterval(() => {
+                document.title = icons[i] + " " + baseTitle;
+                i = (i + 1) % icons.length;
+            }, 1500); // cambia cada 1.5 segundos
         });
-    </script>
+    </script> -->
 </head>

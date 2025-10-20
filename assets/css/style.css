@@ -1,0 +1,298 @@
+@charset "utf-8";
+
+/* Fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css");
+
+/* Reset básico */
+html,
+body {
+  font-family: "Space Grotesk", sans-serif;
+  scroll-behavior: smooth !important;
+  transition: all 0.25s ease;
+  background: #050505;
+  color: #e0e0e0;
+}
+
+/* scrollbar styling */
+::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  display: none;
+}
+::-webkit-scrollbar-thumb:hover {
+  display: none;
+}
+
+/* Placeholder estilado */
+::placeholder {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Navbar tweaks */
+#navbar {
+  .navbar-burger {
+    span:nth-child(2) {
+      left: calc(50%);
+      width: 8px;
+    }
+  }
+}
+
+/* Activar clase activa */
+.is-active {
+  font-weight: bold;
+}
+
+/* Ajustes botones en columnas */
+.columns {
+  .button {
+    margin: 0.5rem !important;
+  }
+}
+
+/* Separadores */
+hr {
+  margin: 1rem auto;
+  height: 1px;
+}
+
+/* Margen columnas */
+.column {
+  margin: auto 0.5rem;
+  padding: 0.5rem;
+}
+
+/* Búsqueda resultados */
+.searchResult {
+  a {
+    .title {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ---------------- BODY ---------------- */
+body {
+  background-color: #050505;
+  color: #e0e0e0;
+  text-shadow: 0 0 5px rgba(0, 224, 255, 0.3);
+}
+
+/* ---------------- HERO ---------------- */
+#hero {
+  overflow: hidden;
+  background: radial-gradient(circle at top, #001f2b 0%, #000 100%);
+  color: #fff;
+  font-family: "Space Grotesk", monospace;
+
+  .hero-body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* centra vertical */
+    align-items: flex-start; /* pega a la izquierda */
+    height: 70%;
+    margin-top: 20%;
+    transform: translate(0px, -100px);
+  }
+
+  .container {
+    max-width: 850px;
+    padding: inherit;
+    margin-left: inherit;
+    padding-left: 7rem;
+    text-align: left;
+  }
+
+  .hero-icon-right {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: inherit;
+    transform: translate(-230px, 20px);
+  }
+
+  .icon-halo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at top, #00e0ff 0%, #0bb772 100%);
+    filter: blur(0.85rem);
+    z-index: 1;
+    transform: translateY(
+      24px
+    ); /* Aumenta/reduce el valor según el efecto deseado */
+  }
+
+  .hero-icon-right img {
+    position: relative;
+    z-index: 2;
+    width: auto;
+    max-width: 80%;
+    height: auto;
+    border-radius: 50%;
+    background: none;
+    box-shadow: 0 0 10px #00e0ff55;
+  }
+
+  h1.title {
+    font-size: 4rem;
+    text-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0;
+  }
+
+  h3.subtitle {
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px #00fff0;
+    margin-bottom: 2rem;
+  }
+
+  .hero-hr {
+    width: auto;
+    height: 3px;
+    border: none;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #00fff0 0%, #00ff94 100%);
+    box-shadow: 0 0 14px #00fff0, 0 0 25px #00ff94;
+    border-radius: 3px;
+    opacity: 0.7;
+  }
+
+  .hero-button {
+    margin-left: 0;
+    transition: all 0.3s ease;
+    display: inline-block;
+    max-width: 100%;
+    &:hover {
+      background-color: #00fff0 !important;
+      color: #000 !important;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #00fff0;
+      align-items: center;
+    }
+  }
+  .hero-button-inverse {
+    background-color: #00fff0;
+    color: #001f2b;
+    border: 1px solid #00fff0;
+    box-shadow: 0 0 10px #00fff088;
+    transition: all 0.25s ease;
+  }
+
+  .hero-button-inverse:hover,
+  .hero-button-inverse:focus {
+    background-color: #001f2b;
+    color: #00fff0;
+    border: 1px solid #00fff0;
+    box-shadow: 0 0 18px #00fff088, 0 0 30px #00ff94;
+  }
+}
+
+/* ---------------- TITLES ---------------- */
+.title {
+  color: #00e0ff;
+  text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);
+}
+
+.subtitle {
+  color: rgb(0, 255, 153);
+  text-shadow: 0 0 8px rgba(0, 255, 153, 0.6);
+}
+
+/* ---------------- BUTTONS ---------------- */
+.button {
+  background-color: transparent;
+  color: #00e0ff;
+  border: 1px solid #00e0ff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.6), 0 0 20px rgba(0, 224, 255, 0.4);
+  transition: all 0.25s ease;
+
+  &:hover {
+    background-color: rgba(0, 255, 153, 0.15);
+    color: rgb(0, 255, 153);
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.7), 0 0 30px rgba(0, 224, 255, 0.5);
+  }
+}
+
+/* ---------------- BLOG CARDS ---------------- */
+#blog {
+  #blog-card {
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(0, 224, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(0.98);
+      box-shadow: 0 0 20px rgba(0, 255, 153, 0.4),
+        0 0 30px rgba(0, 224, 255, 0.3);
+    }
+
+    .title {
+      color: #00e0ff;
+    }
+
+    .content {
+      color: #e0e0e0;
+    }
+  }
+}
+
+/* ---------------- TAGS ---------------- */
+.tag {
+  border-radius: 0.3em;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+.tag.difficulty.easy {
+  background-color: rgb(0, 255, 153);
+}
+
+.tag.difficulty.medium {
+  background-color: #ff6600;
+}
+
+.tag.difficulty.hard {
+  background-color: #ff0055;
+}
+
+/* ---------------- BOOKMARK CARDS ---------------- */
+.bookmark {
+  background-color: #0b0b0b;
+  border: 1px solid rgba(0, 224, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.6), 0 0 20px rgba(0, 224, 255, 0.4);
+
+  h3 {
+    color: #00e0ff;
+  }
+
+  p {
+    color: #ccc;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.6);
+  }
+}

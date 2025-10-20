@@ -1,4 +1,149 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="enes"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="enes" /><updated>2025-04-24T11:57:29+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jose’s Portfolio</title><subtitle>Welcome to my hacking website</subtitle><entry><title type="html">Code</title><link href="http://localhost:4000/blog/Code" rel="alternate" type="text/html" title="Code" /><published>2025-04-23T00:00:00+02:00</published><updated>2025-04-23T00:00:00+02:00</updated><id>http://localhost:4000/blog/Code</id><content type="html" xml:base="http://localhost:4000/blog/Code"><![CDATA[<p>First, we use <code class="language-plaintext highlighter-rouge">ping</code> to check if we have a connection to the machine and identify the OS.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-20T09:41:14+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Jose Luis Venega</title><subtitle>Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.</subtitle><entry><title type="html">SimpleCTF</title><link href="http://0.0.0.0:4000/blog/simpleCTF" rel="alternate" type="text/html" title="SimpleCTF" /><published>2025-10-17T00:00:00+00:00</published><updated>2025-10-17T00:00:00+00:00</updated><id>http://0.0.0.0:4000/blog/simpleCTF</id><content type="html" xml:base="http://0.0.0.0:4000/blog/simpleCTF"><![CDATA[<blockquote>
+  <p>In this room, we’ll obtain the flags <code class="language-plaintext highlighter-rouge">user.txt</code> and <code class="language-plaintext highlighter-rouge">root.txt</code> using various techniques explained below.
+This is a beginner-friendly CTF simulation where the goal is to find these flags.</p>
+</blockquote>
+
+<h1 id="usertxt">User.txt</h1>
+
+<hr />
+
+<p>This TryHackMe room features a Capture The Flag challenge for beginners.</p>
+
+<p>Target machine IP → <code class="language-plaintext highlighter-rouge">10.10.42.145</code></p>
+
+<p>First, we’ll perform a port scan to gather information.</p>
+
+<div style="text-align:center;">
+ <div class="code-container">
+    <div class="code-header">
+      Bash
+      <button class="copy-button" data-code="bash">Copy</button>
+    </div>
+    <pre class="language-bash">sudo nmap -p- &lt;target_IP&gt;</pre>
+  </div>
+</div>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf1.png" alt="sctf1" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>We found several open ports. Let’s gather more details about them.</p>
+
+<div style="text-align:center;">
+ <div class="code-container">
+    <div class="code-header">
+      Bash
+      <button class="copy-button" data-code="bash">Copy</button>
+    </div>
+    <pre class="language-bash">nmap -sC -sV -p&lt;ports&gt;- --min-rate 3000 &lt;target_IP&gt;</pre>
+  </div>
+</div>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf2.png" alt="sctf2" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>We found port 80 (HTTP) hosting a web page, port 21 (FTP) for file transfers, and port 2222 running SSH.</p>
+
+<p>Accessing the website:</p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf3.png" alt="sctf3" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>We reach the Ubuntu default page with nothing useful. Let’s search for hidden directories.</p>
+
+<div style="text-align:center;">
+ <div class="code-container">
+    <div class="code-header">
+      Bash
+      <button class="copy-button" data-code="bash">Copy</button>
+    </div>
+    <pre class="language-bash">gobuster dir -url &lt;target_IP&gt; -w &lt;wordlist&gt;</pre>
+  </div>
+</div>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf4.png" alt="sctf4" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>We found several directories including <b>/robots.txt</b> and <b>/simple</b></p>
+
+<h2 id="robotstxt">/robots.txt</h2>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf5.png" alt="robots.txt" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<h2 id="simple">/simple</h2>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf6.png" alt="sctf6" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>This leads to another website. Let’s look for useful information.</p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf7.png" alt="sctf7" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>We found a login page. Let’s search for vulnerabilities.</p>
+
+<p>We’ll use the <em>searchsploit</em> tool to find vulnerabilities.</p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf8.png" alt="sctf8" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>We navigate to the website containing the script and download it.</p>
+
+<p><a href="https://github.com/e-renna/CVE-2019-9053/blob/master/exploit.py" target="\_blank">The script only works with Python 3.</a></p>
+
+<p>Using <code class="language-plaintext highlighter-rouge">python3 exploit.py -u &lt;url&gt; --crack -w &lt;wordlist&gt;</code>, we’ll check if the exploit works and retrieve the password, where -u (website URL), —crack (indicates we’re cracking a password), -w (wordlist parameter).</p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf9.png" alt="sctf9" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>We decrypt the key and can now connect to the SSH server.</p>
+
+<p>Next, we establish an SSH connection with the obtained credentials:</p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf10.png" alt="sctf10" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>We cat the user.txt file. And we found the flag.</p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf11.png" alt="Flag" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>Running <code class="language-plaintext highlighter-rouge">cd ..</code> reveals the directories <em>mitch</em> (containing user.txt) and <em>sunbath</em>.</p>
+
+<h1 id="roottxt">Root.txt</h1>
+
+<hr />
+
+<p>Attempting to access the sunbath directory with <code class="language-plaintext highlighter-rouge">cd sunbath</code> returns a permission error.</p>
+
+<p>To escalate privileges, we’ll search for vulnerabilities → <code class="language-plaintext highlighter-rouge">sudo -l</code></p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf12.png" alt="sctf12" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>With this information, we can visit https://gtfobins.github.io/ to learn about the exploit.</p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf13.png" alt="sctf13" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>
+
+<p>Now we run the exploit and execute <code class="language-plaintext highlighter-rouge">bash</code> to get a normal console, then search for the flag.</p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/Rooms/THM/SimpleCTF/sctf14.png" alt="sctf14" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
+</div>]]></content><author><name></name></author><category term="" /><summary type="html"><![CDATA[CTF simulation for beginners where the user.txt and root.txt flags are obtained by scanning ports, searching for vulnerabilities, and exploiting them. Tools such as nmap and searchsploit are used to access an SSH server and escalate privileges, finally finding the flags.]]></summary></entry><entry><title type="html">Code</title><link href="http://0.0.0.0:4000/blog/Code" rel="alternate" type="text/html" title="Code" /><published>2025-04-23T00:00:00+00:00</published><updated>2025-04-23T00:00:00+00:00</updated><id>http://0.0.0.0:4000/blog/Code</id><content type="html" xml:base="http://0.0.0.0:4000/blog/Code"><![CDATA[<p>First, we use <code class="language-plaintext highlighter-rouge">ping</code> to check if we have a connection to the machine and identify the OS.</p>
 <div style="text-align: center;">
   <img src="../assets/images/Rooms/HTB/Code/2.png" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:inherit;" />
 </div>
@@ -156,7 +301,7 @@ for user in users:
   <a href="https://www.hackthebox.com/achievement/machine/1157775/653" target="_blank">
     <img src="/assets/images/Rooms/HTB/Code/17.png" alt="Hack The Box Achievement" style="width:100%; max-width:inherit;" />
   </a>
-</div>]]></content><author><name></name></author><category term="" /><summary type="html"><![CDATA[A detailed walkthrough of the Hack The Box machine "Code," showcasing techniques such as Python code exploitation, database extraction, hash cracking, and privilege escalation to capture both user and root flags.]]></summary></entry><entry><title type="html">LinkVortex</title><link href="http://localhost:4000/blog/LinkVortex" rel="alternate" type="text/html" title="LinkVortex" /><published>2025-01-16T00:00:00+01:00</published><updated>2025-01-16T00:00:00+01:00</updated><id>http://localhost:4000/blog/LinkVortex</id><content type="html" xml:base="http://localhost:4000/blog/LinkVortex"><![CDATA[<p>To begin with, let’s perform a port scan to identify which ports are open:</p>
+</div>]]></content><author><name></name></author><category term="" /><summary type="html"><![CDATA[A detailed walkthrough of the Hack The Box machine "Code," showcasing techniques such as Python code exploitation, database extraction, hash cracking, and privilege escalation to capture both user and root flags.]]></summary></entry><entry><title type="html">LinkVortex</title><link href="http://0.0.0.0:4000/blog/LinkVortex" rel="alternate" type="text/html" title="LinkVortex" /><published>2025-01-16T00:00:00+00:00</published><updated>2025-01-16T00:00:00+00:00</updated><id>http://0.0.0.0:4000/blog/LinkVortex</id><content type="html" xml:base="http://0.0.0.0:4000/blog/LinkVortex"><![CDATA[<p>To begin with, let’s perform a port scan to identify which ports are open:</p>
 
 <div style="text-align:center;">
  <div class="code-container">
@@ -380,7 +525,7 @@ for user in users:
   <a href="https://www.hackthebox.com/achievement/machine/1157775/638" target="_blank">
     <img src="/assets/images/Rooms/HTB/LinkVortex/27.png" alt="Hack The Box Achievement" style="width:100%; max-width:inherit;" />
   </a>
-</div>]]></content><author><name></name></author><category term="" /><summary type="html"><![CDATA[LinkVortex machine from Hack The Box. The process includes port scanning, web technology identification, fuzzing for hidden directories, exploiting vulnerabilities in Ghost CMS (CVE-2023-40028), and privilege escalation through the clean_symlink.sh script. The final goal was to escalate privileges and capture the root flag.]]></summary></entry><entry><title type="html">Cicada</title><link href="http://localhost:4000/blog/Cicada" rel="alternate" type="text/html" title="Cicada" /><published>2024-12-31T00:00:00+01:00</published><updated>2024-12-31T00:00:00+01:00</updated><id>http://localhost:4000/blog/Cicada</id><content type="html" xml:base="http://localhost:4000/blog/Cicada"><![CDATA[<p>To begin with, I’m going to check if we have connection with the target machine:</p>
+</div>]]></content><author><name></name></author><category term="" /><summary type="html"><![CDATA[LinkVortex machine from Hack The Box. The process includes port scanning, web technology identification, fuzzing for hidden directories, exploiting vulnerabilities in Ghost CMS (CVE-2023-40028), and privilege escalation through the clean_symlink.sh script. The final goal was to escalate privileges and capture the root flag.]]></summary></entry><entry><title type="html">Cicada</title><link href="http://0.0.0.0:4000/blog/Cicada" rel="alternate" type="text/html" title="Cicada" /><published>2024-12-31T00:00:00+00:00</published><updated>2024-12-31T00:00:00+00:00</updated><id>http://0.0.0.0:4000/blog/Cicada</id><content type="html" xml:base="http://0.0.0.0:4000/blog/Cicada"><![CDATA[<p>To begin with, I’m going to check if we have connection with the target machine:</p>
 
 <div style="text-align:center;">
  <div class="code-container">
@@ -626,7 +771,7 @@ reg save hklm\system C:\tmp\system</code></pre>
   <a href="https://www.hackthebox.com/achievement/machine/1157775/627" target="_blank">
     <img src="/assets/images/Rooms/HTB/Cicada/27.png" alt="Hack The Box Achievement" style="width:100%; max-width:inherit;" />
   </a>
-</div>]]></content><author><name></name></author><category term="" /><summary type="html"><![CDATA[Cicada is an easy Windows machine on Hack The Box. The goal is to exploit weak configurations and vulnerabilities to gain access, escalate privileges, and capture the user.txt and root.txt flags.]]></summary></entry><entry><title type="html">Chemistry</title><link href="http://localhost:4000/blog/Chemistry" rel="alternate" type="text/html" title="Chemistry" /><published>2024-12-30T00:00:00+01:00</published><updated>2024-12-30T00:00:00+01:00</updated><id>http://localhost:4000/blog/Chemistry</id><content type="html" xml:base="http://localhost:4000/blog/Chemistry"><![CDATA[<p>First, I’m going to perform a port scanning in order to find out which ports are open:</p>
+</div>]]></content><author><name></name></author><category term="" /><summary type="html"><![CDATA[Cicada is an easy Windows machine on Hack The Box. The goal is to exploit weak configurations and vulnerabilities to gain access, escalate privileges, and capture the user.txt and root.txt flags.]]></summary></entry><entry><title type="html">Chemistry</title><link href="http://0.0.0.0:4000/blog/Chemistry" rel="alternate" type="text/html" title="Chemistry" /><published>2024-12-30T00:00:00+00:00</published><updated>2024-12-30T00:00:00+00:00</updated><id>http://0.0.0.0:4000/blog/Chemistry</id><content type="html" xml:base="http://0.0.0.0:4000/blog/Chemistry"><![CDATA[<p>First, I’m going to perform a port scanning in order to find out which ports are open:</p>
 <div style="text-align:center;">
  <div class="code-container">
     <div class="code-header">

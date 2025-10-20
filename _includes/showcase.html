@@ -1,16 +1,38 @@
 <section class="hero is-fullheight has-text-centered" id="hero">
-  <div class="hero-body">
+  <div class="binary-diagonal"></div>
+  <div class="hero-body hero-flex">
     <div class="container">
       <h1 class="title has-text-white is-size-1 is-uppercase has-text-weight-bold">
-        {{site.title}}
+        {{ site.title }}
       </h1>
       <h3 class="subtitle has-text-white-bis is-uppercase has-text-weight-medium is-marginless">
-        {{site.description}}
+        {{ site.subtitle }}
       </h3>
-      <hr>
-      <a href="{{site.url}}{{site.baseurl}}/#about"
-        class="button is-white is-rounded is-outlined is-uppercase has-text-weight-normal">Read More</a>
+      <p>{{site.description}}</p>
+      <hr class="hero-hr">
+      <a href="#about"
+        class="button is-white is-rounded is-outlined is-uppercase has-text-weight-normal hero-button hero-button-inverse">
+        Get In Touch!
       </a>
+      <a href="{{site.url}}{{site.baseurl}}/blog"
+        class="button is-white is-rounded is-outlined is-uppercase has-text-weight-normal hero-button">Labs</a><br>
+      <a href="https://www.linkedin.com/in/{{site.linkedin_username}}" class="contact-btn" target="_blank">
+        <i class="fab fa-linkedin"></i></a>
+      <a href="https://www.github.com/{{site.github_username}}" class="contact-btn" target="_blank">
+        <i class="fab fa-github"></i></a>
+      <a href="https://tryhackme.com/p/{{site.tryhackme}}" class="contact-btn" target="_blank">
+        <img src="/assets/images/thm.svg" alt="TryHackMe" />
+      </a>
+      <a href="https://app.hackthebox.com/profile/overview" class="contact-btn" target="_blank">
+        <img src="/assets/images/htb.svg" alt="Hack The Box" />
+      </a>
+
+    </div>
+    <div class="hero-icon-right">
+      <span class="icon-halo"></span>
+      <img src="/assets/images/hacker.gif" alt="Hacker Icon">
     </div>
   </div>
 </section>
+<section id="about"></section>
+<section id="skills"></section>

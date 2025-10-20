@@ -2,19 +2,17 @@ markdown: kramdown
 
 lang:
   - en
-  - es
-
-baseurl: /
+baseurl: 
 
 # URL of the Site
 url: 'https://joseeelv.github.io/'
-# Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
-baseurl: 
 
 # Title of the Site
-title: Jose's Portfolio
+title: Jose Luis Venega
+subtitle: Cybersecurity-Focused Software Developer
 # Description of the Site
-description: Welcome to my hacking website
+description: Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.
+
 # URL of Image of the Site
 site-image: "/assets/images/favicon.png"
 # Keywords of the Site
@@ -27,10 +25,12 @@ heroimage: "/assets/images/banner.png"
 # If you don't want to use any icon, you can leave them blank.
 email: jose.venegasan@gmail.com
 github_username: Joseeelv
+tryhackme: joseelv
+hackthebox: jhex
 linkedin_username: jose-luis-venega-sánchez-817a65285
-# twitter_username: thedevslot
+# twitter_username: 
 # instagram_username: joseelv_
-# youtube_channel_id: UCk_93NXYP-U_AOB5GfWlOow
+# youtube_channel_id: 
 # reddit_username: /
 # behance_username: /
 # dribbble_username: /
@@ -47,8 +47,7 @@ author-name: Jose Luis Venega
 # URL for the Image of the Author
 author-image: "/assets/images/me.png"
 # 60 Words About the Author
-author-about: Hi! I'm Jose Luis Venega, a Computer Engineering student at the University of Cádiz. Alongside my studies, I focus on enhancing my skills in ethical hacking, with a particular emphasis on penetration testing. I dedicate my time to solving practical labs and challenges on platforms such as Hack The Box and VulnHub, while also actively participating in CTF competitions, where I apply my expertise in cybersecurity and technical problem-solving.
-
+author-about:
 
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)ZZ
 author-url: https://github.com/Joseeelv
@@ -57,6 +56,7 @@ author-url: https://github.com/Joseeelv
 sass:
   sass_dir: _sass
   style: compressed
+
 
 # Build settings
 plugins:

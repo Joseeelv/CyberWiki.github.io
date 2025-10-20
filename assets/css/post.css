@@ -1,0 +1,429 @@
+/* Globals para posts */
+#post {
+  background: #0a0a0a;
+  padding: 2rem 1rem 4rem;
+  font-family: "Rajdhani", "IBM Plex Mono", monospace;
+  color: #ccc;
+  margin: 0 auto;
+}
+
+/* Título principal */
+#post h1 {
+  font-family: "Orbitron", "Rajdhani", "IBM Plex Mono", monospace;
+  color: #00e0ff;
+  font-weight: 700;
+  font-size: 2rem;
+  text-shadow: 0 0 12px #00e0ffcc, 0 0 20px #00ff99cc;
+  letter-spacing: 0.07em;
+  margin-bottom: 1.6rem;
+}
+
+#post h2 {
+  color: #00ff99cc;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-shadow: 0 0 12px #00e0ffcc, 0 0 20px #00ff99cc;
+  letter-spacing: 0.07em;
+  margin-bottom: 1.6rem;
+}
+
+/* Separador decorativo */
+.divider {
+  border: none;
+  height: 3px;
+  margin: 2rem auto;
+  max-width: 180px;
+  background: linear-gradient(90deg, #00e0ff, #00ff99, #00e0ff);
+  box-shadow: 0 0 25px #00e0ffbb, 0 0 30px #00ff99cc;
+  border-radius: 12px;
+}
+
+/* Imagen principal del post */
+#post-image {
+  width: 100%;
+  max-width: 60%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  margin: 2rem auto;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+#post-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px #00ff99, 0 0 35px #00e0ff;
+}
+
+.post-label {
+  display: flex;
+  align-items: center;
+  margin: 1.1rem 0 0.7rem 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.11rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-wrap: inherit;
+}
+
+.post-label b,
+.post-label a,
+.post-label .tag {
+  color: #00ff99;
+  background: none;
+  margin-left: 0.55em;
+  text-shadow: 0 0 16px #00e0ff;
+  font-size: 1.19em;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  opacity: 1;
+}
+
+.post-label .tag.difficulty.easy {
+  background-color: rgb(0, 255, 153);
+  box-shadow: 0 0 18px #00ff99aa;
+}
+
+.post-label .tag.difficulty.medium {
+  background-color: #ff6600;
+  box-shadow: 0 0 18px #ff6600;
+}
+
+.post-label .tag.difficulty.hard {
+  background-color: #ff0055;
+  box-shadow: 0 0 18px #ff0055;
+}
+
+.os-icon {
+  color: #00ff99; /* verde-neón */
+  text-shadow: 0 0 6px #00ff99, 0 0 12px #00e0ff, 0 0 18px #00ff99cc;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+.post-label .tag.difficulty {
+  background: #00ff99;
+  color: #222;
+  border-radius: 14px;
+  padding: 0.25em 1.3em;
+  margin-left: 0.6em;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.08em;
+  letter-spacing: 0.14em;
+}
+
+/* Responsive imagen */
+@media (max-width: 1023px) {
+  #post-image {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 768px) {
+  #post h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Cuerpo del post */
+#post .post-body {
+  font-size: 1.2rem;
+  line-height: 1.58;
+  color: #cfcfcf;
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: justify;
+}
+
+/* Meta info tipo bulma column is-5 */
+.post-meta {
+  font-family: "IBM Plex Mono", "Orbitron", monospace;
+  font-size: 1.14rem;
+  color: #00ffb3;
+  max-width: 41.6667%;
+  width: 100%;
+  margin: 2rem auto 1.5rem;
+  background: none;
+  padding: 0.2rem 0.3rem 0;
+  letter-spacing: 0.025em;
+}
+@media (max-width: 1023px) {
+  .post-meta {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+}
+
+.post-meta a,
+.post-meta b,
+.post-meta .tag {
+  color: #00e0ff;
+  text-shadow: 0 0 12px #00e0ff77;
+  font-weight: 700;
+  font-size: 1.09em;
+}
+
+.post-meta .tag.difficulty {
+  background: #00ff99;
+  color: #1d1d1d;
+  border-radius: 7px;
+  padding: 0.16em 0.7em;
+  font-size: 1.03em;
+}
+
+.code-container {
+  background: #101010;
+  border: 1.5px solid #00e0ff;
+  border-radius: 12px;
+  box-shadow: 0 0 18px #00e0ffa0 inset;
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+.code-header {
+  background: #161c1f;
+  color: #00ff99;
+  font-family: "Orbitron", "IBM Plex Mono", monospace;
+  font-weight: 600;
+  padding: 0.53rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.99rem;
+}
+
+.code-header .copy-button {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid #00e0ff;
+  color: #00e0ff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  font-family: "IBM Plex Mono", monospace;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s, color 0.2s;
+}
+.code-header .copy-button:hover {
+  background: #00e0ff;
+  color: #101010;
+}
+
+pre,
+code,
+pre code {
+  background: transparent !important;
+  color: #00e0ff;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #00e0ff55;
+}
+
+strong,
+b {
+  color: #00e0ff;
+  font-weight: 700;
+  text-shadow: 0 0 8px #00e0ffcc;
+}
+em,
+i {
+  font-style: italic;
+  color: #66fff6;
+  text-shadow: 0 0 6px #66fff688;
+}
+/* Blockquote */
+blockquote {
+  font-style: italic;
+  border-left: 4px solid #00e0ff;
+  padding: 1rem 1.25rem;
+  margin: 2rem auto;
+  color: #cceeff;
+  background: #181f22 !important;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00e0ff40;
+  max-width: 800px;
+  line-height: 1.6;
+}
+blockquote::before {
+  content: "❝";
+  color: #00e0ff;
+  font-size: 1.7rem;
+  margin-right: 0.39rem;
+  vertical-align: middle;
+  text-shadow: 0 0 10px #00e0ff;
+}
+ul,
+ol {
+  margin-left: 2rem;
+  margin-bottom: 1.6rem;
+  color: #ddd;
+}
+li {
+  margin-bottom: 0.3rem;
+}
+#post img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 18px #00ff9970, 0 0 21px #00e0ff80;
+  margin: 2rem auto;
+  transition: transform 0.4s, box-shadow 0.3s;
+  cursor: pointer;
+}
+#post img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #00ff99, 0 0 36px #00e0ff;
+}
+
+.code-skillblock {
+  font-family: "IBM Plex Mono", "Fira Mono", monospace;
+  color: #33ffcc;
+  background: none;
+  font-size: 1.18rem;
+  letter-spacing: 0.13em;
+  margin: 2rem 0 1rem 0;
+  padding-left: 0.7em;
+  text-align: left;
+}
+.code-skillblock .skill-label {
+  color: #36d1ff;
+  font-weight: bold;
+  margin-right: 0.8em;
+  letter-spacing: 0.16em;
+  text-shadow: 0 0 10px #36d1ff80;
+}
+.code-skillblock .skill-value {
+  color: #00ff99;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-shadow: 0 0 13px #00ff9999;
+  margin-right: 0.1em;
+}
+.code-skillblock,
+.code-skillblock .skill-label,
+.code-skillblock .skill-value {
+  text-transform: uppercase;
+}
+
+/* El número en inline code NO sale como badge/pill ni color de fondo especial */
+pre .number,
+pre .literal,
+pre .constant,
+pre .token.number,
+pre .token-literal,
+pre .token-constant,
+pre .hljs-number,
+pre .hljs-literal,
+pre .hljs-constant {
+  background: transparent !important;
+  color: #00e0ff !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  outline: none !important;
+  border: none !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+  text-shadow: 0 0 8px #00e0ff66;
+  display: inline !important;
+  vertical-align: baseline !important;
+}
+
+/* Modal base */
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(10, 10, 20, 0.95);
+  backdrop-filter: blur(8px);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  cursor: pointer;
+  display: flex; /* usa flex para centrar */
+  justify-content: center; /* horizontal */
+  align-items: center; /* vertical */
+}
+
+/* Mostrar modal */
+.modal.show {
+  display: flex; /* mantiene el centrado */
+  opacity: 1;
+}
+
+/* Imagen dentro del modal */
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  border: 2px solid #00ffea;
+  box-shadow: 0 0 25px #00ffea;
+  border-radius: 12px;
+  transition: transform 0.4s ease, opacity 0.4s ease; /* transición suave */
+  transform-origin: center center; /* zoom desde el centro */
+}
+
+/* Clase para hacer zoom */
+.modal-content.zoomed {
+  transform: scale(1.75);
+  cursor: zoom-out;
+  transition: transform 0.4s ease, opacity 0.4s ease; /* transición suave */
+}
+
+/* Imagen dentro del modal */
+.modal-content {
+  margin: 5% auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border: 2px solid #00ffea;
+  box-shadow: 0 0 25px #00ffea;
+  border-radius: 12px;
+  animation: popin 0.3s ease;
+}
+
+/* Animación de entrada */
+@keyframes popin {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Botón cerrar */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #00ffea;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 0 10px #00ffea;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close:hover {
+  color: #ff00ff;
+  transform: scale(1.2);
+}
+
+/* Miniaturas con efecto glow */
+.thumbnail {
+  cursor: pointer;
+  border: 2px solid #00ffea;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffea;
+}

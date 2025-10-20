@@ -26,12 +26,11 @@ desktop.ini
 dist/
 build/
 
-# Environment variables
-.env
-.env.local
-.env.*.local
-
 # IDE specific files
 .idea/
 .vscode/
 *.code-workspace
+
+# Docker files
+docker-composer.yml
+Dockerfile

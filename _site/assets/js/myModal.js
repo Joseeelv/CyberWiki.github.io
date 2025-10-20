@@ -1,23 +1,32 @@
-// Abre el modal
-function openModal() {
-  var modal = document.getElementById("myModal");
-  var img = document.querySelector(".thumbnail");
-  var modalImg = document.getElementById("img01");
+window.openModal = function(imgSrc) {
+  const modal = document.getElementById("myModal");
+  const modalImg = document.getElementById("img01");
 
-  modal.style.display = "block";
-  modalImg.src = img.src;
-}
+  modal.style.display = "flex"; 
+  setTimeout(() => modal.classList.add("show"), 10);
+  modalImg.src = imgSrc;
 
-// Cierra el modal
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
+  // Reiniciar zoom al abrir
+  modalImg.classList.remove("zoomed");
 
-// Maneja el clic fuera del modal para cerrarlo
+  // Toggle zoom al hacer clic en la imagen
+  modalImg.onclick = (e) => {
+    e.stopPropagation(); // evitar cerrar modal al hacer zoom
+    modalImg.classList.toggle("zoomed");
+  };
+};
+
+window.closeModal = function() {
+  const modal = document.getElementById("myModal");
+  const modalImg = document.getElementById("img01");
+  modalImg.classList.remove("zoomed");
+  modal.classList.remove("show");
+  setTimeout(() => modal.style.display = "none", 300);
+};
+
+// Cerrar si se hace clic fuera de la imagen
 window.onclick = function(event) {
-  var modal = document.getElementById("myModal");
-  if (event.target == modal) {
-      modal.style.display = "none";
-  }
-}
+  const modal = document.getElementById("myModal");
+  const modalImg = document.getElementById("img01");
+  if (event.target === modal) closeModal();
+};

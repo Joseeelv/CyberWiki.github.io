@@ -6,7 +6,7 @@
       Bash
       <button class="copy-button" data-code="bash">Copy</button>
     </div>
-    <pre><code class="language-bash" >sudo nmap -p- -open -sS -sV -sC -n -Pn -vvv --min-rate 5000 &lt;target_IP&gt; -oN filename</code></pre>
+    <pre class="language-bash" >your code here</pre>
   </div>
 </div>
 
@@ -18,5 +18,3 @@
 <div style="text-align: center;">
   <img src="" alt="Untitled" onclick="openModal(this.src)" style="width:100%; max-width:inherit;">
 </div>
-
-→

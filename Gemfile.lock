@@ -60,9 +60,13 @@ GEM
       logger
     faraday-net_http (3.3.0)
       net-http
+    ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-arm64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
+    google-protobuf (4.28.2-aarch64-linux)
+      bigdecimal
+      rake (>= 13)
     google-protobuf (4.28.2-arm64-darwin)
       bigdecimal
       rake (>= 13)
@@ -216,6 +220,7 @@ GEM
     webrick (1.8.2)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-23
   x86_64-linux-gnu
 
@@ -226,10 +231,12 @@ DEPENDENCIES
   colorize (~> 0.8.1)
   cucumber (~> 7.0)
   fakefs (>= 1.0)
+  ffi (~> 1.17)
   iniparse (~> 1.5)
   jekyll (~> 4.3.3)
   jekyll-admin (~> 0.11)
   jekyll-feed (~> 0.15)
+  jekyll-sass-converter (>= 2.0)
   listen (~> 3.7.0)
   minitest (~> 5.0)
   minitest-fail-fast
@@ -242,7 +249,6 @@ DEPENDENCIES
   rubocop-minitest
   rubocop-rake
   rubocop-shopify
-  sass-embedded (~> 1.77.8)
   timecop
   webmock
   webrick (~> 1.7)

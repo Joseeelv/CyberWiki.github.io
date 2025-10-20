@@ -1,0 +1,32 @@
+.page-title {
+  font-family: 'Orbitron', 'Rajdhani', 'IBM Plex Mono', monospace;
+  text-shadow: 0 0 10px #00e0ff70;
+}
+
+.page-subtitle {
+  font-family: 'Rajdhani', 'IBM Plex Mono', monospace;
+  letter-spacing: 0.15em;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+  color: #a0a0a0;
+  text-shadow: 0 0 6px rgba(100, 255, 204, 0.25);
+}
+
+.page-divider {
+  border-color: #00ffc3;
+  margin: 0 auto 2.2rem auto;
+  width: 150px;
+  border-top-width: 2px;
+  filter: drop-shadow(0 0 7px #00e0ffaa);
+}
+
+.page-btn {
+  font-family: 'Rajdhani', 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  box-shadow: 0 0 12px #00e0ff90;
+  transition: box-shadow 0.3s ease;
+}
+.page-btn:hover {
+  box-shadow: 0 0 20px #00ffc3, 0 0 28px #00e0ff;
+}

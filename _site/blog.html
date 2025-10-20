@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <!-- Include Meta Tags Here -->
@@ -9,31 +9,31 @@
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1 user-scalable=no, shrink-to-fit=no">
 <meta content='#000000' name='theme-color'/>
 <meta name="keywords" content="Site, Template, Theme">
-<title>Jose's Portfolio | Blog</title>
+<title>Jose Luis Venega | Blog</title>
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-<meta name="og:title" content="Jose's Portfolio | Blog">
-<meta name="og:description" content="Welcome to my hacking website">
+<meta name="og:title" content="Jose Luis Venega | Blog">
+<meta name="og:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
 <meta name="og:image" content="/assets/images/favicon.png">
-<meta name="og:image:alt" content="Jose's Portfolio | Blog">
-<meta name="og:url" content="http://localhost:4000/blog">
+<meta name="og:image:alt" content="Jose Luis Venega | Blog">
+<meta name="og:url" content="http://0.0.0.0:4000/blog">
 <meta name="article:author" content="https://www.facebook.com/">
-<meta name="og:site_name" content="Jose's Portfolio | Blog">
+<meta name="og:site_name" content="Jose Luis Venega | Blog">
 <meta name="og:type" content="website">
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Jose's Portfolio | Blog">
-<meta name="twitter:description" content="Welcome to my hacking website">
+<meta name="twitter:title" content="Jose Luis Venega | Blog">
+<meta name="twitter:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
 <meta name="twitter:site" content="@">
 <meta name="twitter:creator" content="@">
 <meta name="twitter:image:src" content="/assets/images/favicon.png">
 <!-- Search Engine -->
-<meta name="description" content="Welcome to my hacking website">
+<meta name="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
 <meta name="image" content="/assets/images/favicon.png">
 <!-- Schema.org for Google -->
-<meta itemprop="name" content="Jose's Portfolio | Blog">
+<meta itemprop="name" content="Jose Luis Venega | Blog">
 <meta name="author" content="Jose Luis Venega"/>
-<meta itemprop="description" content="Welcome to my hacking website">
+<meta itemprop="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
 <meta itemprop="image" content="/assets/images/favicon.png">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -48,102 +48,246 @@
 
     gtag('config', '');
 </script>
-    <title>Jose's Portfolio</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-      <!-- Incluye el CSS de Prism.js -->
-    <link rel="stylesheet" href="../prism.css">
-    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Jose Luis Venega</title>
     
-    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var titleElement = document.getElementById('page-title');
-            var icon = "/assest/images/favicon.png"; // Puedes usar cualquier emoji o icono aquí
-            titleElement.textContent = icon + " " + titleElement.textContent;
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+    href="/assets/images/favicon.png"
+    type="image/x-icon">
+    <!-- Font Awesome Icons (latest official version only) -->
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+    
+    <!-- Main styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Prism.js code highlighting -->
+    <link rel="stylesheet" href="prism.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Meta responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Navbar Style-->
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+
+    <!-- 404 Style-->
+    <link rel="stylesheet" href="/assets/css/404.css">
+
+    <!-- Blog Style-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <!-- Page Style-->
+    <link rel="stylesheet" href="/assets/css/page.css">
+
+    <!-- Post Style-->
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+    <!-- Search Style-->
+    <link rel="stylesheet" href="/assets/css/search.css">
+
+    <!-- About Style-->
+    <link rel="stylesheet" href="/assets/css/about.css">
+
+    <!-- Dynamic cyber favicon in title (optional, commented) -->
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = ["🤑", "👋🏽", "⚠️"];
+            const baseTitle = document.title;
+            let i = 0;
+
+            setInterval(() => {
+                document.title = icons[i] + " " + baseTitle;
+                i = (i + 1) % icons.length;
+            }, 1500); // cambia cada 1.5 segundos
         });
-    </script>
+    </script> -->
 </head>
 
-  <body>
-    <nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
-    <div class="container">
+<body>
+  <head>
+    <!-- Include Meta Tags Here -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1 user-scalable=no, shrink-to-fit=no">
+<meta content='#000000' name='theme-color'/>
+<meta name="keywords" content="Site, Template, Theme">
+<title>Jose Luis Venega | Blog</title>
 
-        <!-- logo or branding image on left side -->
-       
-        <!-- Logo o imagen de marca en el lado izquierdo -->
-        <div class="navbar-brand">
-            <a class="navbar-item"
-                href="http://localhost:4000/">
-                    <img src="/assets/images/favicon.png" 
-                        alt="Site Icon" 
-                        style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
-                    <i class="/assest/images/favicon.png"></i>
-                    <strong>Jose's Portfolio</strong>
-                </a>
-            <div class="navbar-burger" data-target="navbar-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Jose Luis Venega | Blog">
+<meta name="og:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="og:image" content="/assets/images/favicon.png">
+<meta name="og:image:alt" content="Jose Luis Venega | Blog">
+<meta name="og:url" content="http://0.0.0.0:4000/blog">
+<meta name="article:author" content="https://www.facebook.com/">
+<meta name="og:site_name" content="Jose Luis Venega | Blog">
+<meta name="og:type" content="website">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Jose Luis Venega | Blog">
+<meta name="twitter:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image:src" content="/assets/images/favicon.png">
+<!-- Search Engine -->
+<meta name="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="image" content="/assets/images/favicon.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Jose Luis Venega | Blog">
+<meta name="author" content="Jose Luis Venega"/>
+<meta itemprop="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta itemprop="image" content="/assets/images/favicon.png">
 
-        <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
-        <div class="navbar-menu has-background-black" id="navbar-menu">
-            <!-- navbar items | left side -->
-            <!-- <div class="navbar-start">
-            </div> -->
-            <!-- navbar items | right side -->
-            <div class="navbar-end">
-                <a class="navbar-item "
-                    href="http://localhost:4000/">HOME</a>
-                <a class="navbar-item" href="http://localhost:4000/#about">WHOAMI</a>
-                <a class="navbar-item" href="http://localhost:4000/#contact">CONTACT</a>
-                <a class="navbar-item is-active"
-                    href="http://localhost:4000/blog">MACHINES</a>
-            </div>
-        </div>
-    </div>
-</nav>
-<!-- Bulma Navbar JS -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        /* Get all "navbar-burger" elements */
-        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        /* Check if there are any navbar burgers */
-        if ($navbarBurgers.length > 0) {
-            /* Add a click event on each of them */
-            $navbarBurgers.forEach(function ($el) {
-                $el.addEventListener('click', function () {
-                    /* Get the target from the "data-target" attribute */
-                    var target = $el.dataset.target;
-                    var $target = document.getElementById(target);
-                    /* Toggle the class on both the "navbar-burger" and the "navbar-menu" */
-                    $el.classList.toggle('is-active');
-                    $target.classList.toggle('is-active');
-                });
-            });
-        }
-    });
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '');
+</script>
+    <title>Jose Luis Venega</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+    href="/assets/images/favicon.png"
+    type="image/x-icon">
+    <!-- Font Awesome Icons (latest official version only) -->
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+    
+    <!-- Main styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Prism.js code highlighting -->
+    <link rel="stylesheet" href="prism.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Meta responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Navbar Style-->
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+
+    <!-- 404 Style-->
+    <link rel="stylesheet" href="/assets/css/404.css">
+
+    <!-- Blog Style-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <!-- Page Style-->
+    <link rel="stylesheet" href="/assets/css/page.css">
+
+    <!-- Post Style-->
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+    <!-- Search Style-->
+    <link rel="stylesheet" href="/assets/css/search.css">
+
+    <!-- About Style-->
+    <link rel="stylesheet" href="/assets/css/about.css">
+
+    <!-- Dynamic cyber favicon in title (optional, commented) -->
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = ["🤑", "👋🏽", "⚠️"];
+            const baseTitle = document.title;
+            let i = 0;
+
+            setInterval(() => {
+                document.title = icons[i] + " " + baseTitle;
+                i = (i + 1) % icons.length;
+            }, 1500); // cambia cada 1.5 segundos
+        });
+    </script> -->
+</head>
+<nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
+  <!-- Quitar container de aquí para navbar full width -->
+  <div class="navbar-brand">
+    <a class="navbar-item" href="http://0.0.0.0:4000/">
+      <img src="/assets/images/favicon.png" alt="Site Icon"
+           style="width: 28px; height: 28px; margin-right: 9px; vertical-align: middle; box-shadow: 0 0 8px #00e0ff;">
+    </a>
+    <div class="navbar-burger" data-target="navbar-menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="navbar-menu has-background-black" id="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item " href="/">Home</a>
+      <a class="navbar-item" href="http://0.0.0.0:4000/#about">Whoami</a>
+      <a class="navbar-item" href="http://0.0.0.0:4000/#contact">Contact</a>
+      <a class="navbar-item" href="http://0.0.0.0:4000/#skills">Skills</a>
+      <a class="navbar-item" href="http://0.0.0.0:4000/#articles">Articles</a>
+      <a class="navbar-item is-active" href="/blog">Labs</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach(function ($el) {
+        $el.addEventListener('click', function () {
+          var target = $el.dataset.target;
+          var $target = document.getElementById(target);
+          $el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+  });
 </script>
 
-    <section class="hero is-fullheight" id="blog">
-        <div class="hero-body">
-            <div class="container">
-                <!-- Main container -->
-<nav class="level has-text-centered">
-    <!-- Left side -->
-    <div class="level-left">
-        <p class="subtitle is-uppercase has-text-weight-medium has-text-grey">Machines done</p>
-    </div>
-    <!-- Right side -->
-    <div class="level-right">
-        <div class="level-item">
-            <div class="field has-addons has-text-weight-medium has-text-grey" id="search">
+
+  <section class="hero is-fullheight" id="blog">
+    <div class="hero-body">
+      <div class="container">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/blog.css">
+</head>
+<body>
+    
+</body>
+</html>
+<nav class="rooms-level">
+  <div class="rooms-level-left">
+    <p class="rooms-level-label">Labs Writeups</p>
+  </div>
+  <div class="rooms-level-right">
+    <div class="rooms-level-item">
+      <head>
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+</head>
+
+<div class="field has-addons has-text-weight-medium has-text-grey" id="search">
     <p class="control">
-        <input id="search-input" class="input is-shadowless is-uppercase has-text-grey has-text-weight-normal" type="text"
-            placeholder="Search Here">
+        <input id="search-input" class="input is-shadowless is-uppercase has-text-weight-normal"
+            type="text" placeholder="Search Here">
     </p>
     <p class="control">
         <button class="button">
@@ -151,336 +295,788 @@
         </button>
     </p>
 </div>
-        </div>
     </div>
+  </div>
 </nav>
-            </div>
-        </div>
 
-        <!-- Selector de Ordenación
-        <div class="container" style="text-align: center;">
-            <div class="field">
-                <label class="label">Ordenar las rooms por:</label>
-                <div class="control">
-                  <div class="select">
-                      <select id="sort-selector" style="text-align: center;">
-                          <option value="date">Fecha</option>
-                          <option value="difficulty">Dificultad</option>
-                          <option value="title">Nombre</option>
-                      </select>
-                  </div>
-              </div>
-          </div>
-        </div>        -->
-        <div id="results-container"></div>
-        <!--Blog Cards Section-->
-        
-            
-                 <div class="columns has-text-centered" id="blog-card">
-    <div class="column is-marginless is-paddingless is-one-third-desktop is-one-third-fullhd is-one-third-tablet">
-        <div class="image is-16by9" style="background-image: url(/assets/images/Rooms/HTB/Code/1.png);"></div>
+      </div>
     </div>
-    <a href="http://localhost:4000/blog/Code" class="column has-text-left-desktop has-text-left-tablet">
-        <!-- Título y descripción -->
-        <h1 class="title is-size-4-touch">Code</h1>
-        <div class="content has-text-grey">
+
+    <!-- Selector de ordenación opcional - comenta si no lo usas -->
+    <!--
+    <div class="container has-text-centered">
+      <div class="field is-inline-flex">
+        <label class="label is-uppercase has-text-weight-semibold mr-3">Ordenar las rooms por:</label>
+        <div class="control">
+          <div class="select">
+            <select id="sort-selector">
+              <option value="date">Fecha</option>
+              <option value="difficulty">Dificultad</option>
+              <option value="title">Nombre</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+
+    <div id="results-container" class="container mt-5"></div>
+
+    <!-- Blog Cards -->
+    <div id="blog-card-list" class="container mt-6">
+      
+      
+      <head>
+    <!-- Include Meta Tags Here -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1 user-scalable=no, shrink-to-fit=no">
+<meta content='#000000' name='theme-color'/>
+<meta name="keywords" content="Site, Template, Theme">
+<title>Jose Luis Venega | Blog</title>
+
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Jose Luis Venega | Blog">
+<meta name="og:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="og:image" content="/assets/images/favicon.png">
+<meta name="og:image:alt" content="Jose Luis Venega | Blog">
+<meta name="og:url" content="http://0.0.0.0:4000/blog">
+<meta name="article:author" content="https://www.facebook.com/">
+<meta name="og:site_name" content="Jose Luis Venega | Blog">
+<meta name="og:type" content="website">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Jose Luis Venega | Blog">
+<meta name="twitter:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image:src" content="/assets/images/favicon.png">
+<!-- Search Engine -->
+<meta name="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="image" content="/assets/images/favicon.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Jose Luis Venega | Blog">
+<meta name="author" content="Jose Luis Venega"/>
+<meta itemprop="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta itemprop="image" content="/assets/images/favicon.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '');
+</script>
+    <title>Jose Luis Venega</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+    href="/assets/images/favicon.png"
+    type="image/x-icon">
+    <!-- Font Awesome Icons (latest official version only) -->
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+    
+    <!-- Main styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Prism.js code highlighting -->
+    <link rel="stylesheet" href="prism.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Meta responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Navbar Style-->
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+
+    <!-- 404 Style-->
+    <link rel="stylesheet" href="/assets/css/404.css">
+
+    <!-- Blog Style-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <!-- Page Style-->
+    <link rel="stylesheet" href="/assets/css/page.css">
+
+    <!-- Post Style-->
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+    <!-- Search Style-->
+    <link rel="stylesheet" href="/assets/css/search.css">
+
+    <!-- About Style-->
+    <link rel="stylesheet" href="/assets/css/about.css">
+
+    <!-- Dynamic cyber favicon in title (optional, commented) -->
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = ["🤑", "👋🏽", "⚠️"];
+            const baseTitle = document.title;
+            let i = 0;
+
+            setInterval(() => {
+                document.title = icons[i] + " " + baseTitle;
+                i = (i + 1) % icons.length;
+            }, 1500); // cambia cada 1.5 segundos
+        });
+    </script> -->
+</head>
+
+<div class="blog-card" data-title="SimpleCTF" data-tags=""
+    data-difficulty="Easy" data-os="Linux"
+    data-skills="Enumeration,Security,SQLi">
+    <div class="blog-card-image" style="background-image: url('/assets/images/Rooms/THM/SimpleCTF/sctf.png');"></div>
+    <a href="http://0.0.0.0:4000/blog/simpleCTF" class="blog-card-content">
+        <h1 class="title blog-card-title">SimpleCTF</h1>
+        <div class="content blog-card-desc">
+            CTF simulation for beginners where the user.txt and root.txt flags are obtained by scanning ports, searching for vulnerabilities, and exploiting them. Tools such as nmap and searchsploit are used to access an SSH server and escalate privileges, finally finding the flags.
+            <hr>
+        </div>
+        <div class="blog-card-meta">
+            <div class="difficulty">
+                <strong>Difficulty: </strong>
+                <span class="tag difficulty easy">
+                    Easy
+                </span>
+            </div>
+            
+            <div class="os os-label">
+                <strong>Operating System: </strong>
+                <span class="os-icon" data-os="Linux"></span>
+            </div>
+            
+            
+            <div class="skills">
+                <strong>Skills: </strong> Enumeration | Security | SQLi
+
+            </div>
+            
+        </div>
+    </a>
+</div>
+<script src="/assets/js/icon.js"></script>
+      
+      
+      
+      <head>
+    <!-- Include Meta Tags Here -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1 user-scalable=no, shrink-to-fit=no">
+<meta content='#000000' name='theme-color'/>
+<meta name="keywords" content="Site, Template, Theme">
+<title>Jose Luis Venega | Blog</title>
+
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Jose Luis Venega | Blog">
+<meta name="og:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="og:image" content="/assets/images/favicon.png">
+<meta name="og:image:alt" content="Jose Luis Venega | Blog">
+<meta name="og:url" content="http://0.0.0.0:4000/blog">
+<meta name="article:author" content="https://www.facebook.com/">
+<meta name="og:site_name" content="Jose Luis Venega | Blog">
+<meta name="og:type" content="website">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Jose Luis Venega | Blog">
+<meta name="twitter:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image:src" content="/assets/images/favicon.png">
+<!-- Search Engine -->
+<meta name="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="image" content="/assets/images/favicon.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Jose Luis Venega | Blog">
+<meta name="author" content="Jose Luis Venega"/>
+<meta itemprop="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta itemprop="image" content="/assets/images/favicon.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '');
+</script>
+    <title>Jose Luis Venega</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+    href="/assets/images/favicon.png"
+    type="image/x-icon">
+    <!-- Font Awesome Icons (latest official version only) -->
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+    
+    <!-- Main styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Prism.js code highlighting -->
+    <link rel="stylesheet" href="prism.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Meta responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Navbar Style-->
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+
+    <!-- 404 Style-->
+    <link rel="stylesheet" href="/assets/css/404.css">
+
+    <!-- Blog Style-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <!-- Page Style-->
+    <link rel="stylesheet" href="/assets/css/page.css">
+
+    <!-- Post Style-->
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+    <!-- Search Style-->
+    <link rel="stylesheet" href="/assets/css/search.css">
+
+    <!-- About Style-->
+    <link rel="stylesheet" href="/assets/css/about.css">
+
+    <!-- Dynamic cyber favicon in title (optional, commented) -->
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = ["🤑", "👋🏽", "⚠️"];
+            const baseTitle = document.title;
+            let i = 0;
+
+            setInterval(() => {
+                document.title = icons[i] + " " + baseTitle;
+                i = (i + 1) % icons.length;
+            }, 1500); // cambia cada 1.5 segundos
+        });
+    </script> -->
+</head>
+
+<div class="blog-card" data-title="Code" data-tags=""
+    data-difficulty="easy" data-os="Linux"
+    data-skills="Python code exploitation,Database extraction,Hash cracking,Privilege escalation,Path traversal">
+    <div class="blog-card-image" style="background-image: url('/assets/images/Rooms/HTB/Code/1.png');"></div>
+    <a href="http://0.0.0.0:4000/blog/Code" class="blog-card-content">
+        <h1 class="title blog-card-title">Code</h1>
+        <div class="content blog-card-desc">
             A detailed walkthrough of the Hack The Box machine &quot;Code,&quot; showcasing techniques such as Python code exploitation, database extraction, hash cracking, and privilege escalation to capture both user and root flags.
-            <hr class="has-background-grey">
+            <hr>
         </div>
-
-        <!-- Dificultad del CTF -->
-        <div class="difficulty is-size-6-touch">
-            <strong>Difficulty:</strong> 
-            <span class="tag difficulty easy">
-                Easy
-            </span>
-        </div>
-
-        <!-- Sistema Operativo -->
-        
-        <div class="os is-size-6-touch">
-            <strong>Operating System:</strong> Linux
-        </div>
-        
-
-        <!-- Skills -->
-        
-        <div class="skills is-size-6-touch">
-            <strong>Skills:</strong> Python code exploitation, Database extraction, Hash cracking, Privilege escalation, Path traversal
-        </div>
-        
-    </a>
-</div>
-
-            
-        
-            
-                 <div class="columns has-text-centered" id="blog-card">
-    <div class="column is-marginless is-paddingless is-one-third-desktop is-one-third-fullhd is-one-third-tablet">
-        <div class="image is-16by9" style="background-image: url(/assets/images/Rooms/HTB/LinkVortex/LinkVortex.png);"></div>
-    </div>
-    <a href="http://localhost:4000/blog/LinkVortex" class="column has-text-left-desktop has-text-left-tablet">
-        <!-- Título y descripción -->
-        <h1 class="title is-size-4-touch">LinkVortex</h1>
-        <div class="content has-text-grey">
-            LinkVortex machine from Hack The Box. The process includes port scanning, web technology identification, fuzzing for hidden directories, exploiting vulnerabilities in Ghost CMS (CVE-2023-40028), and privilege escalation through the clean_symlink.sh script. The final goal was to escalate privilege...
-            <hr class="has-background-grey">
-        </div>
-
-        <!-- Dificultad del CTF -->
-        <div class="difficulty is-size-6-touch">
-            <strong>Difficulty:</strong> 
-            <span class="tag difficulty easy">
-                Easy
-            </span>
-        </div>
-
-        <!-- Sistema Operativo -->
-        
-        <div class="os is-size-6-touch">
-            <strong>Operating System:</strong> Linux
-        </div>
-        
-
-        <!-- Skills -->
-        
-        <div class="skills is-size-6-touch">
-            <strong>Skills:</strong> .git directory enumeration, CVE-2023-40028 exploitation, Privilege escalation using clean_symlink.sh script
-        </div>
-        
-    </a>
-</div>
-
-            
-        
-            
-                 <div class="columns has-text-centered" id="blog-card">
-    <div class="column is-marginless is-paddingless is-one-third-desktop is-one-third-fullhd is-one-third-tablet">
-        <div class="image is-16by9" style="background-image: url(/assets/images/Rooms/HTB/Cicada/Cicada.png);"></div>
-    </div>
-    <a href="http://localhost:4000/blog/Cicada" class="column has-text-left-desktop has-text-left-tablet">
-        <!-- Título y descripción -->
-        <h1 class="title is-size-4-touch">Cicada</h1>
-        <div class="content has-text-grey">
-            Cicada is an easy Windows machine on Hack The Box. The goal is to exploit weak configurations and vulnerabilities to gain access, escalate privileges, and capture the user.txt and root.txt flags.
-            <hr class="has-background-grey">
-        </div>
-
-        <!-- Dificultad del CTF -->
-        <div class="difficulty is-size-6-touch">
-            <strong>Difficulty:</strong> 
-            <span class="tag difficulty easy">
-                Easy
-            </span>
-        </div>
-
-        <!-- Sistema Operativo -->
-        
-        <div class="os is-size-6-touch">
-            <strong>Operating System:</strong> Windows
-        </div>
-        
-
-        <!-- Skills -->
-        
-        <div class="skills is-size-6-touch">
-            <strong>Skills:</strong> SMB enumeration, brute force, exploitation, Privilege Escalation abusing SeBackupPrivilege, Hash cracking, Powershell exploitation
-        </div>
-        
-    </a>
-</div>
-
-            
-        
-            
-                 <div class="columns has-text-centered" id="blog-card">
-    <div class="column is-marginless is-paddingless is-one-third-desktop is-one-third-fullhd is-one-third-tablet">
-        <div class="image is-16by9" style="background-image: url(/assets/images/Rooms/HTB/Chemistry/Chemistry.png);"></div>
-    </div>
-    <a href="http://localhost:4000/blog/Chemistry" class="column has-text-left-desktop has-text-left-tablet">
-        <!-- Título y descripción -->
-        <h1 class="title is-size-4-touch">Chemistry</h1>
-        <div class="content has-text-grey">
-            The Chemistry machine on Hack The Box is vulnerable to various techniques, such as command injection, LFI, and vulnerabilities in CIF file handling. Through these vulnerabilities, a reverse shell was executed, privileges were escalated, and the flags user.txt and root.txt were obtained.
-            <hr class="has-background-grey">
-        </div>
-
-        <!-- Dificultad del CTF -->
-        <div class="difficulty is-size-6-touch">
-            <strong>Difficulty:</strong> 
-            <span class="tag difficulty easy">
-                Easy
-            </span>
-        </div>
-
-        <!-- Sistema Operativo -->
-        
-        <div class="os is-size-6-touch">
-            <strong>Operating System:</strong> Linux
-        </div>
-        
-
-        <!-- Skills -->
-        
-        <div class="skills is-size-6-touch">
-            <strong>Skills:</strong> Command Injection, LFI, CIF files vulnerability, Database Analysis and Exploration, Hash cracking
-        </div>
-        
-    </a>
-</div>
-
-            
-        
-    </section>
-    <br>
-    <!--Footer begins here-->
-    <footer id="footer">
-    <!--Footer Button-->
-    <div class="container has-text-centered has-background-grey-darker" id="backtotop">
-        <a class="has-text-white" onclick="window.scroll(0,0)">BACK TO TOP</a>
-    </div>
-    <!--Footer Main Section-->
-    <!-- <div class="has-background-grey-darker">
-        <div class="container columns">
-            Name Section-->
-            <!-- <div class="column has-text-left-desktop has-text-centered-mobile">
-                <a href="http://localhost:4000/#about">
-                    <div class="columns">
-                        <div class="column is-one-fifth-desktop is-one-fifth-fullhd is-one-quarter-tablet">
-                            <figure class="image is-64x64">
-                                <img class="is-rounded" src="/assets/images/me.png">
-                            </figure>
-                        </div>
-                        <div class="column is-marginless">
-                            <h5 class="has-text-grey-lighter">Jose Luis Venega</h5>
-                            <div class="content has-text-grey">
-                                <p>Hi! I'm Jose Luis Venega, a Computer Engineering student at the Universi...</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div> -->
-
-            <!--Link Section
-            <div class="column has-text-white">
-                <h3>More Links</h3>
-                
-                <li>
-                    <a target="_blank" href="http://localhost:4000/feed.xml">Subscribe via RSS</a>
-                </li>
-            </div> -->
-
-            <!--Blog-post Section-->
-            <!-- <div class="column has-text-white">
-                <h3>Recent Posts</h3>
-                
-                <li>
-                    <a href="http://localhost:4000/blog/Code">Code</a>
-                </li>
-                
-                <li>
-                    <a href="http://localhost:4000/blog/LinkVortex">LinkVortex</a>
-                </li>
-                
-                <li>
-                    <a href="http://localhost:4000/blog/Cicada">Cicada</a>
-                </li>
-                
+        <div class="blog-card-meta">
+            <div class="difficulty">
+                <strong>Difficulty: </strong>
+                <span class="tag difficulty easy">
+                    easy
+                </span>
             </div>
-        </div> -->
+            
+            <div class="os os-label">
+                <strong>Operating System: </strong>
+                <span class="os-icon" data-os="Linux"></span>
+            </div>
+            
+            
+            <div class="skills">
+                <strong>Skills: </strong> Python code exploitation | Database extraction | Hash cracking | Privilege escalation | Path traversal
+
+            </div>
+            
+        </div>
+    </a>
+</div>
+<script src="/assets/js/icon.js"></script>
+      
+      
+      
+      <head>
+    <!-- Include Meta Tags Here -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1 user-scalable=no, shrink-to-fit=no">
+<meta content='#000000' name='theme-color'/>
+<meta name="keywords" content="Site, Template, Theme">
+<title>Jose Luis Venega | Blog</title>
+
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Jose Luis Venega | Blog">
+<meta name="og:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="og:image" content="/assets/images/favicon.png">
+<meta name="og:image:alt" content="Jose Luis Venega | Blog">
+<meta name="og:url" content="http://0.0.0.0:4000/blog">
+<meta name="article:author" content="https://www.facebook.com/">
+<meta name="og:site_name" content="Jose Luis Venega | Blog">
+<meta name="og:type" content="website">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Jose Luis Venega | Blog">
+<meta name="twitter:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image:src" content="/assets/images/favicon.png">
+<!-- Search Engine -->
+<meta name="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="image" content="/assets/images/favicon.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Jose Luis Venega | Blog">
+<meta name="author" content="Jose Luis Venega"/>
+<meta itemprop="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta itemprop="image" content="/assets/images/favicon.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '');
+</script>
+    <title>Jose Luis Venega</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+    href="/assets/images/favicon.png"
+    type="image/x-icon">
+    <!-- Font Awesome Icons (latest official version only) -->
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+    
+    <!-- Main styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Prism.js code highlighting -->
+    <link rel="stylesheet" href="prism.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Meta responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Navbar Style-->
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+
+    <!-- 404 Style-->
+    <link rel="stylesheet" href="/assets/css/404.css">
+
+    <!-- Blog Style-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <!-- Page Style-->
+    <link rel="stylesheet" href="/assets/css/page.css">
+
+    <!-- Post Style-->
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+    <!-- Search Style-->
+    <link rel="stylesheet" href="/assets/css/search.css">
+
+    <!-- About Style-->
+    <link rel="stylesheet" href="/assets/css/about.css">
+
+    <!-- Dynamic cyber favicon in title (optional, commented) -->
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = ["🤑", "👋🏽", "⚠️"];
+            const baseTitle = document.title;
+            let i = 0;
+
+            setInterval(() => {
+                document.title = icons[i] + " " + baseTitle;
+                i = (i + 1) % icons.length;
+            }, 1500); // cambia cada 1.5 segundos
+        });
+    </script> -->
+</head>
+
+<div class="blog-card" data-title="LinkVortex" data-tags=""
+    data-difficulty="Easy" data-os="Linux"
+    data-skills=".git directory enumeration,CVE-2023-40028 exploitation,Privilege escalation using clean_symlink.sh script">
+    <div class="blog-card-image" style="background-image: url('/assets/images/Rooms/HTB/LinkVortex/LinkVortex.png');"></div>
+    <a href="http://0.0.0.0:4000/blog/LinkVortex" class="blog-card-content">
+        <h1 class="title blog-card-title">LinkVortex</h1>
+        <div class="content blog-card-desc">
+            LinkVortex machine from Hack The Box. The process includes port scanning, web technology identification, fuzzing for hidden directories, exploiting vulnerabilities in Ghost CMS (CVE-2023-40028), and privilege escalation through the clean_symlink.sh script. The final goal was to escalate privilege...
+            <hr>
+        </div>
+        <div class="blog-card-meta">
+            <div class="difficulty">
+                <strong>Difficulty: </strong>
+                <span class="tag difficulty easy">
+                    Easy
+                </span>
+            </div>
+            
+            <div class="os os-label">
+                <strong>Operating System: </strong>
+                <span class="os-icon" data-os="Linux"></span>
+            </div>
+            
+            
+            <div class="skills">
+                <strong>Skills: </strong> .git directory enumeration | CVE-2023-40028 exploitation | Privilege escalation using clean_symlink.sh script
+
+            </div>
+            
+        </div>
+    </a>
+</div>
+<script src="/assets/js/icon.js"></script>
+      
+      
+      
+      <head>
+    <!-- Include Meta Tags Here -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1 user-scalable=no, shrink-to-fit=no">
+<meta content='#000000' name='theme-color'/>
+<meta name="keywords" content="Site, Template, Theme">
+<title>Jose Luis Venega | Blog</title>
+
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Jose Luis Venega | Blog">
+<meta name="og:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="og:image" content="/assets/images/favicon.png">
+<meta name="og:image:alt" content="Jose Luis Venega | Blog">
+<meta name="og:url" content="http://0.0.0.0:4000/blog">
+<meta name="article:author" content="https://www.facebook.com/">
+<meta name="og:site_name" content="Jose Luis Venega | Blog">
+<meta name="og:type" content="website">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Jose Luis Venega | Blog">
+<meta name="twitter:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image:src" content="/assets/images/favicon.png">
+<!-- Search Engine -->
+<meta name="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="image" content="/assets/images/favicon.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Jose Luis Venega | Blog">
+<meta name="author" content="Jose Luis Venega"/>
+<meta itemprop="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta itemprop="image" content="/assets/images/favicon.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '');
+</script>
+    <title>Jose Luis Venega</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+    href="/assets/images/favicon.png"
+    type="image/x-icon">
+    <!-- Font Awesome Icons (latest official version only) -->
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+    
+    <!-- Main styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Prism.js code highlighting -->
+    <link rel="stylesheet" href="prism.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Meta responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Navbar Style-->
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+
+    <!-- 404 Style-->
+    <link rel="stylesheet" href="/assets/css/404.css">
+
+    <!-- Blog Style-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <!-- Page Style-->
+    <link rel="stylesheet" href="/assets/css/page.css">
+
+    <!-- Post Style-->
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+    <!-- Search Style-->
+    <link rel="stylesheet" href="/assets/css/search.css">
+
+    <!-- About Style-->
+    <link rel="stylesheet" href="/assets/css/about.css">
+
+    <!-- Dynamic cyber favicon in title (optional, commented) -->
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = ["🤑", "👋🏽", "⚠️"];
+            const baseTitle = document.title;
+            let i = 0;
+
+            setInterval(() => {
+                document.title = icons[i] + " " + baseTitle;
+                i = (i + 1) % icons.length;
+            }, 1500); // cambia cada 1.5 segundos
+        });
+    </script> -->
+</head>
+
+<div class="blog-card" data-title="Cicada" data-tags=""
+    data-difficulty="Easy" data-os="Windows"
+    data-skills="SMB enumeration, brute force, exploitation,Privilege Escalation abusing SeBackupPrivilege,Hash cracking,Powershell exploitation">
+    <div class="blog-card-image" style="background-image: url('/assets/images/Rooms/HTB/Cicada/Cicada.png');"></div>
+    <a href="http://0.0.0.0:4000/blog/Cicada" class="blog-card-content">
+        <h1 class="title blog-card-title">Cicada</h1>
+        <div class="content blog-card-desc">
+            Cicada is an easy Windows machine on Hack The Box. The goal is to exploit weak configurations and vulnerabilities to gain access, escalate privileges, and capture the user.txt and root.txt flags.
+            <hr>
+        </div>
+        <div class="blog-card-meta">
+            <div class="difficulty">
+                <strong>Difficulty: </strong>
+                <span class="tag difficulty easy">
+                    Easy
+                </span>
+            </div>
+            
+            <div class="os os-label">
+                <strong>Operating System: </strong>
+                <span class="os-icon" data-os="Windows"></span>
+            </div>
+            
+            
+            <div class="skills">
+                <strong>Skills: </strong> SMB enumeration, brute force, exploitation | Privilege Escalation abusing SeBackupPrivilege | Hash cracking | Powershell exploitation
+
+            </div>
+            
+        </div>
+    </a>
+</div>
+<script src="/assets/js/icon.js"></script>
+      
+      
+      
+      <head>
+    <!-- Include Meta Tags Here -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1 user-scalable=no, shrink-to-fit=no">
+<meta content='#000000' name='theme-color'/>
+<meta name="keywords" content="Site, Template, Theme">
+<title>Jose Luis Venega | Blog</title>
+
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Jose Luis Venega | Blog">
+<meta name="og:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="og:image" content="/assets/images/favicon.png">
+<meta name="og:image:alt" content="Jose Luis Venega | Blog">
+<meta name="og:url" content="http://0.0.0.0:4000/blog">
+<meta name="article:author" content="https://www.facebook.com/">
+<meta name="og:site_name" content="Jose Luis Venega | Blog">
+<meta name="og:type" content="website">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Jose Luis Venega | Blog">
+<meta name="twitter:description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image:src" content="/assets/images/favicon.png">
+<!-- Search Engine -->
+<meta name="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta name="image" content="/assets/images/favicon.png">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Jose Luis Venega | Blog">
+<meta name="author" content="Jose Luis Venega"/>
+<meta itemprop="description" content="Aspiring cybersecurity professional and Computer Engineering student at the University of Cádiz, penetration testing, and practical security challenges. Active on Hack The Box, TryHackMe and CTFs, dedicated to continuous learning and real-world problem-solving in the field of cybersecurity.">
+<meta itemprop="image" content="/assets/images/favicon.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '');
+</script>
+    <title>Jose Luis Venega</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+    href="/assets/images/favicon.png"
+    type="image/x-icon">
+    <!-- Font Awesome Icons (latest official version only) -->
+    <script src="https://kit.fontawesome.com/6a97161b76.js" crossorigin="anonymous"></script>
+    
+    <!-- Main styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Prism.js code highlighting -->
+    <link rel="stylesheet" href="prism.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Meta responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Navbar Style-->
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+
+    <!-- 404 Style-->
+    <link rel="stylesheet" href="/assets/css/404.css">
+
+    <!-- Blog Style-->
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <!-- Page Style-->
+    <link rel="stylesheet" href="/assets/css/page.css">
+
+    <!-- Post Style-->
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+    <!-- Search Style-->
+    <link rel="stylesheet" href="/assets/css/search.css">
+
+    <!-- About Style-->
+    <link rel="stylesheet" href="/assets/css/about.css">
+
+    <!-- Dynamic cyber favicon in title (optional, commented) -->
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = ["🤑", "👋🏽", "⚠️"];
+            const baseTitle = document.title;
+            let i = 0;
+
+            setInterval(() => {
+                document.title = icons[i] + " " + baseTitle;
+                i = (i + 1) % icons.length;
+            }, 1500); // cambia cada 1.5 segundos
+        });
+    </script> -->
+</head>
+
+<div class="blog-card" data-title="Chemistry" data-tags=""
+    data-difficulty="Easy" data-os="Linux"
+    data-skills="Command Injection,LFI,CIF files vulnerability,Database Analysis and Exploration,Hash cracking">
+    <div class="blog-card-image" style="background-image: url('/assets/images/Rooms/HTB/Chemistry/Chemistry.png');"></div>
+    <a href="http://0.0.0.0:4000/blog/Chemistry" class="blog-card-content">
+        <h1 class="title blog-card-title">Chemistry</h1>
+        <div class="content blog-card-desc">
+            The Chemistry machine on Hack The Box is vulnerable to various techniques, such as command injection, LFI, and vulnerabilities in CIF file handling. Through these vulnerabilities, a reverse shell was executed, privileges were escalated, and the flags user.txt and root.txt were obtained.
+            <hr>
+        </div>
+        <div class="blog-card-meta">
+            <div class="difficulty">
+                <strong>Difficulty: </strong>
+                <span class="tag difficulty easy">
+                    Easy
+                </span>
+            </div>
+            
+            <div class="os os-label">
+                <strong>Operating System: </strong>
+                <span class="os-icon" data-os="Linux"></span>
+            </div>
+            
+            
+            <div class="skills">
+                <strong>Skills: </strong> Command Injection | LFI | CIF files vulnerability | Database Analysis and Exploration | Hash cracking
+
+            </div>
+            
+        </div>
+    </a>
+</div>
+<script src="/assets/js/icon.js"></script>
+      
+      
     </div>
-    <div class="has-background-black has-text-centered has-text-white" id="credits">
-        <i class="far fa-copyright"></i> 2025 | A Theme made by <a href="https://github.com/Joseeelv" target="_blank" rel="noopener noreferrer">Joseeelv</a> Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>
-    </div>
+
+  </section>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+</head>
+<body>
+    
+</body>
+</html>
+<footer id="footer-section">
+  <div class="footer-backtotop">
+    <a href="#" class="footer-link" onclick="window.scroll(0,0)">↑ BACK TO TOP</a>
+  </div>
+  <div class="footer-credits">
+    <span>© 2025 | A Theme by <a href="https://github.com/Joseeelv" target="_blank">Joseeelv</a> · Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a></span>
+  </div>
 </footer>
-    <script src="http://localhost:4000/assets/js/simple-jekyll-search.js"></script>
 
-    <script>
-      SimpleJekyllSearch({
-    searchInput: document.getElementById('search'),
-    resultsContainer: document.getElementById('results-container'),
-    json: 'http://localhost:4000/search.json',
-    searchResultTemplate: `
-        <div style="border: 0.15rem dashed black" class="searchResult columns has-text-centered" id="blog-card">
-        <div class="column is-marginless is-paddingless is-one-third-desktop is-one-third-fullhd is-one-third-tablet">
-        <div class="image is-16by9" style="background-image: url({image});"></div>
-        </div>
-        <a href="{url}">
-        <div class="column has-text-left-desktop has-text-left-tablet">
-          <h1 class="title is-size-4-touch">{title}</h1>
-          <div class="content has-text-grey">
-            {description}
-            <hr class="has-background-grey">
-            <span class="has-text-grey date">
-              Published on <span class="has-text-weight-semibold">{date}</span>
-            </span>
-            <br>
-            <span class="has-text-weight-semibold difficulty">{difficulty}</span> 
-              | <a href="{enlace}" class="has-text-weight-semibold">Link</a>
-          </div>
-        </div>
-        </a>
-        </div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">`,
-        noResultsText: '<div class="subtitle has-text-centered is-uppercase">No Results Found</div><hr class="has-background-black" style="margin: 0.5rem 5rem 2.5rem 5rem">',
-        fuzzy: false,
-});
 
-      // Función para ordenar los resultados
-      // function sortResults(criteria) {
-      //   const container = document.getElementById('results-container');
-      //   const results = Array.from(container.querySelectorAll('.searchResult'));
+  <script src="/assets/js/search.js"></script>
 
-      //   results.sort((a, b) => {
-      //     let aValue, bValue;
+</body>
 
-      //     switch (criteria) {
-      //       case 'title':
-      //         aValue = a.querySelector('.title').textContent.trim().toLowerCase();
-      //         bValue = b.querySelector('.title').textContent.trim().toLowerCase();
-      //         return aValue.localeCompare(bValue); // Ordenar alfabéticamente
-
-      //       case 'date':
-      //         aValue = new Date(a.querySelector('.date').textContent.trim().split('on ')[1]);
-      //         bValue = new Date(b.querySelector('.date').textContent.trim().split('on ')[1]);
-      //         return bValue - aValue; // Ordenar por fecha descendente
-
-      //       case 'difficulty':
-      //         const difficulties = ['Easy', 'Intermediate', 'Hard'];
-      //         aValue = difficulties.indexOf(a.querySelector('.difficulty').textContent.trim());
-      //         bValue = difficulties.indexOf(b.querySelector('.difficulty').textContent.trim());
-      //         return aValue - bValue; // Ordenar por dificultad ascendente
-
-      //       default:
-      //         return 0;
-      //     }
-      //   });
-
-      //   results.forEach(result => container.appendChild(result));
-      // }
-
-      // Función para filtrar los resultados
-      // function filterResults() {
-      //   const container = document.getElementById('results-container');
-      //   const results = Array.from(container.querySelectorAll('.searchResult'));
-      //   const selectedFilters = Array.from(document.getElementById('filter-selector').selectedOptions).map(option => option.value);
-
-      //   results.forEach(result => {
-      //     const tags = result.querySelector('.tags').textContent.trim().split(','); // Asume que las etiquetas están en una clase 'tags' y separadas por comas
-      //     const matches = selectedFilters.every(filter => tags.includes(filter));
-      //     result.style.display = matches ? 'block' : 'none';
-      //   });
-      // }
-
-      // Event listener para el selector de ordenación
-      // document.getElementById('sort-selector').addEventListener('change', function() {
-      //   sortResults(this.value);
-      // });
-
-      // Event listener para el multiselect de filtrado
-      // document.getElementById('filter-selector').addEventListener('change', filterResults);
-
-      // Inicializar el filtrado al cargar
-      // document.addEventListener('DOMContentLoaded', filterResults);
-    </script>    
-  </body>
 </html>

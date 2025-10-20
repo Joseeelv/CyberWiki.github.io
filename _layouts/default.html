@@ -1,41 +1,38 @@
----
-layout: compress
----
-
 <!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
-<body>
- 
-  {% include navbar.html %}
-  {% include showcase.html %}
-  {% include about.html %}
-  {% include contact.html %}
-  <!--Footer begins here-->
-  {% include footer.html %}
-</body>
-<script>
-  var navItems = document.getElementsByClassName('navbar-item');
-  var heroes = document.getElementsByClassName('hero');
-  const viewOffset = 200; 
+  {% include head.html %}
+  <body>
+    {% include navbar.html %}
+    {% include showcase.html %}
+    {% include about.html %}
+    {% include contact.html %}
+    <!-- Footer begins here -->
+    {% include footer.html %}
 
-  window.addEventListener("scroll", function (event) {
-    var scroll = this.scrollY;
-    var position = window.pageYOffset;
+    <script>
+      (() => {
+        const navItems = document.querySelectorAll('.navbar-item');
+        const heroes = document.querySelectorAll('.hero');
+        const viewOffset = 200;
 
-    for (var i = 0; i < navItems.length; i++) {
-      navItems[i].classList.remove('is-active');
-    }
+        window.addEventListener('scroll', () => {
+          const scrollPosition = window.scrollY;
 
-    for (var i = 0; i < heroes.length; i++) {
-        var sectionTop = heroes[i].offsetTop-viewOffset;
-        var sectionBottom = heroes[i].offsetTop + heroes[i].offsetHeight-viewOffset;
+          navItems.forEach(item => item.classList.remove('is-active'));
 
-        if (scroll >= sectionTop && scroll < sectionBottom) {
-          navItems[i+1].classList.add('is-active');
-      }
-    }
-  });
-</script>
+          heroes.forEach((section, index) => {
+            const sectionTop = section.offsetTop - viewOffset;
+            const sectionBottom = sectionTop + section.offsetHeight;
 
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+              // Add 'is-active' to navItems at index+1 to match original logic
+              if (navItems[index + 1]) {
+                navItems[index + 1].classList.add('is-active');
+              }
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
 </html>

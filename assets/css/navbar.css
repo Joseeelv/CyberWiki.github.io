@@ -1,0 +1,91 @@
+.navbar {
+  width: 100vw;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 1000;
+  background: rgba(0,0,0,0.97);
+  border-bottom: 1.5px solid #00e0ff;
+  box-shadow: 0 2px 15px rgba(0,224,255,0.20);
+  font-family: 'IBM Plex Mono', 'Orbitron', 'Rajdhani', 'Roboto Mono', monospace;
+  padding: 0 1.5rem;
+
+  .navbar-brand,
+  .navbar-menu {
+    max-width: 750px; 
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .navbar-item {
+    color: #e0e0e0 !important;
+    letter-spacing: 0.05em;
+    font-size: 1.07rem;
+    transition: color 0.22s, background-color 0.22s;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .navbar-item.is-active,
+  .navbar-item:hover {
+    background-color: rgba(0,255,153,0.10) !important;
+    color: #00e0ff !important;
+    text-shadow: 0 0 9px #00e0ff;
+    box-shadow: 0 0 8px #00e0ff;
+  }
+
+  .navbar-title {
+    font-family: 'Orbitron', 'IBM Plex Mono', 'Rajdhani', sans-serif;
+    color: #00e0ff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 9px #00e0ff;
+  }
+}
+
+
+@media (max-width: 1199px) {
+  .navbar-menu {
+    display: none !important;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    background: rgba(0,0,0,0.97);
+    padding: 0.3rem 1.2rem;
+  }
+
+  .navbar-menu.is-active {
+    display: flex !important; 
+  }
+
+  .navbar-end {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .navbar-item {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-grow: 0;
+  }
+
+  .navbar-burger {
+    display: flex;  
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-menu {
+    display: flex !important;
+  }
+
+  .navbar-end {
+    flex-direction: row;
+  }
+
+  .navbar-burger {
+    display: none; 
+  }
+}
